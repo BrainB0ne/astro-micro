@@ -8,4 +8,3 @@ Micro still comes with everything great about Nano — full type safety, a sitem
 
 ---
 
-![astro-micro](https://github.com/user-attachments/assets/fc9b55b9-53e5-4933-9d23-936e1c61e6c2)
