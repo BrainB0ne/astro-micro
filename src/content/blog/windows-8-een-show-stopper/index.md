@@ -6,22 +6,23 @@ tags:
   - "windows"
 ---
 
+---
+
 Microsoft Windows 8 is sinds gisteren officieel [verkrijgbaar](http://tweakers.net/nieuws/85170/microsoft-brengt-windows-8-en-windows-rt-uit.html). Hoera, of toch niet?
 
-
-Inleiding
+## Inleiding
 
 Er is in de afgelopen tijd enorm veel geschreven over dit "vernieuwende" besturingssysteem. Windows 8 gooit haar zelf opgebouwde historie de prullenbak in, weg met de startknop, weg met kleine icoontjes op het bureaublad. Vierkante en rechthoekige bont gekleurde tegels zijn ervoor in de plaats gekomen. "Microsoft Tiles", of "Microsoft Bricks" als naam was hier beter op z'n plaats geweest, maar dit terzijde. Applicaties draaien of in tegelvorm, of in fullscreen mode als erop wordt geklikt. Het ouderwetse vergroten/verkleinen/verplaatsen/sluiten van applicaties is er niet meer bij. (Tenzij een oude applicatie gemaakt voor Windows XP/Vista/7 wordt opgestart, hierover later meer.)
 
 [![](images/Windows8.png "Windows 8 - Start Screen")](http://www.brainbytez.nl/wp-content/uploads/2012/10/Windows8.png)
 
 
-Developer / Consumer Preview
+## Developer / Consumer Preview
 
 Enige tijd geleden heb ik zelf de Windows 8 Developer en Consumer Preview al eens geinstalleerd in een VirtualBox omgeving, gewoon om eens te kijken wat het was of is. Uit nieuwsgierigheid. Ik had al vrij snel in de gaten dat dit besturingssysteem niet ontworpen is voor de traditionele desktop computer met grote beeldschermen bestuurd met een toetsenbord en muis. Dit besturingssysteem is gemaakt voor tablets, in ieder geval apparaten met een touch screen. De "experience" veranderde al snel in een grote frustratie. Er moeten kilometers worden gemaakt met de muis om van de ene naar de andere applicatie over te schakelen. Kortom, een RSI opwekkend systeem. Traditionele applicaties gemaakt voor Windows XP/Vista/7 werken ook in Windows 8 (behalve in de Windows 8 RT versie, de tablet versie). Hiervoor wordt er automatisch overschakeld naar de traditionele desktop interface. Echter om een andere (traditionele) applicatie op te starten moet men weer terug naar de Windows 8 interface, om vervolgens weer terug te keren naar de traditionele desktop interface. Een "experience" waar je al snel zeeziek van wordt. Ik had inmiddels besloten dat dit besturingssysteem niet op mijn desktop PC komt (update 4-11-12: toch heb ik afgelopen vrijdag een upgrade gewaagd op de desktop, met het volgende resultaat: [link](http://www.brainbytez.nl/windows/internet-explorer-10-has-stopped-working-in-windows-8/ "Internet Explorer 10 has stopped working in Windows 8")). Ik weet nog dat ik destijds uit frustratie riep: "Dit is een drie tientjes OS!"...
 
 
-Drie Tientjes
+## Drie Tientjes
 
 Gisteren was het dan zover, de release van Windows 8. En wat schetste mijn verbazing? Windows 8 kan aangeschaft worden voor 3 tientjes! Ik heb nog een netbook (Asus eeePC 1000H) draaiende op Windows XP in bezit. Ik bedacht dat dit misschien wel eens de ideale kanshebber zou zijn om Windows 8 op installeren, vanwege het kleine 10 inch scherm. Echter werkt de aanschaf niet zoals ik in gedachte had. De drie tientjes versie betreft namelijk een upgrade.
 
@@ -34,7 +35,7 @@ Overigens probeert [MyCom](http://www.mycom.nl/Product/Software-en-Boeken-Retail
 [![](images/mycom_win8.png "Mycom-Windows8")](http://www.brainbytez.nl/wp-content/uploads/2012/10/mycom_win8.png)
 
 
-De Show-Stopper
+## De Show-Stopper
 
 Ik heb toch maar eens de door Microsoft aangeboden "Windows 8-upgradeassistent" geinstalleerd en uitgevoerd op mijn netbook. De assistent doorzoekt de complete netbook op allerlei applicaties/apparaten die geinstalleerd zijn en geeft na afloop een compatibileitsrapport.
 
