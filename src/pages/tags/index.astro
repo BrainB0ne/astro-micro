@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
+import BackToPrevious from "@components/BackToPrevious.astro";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 const tags = [...new Set(posts.flatMap((post) => post.data.tags || []))].sort();
@@ -10,6 +11,7 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags || []))].sort();
 <Layout title="Tags" description="List of tags used.">
   <Container>
     <div class="space-y-10">
+      <BackToPrevious href="/"> Go to home page </BackToPrevious>
       <h1 class="animate font-semibold">All Tags</h1>
       <div class="animate flex flex-wrap gap-2">
         {

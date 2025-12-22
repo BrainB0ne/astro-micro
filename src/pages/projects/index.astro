@@ -4,6 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { PROJECTS } from "@consts";
+import BackToPrevious from "@components/BackToPrevious.astro";
 
 const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
@@ -14,6 +15,7 @@ const projects = (await getCollection("projects"))
   <Container>
     <aside data-pagefind-ignore>
       <div class="space-y-10">
+        <BackToPrevious href="/"> Go to home page </BackToPrevious>
         <div class="animate font-semibold text-black dark:text-white">
           Projects
         </div>
