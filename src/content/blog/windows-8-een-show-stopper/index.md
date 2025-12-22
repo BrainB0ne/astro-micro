@@ -12,7 +12,7 @@ Microsoft Windows 8 is sinds gisteren officieel [verkrijgbaar](http://tweakers.n
 
 ## Inleiding
 
-Er is in de afgelopen tijd enorm veel geschreven over dit "vernieuwende" besturingssysteem. Windows 8 gooit haar zelf opgebouwde historie de prullenbak in, weg met de startknop, weg met kleine icoontjes op het bureaublad. Vierkante en rechthoekige bont gekleurde tegels zijn ervoor in de plaats gekomen. "Microsoft Tiles", of "Microsoft Bricks" als naam was hier beter op z'n plaats geweest, maar dit terzijde. Applicaties draaien of in tegelvorm, of in fullscreen mode als erop wordt geklikt. Het ouderwetse vergroten/verkleinen/verplaatsen/sluiten van applicaties is er niet meer bij. (Tenzij een oude applicatie gemaakt voor Windows XP/Vista/7 wordt opgestart, hierover later meer.)
+Er is in de afgelopen tijd enorm veel geschreven over dit "vernieuwende" besturingssysteem. Windows 8 gooit haar zelf opgebouwde historie de prullenbak in, weg met de startknop, weg met kleine icoontjes op het bureaublad. Vierkante en rechthoekige bont gekleurde tegels zijn ervoor in de plaats gekomen. "Microsoft Tiles", of "Microsoft Bricks" als naam was hier beter op z'n plaats geweest, maar dit terzijde. Applicaties draaien of in tegelvorm, of in fullscreen mode als erop wordt geklikt. Het ouderwetse vergroten/verkleinen/verplaatsen/sluiten van applicaties is er niet meer bij. (Tenzij een oude applicatie gemaakt voor Windows XP/Vista/7 wordt opgestart, hierover later meer.)
 
 [![](images/Windows8.png "Windows 8 - Start Screen")](http://www.brainbytez.nl/wp-content/uploads/2012/10/Windows8.png)
 
