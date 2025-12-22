@@ -1,0 +1,68 @@
+---
+title: "Qt Minecraft Server"
+description: "Qt Minecraft Server"
+date: "2013-03-30"
+---
+
+---
+
+## 👋 Introduction
+
+Qt Minecraft Server is a GUI application for running/managing your own Minecraft Server.
+
+This project is developed with Qt 4.8.4
+
+The official Minecraft Server (.jar) package can be downloaded from within the application at the Settings dialog.
+
+## ⚠️ System Requirements
+
+- Windows or Linux.
+- A recent version of Java VM that is supported for running the Minecraft Server.
+- A decent amount of RAM to run the Minecraft Server smoothly :-)
+
+## ⭐ Recommended
+
+- The game: [Minecraft](https://minecraft.net/) ;-)
+
+!["Qt Minecraft Server Screenshot"](./images/qt-minecraft-server-screenshot.png)
+
+## 📥 Downloads
+
+**![](images/windows-icon.png)**
+
+\[dl url="https://www.brainbytez.nl/download/825/" title="Qt Minecraft Server" desc="v0.1.0 (windows-installer)" type="download" align="" target="\_blank"\]
+
+\[dl url="https://www.brainbytez.nl/download/827/" title="Qt Minecraft Server" desc="v0.1.0 (windows-zip)" type="archive" align="" target="\_blank"\]
+
+ 
+
+**![](images/linux-icon.png)**
+
+\[dl url="https://www.brainbytez.nl/download/831/" title="Qt Minecraft Server" desc="v0.1.0 (32bit-linux-tar.gz)" type="archive" align="" target="\_blank"\]
+
+\[dl url="https://www.brainbytez.nl/download/829/" title="Qt Minecraft Server" desc="v0.1.0 (64bit-linux-tar.gz)" type="archive" align="" target="\_blank"\]
+
+## 💻 Source
+
+[![Get it on GitHub](images/github-button.png "Get it on GitHub")](https://github.com/BrainB0ne/qtmcserver)
+
+[![Get it on Codeberg](images/codeberg.png "Get it on Codeberg")](https://codeberg.org/BrainB0ne/qtmcserver)
+
+## 🏛️ License
+
+```
+Qt Minecraft Server
+Copyleft 2013
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+```

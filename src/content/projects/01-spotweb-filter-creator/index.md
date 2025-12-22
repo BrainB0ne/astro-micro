@@ -1,0 +1,77 @@
+---
+title: "Spotweb Filter Creator"
+description: "Spotweb Filter Creator"
+date: "2012-10-22"
+---
+
+---
+
+## 🇳🇱 👋 Introductie
+
+Spotweb Filter Creator is een tool om het aanmaken van [Spotweb](https://github.com/spotweb) Filter XML bestanden te vereenvoudigen.
+
+Spotweb Filter Creator is een open-source project (GPLv3). De broncode is te downloaden/bekijken/forken op GitHub.
+
+## 🇳🇱 📄 Handleiding
+
+Na het opstarten van Spotweb Filter Creator kan door het klikken op de (+) Add knop, een nieuw filter worden aangemaakt. Er verschijnt hierna in de Filters boom een item met de gekozen filter naam en icoon. Aan de rechterkant in de Contents boom verschijnen vervolgens de beschikbare categorieen. Door een vinkje te zetten bij een categorie zal deze gekoppeld worden aan het geselecteerde filter in de Filters boom. Als alle filters naar tevredenheid zijn aangemaakt, kan het worden opgeslagen in XML formaat met de Save / Save As.. knop (bijv MyFilters.xml). Het opgeslagen filterbestand (MyFilters.xml) kan dan vervolgens in Spotweb bij de filtervoorkeuren worden geupload.
+
+## 🇺🇸 👋 Introduction
+
+Spotweb Filter Creator is a tool for creating [Spotweb](https://github.com/spotweb) Filter XML files easier. Spotweb Filter Creator is an open-source project (GPLv3).
+
+The source code is available for download / viewing / forking on GitHub.
+
+## 🇺🇸 📄 Manual
+
+After starting Spotweb Creator, a new filter can be created by clicking the (+) Add button. In the Filters tree below, an item with the selected filter name and icon appears. On the right, in the Contents tree, the available categories appear. By ticking the box for a category, it will be linked to the selected filter in the Filters tree. If all filters satisfactorily have been created, it can be saved in XML format with the Save / Save As .. button (eg MyFilters.xml). The saved filter file (MyFilters.xml) can then be uploaded to Spotweb at the filter preferences.
+
+!["Spotweb Filter Creator Screenshot"](images/screenshot_spotwebfc_v020.png)
+
+!["Spotweb Filter Creator Screenshot (Ubuntu 12.04-x64)"](images/spotwebfc-ubuntu-x64-480x315.png)
+
+## 📥 Downloads
+
+**![](images/windows-icon.png)**
+
+\[dl url="https://www.brainbytez.nl/download/1195/" title="Spotweb Filter Creator" desc="v0.6.1 (windows-installer)" type="download" align="" target="\_blank"\]
+
+\[dl url="https://www.brainbytez.nl/download/1197/" title="Spotweb Filter Creator" desc="v0.6.1 (windows-zip)" type="archive" align="" target="\_blank"\]
+
+ 
+
+**![](images/linux-icon.png)**
+
+\[dl url="https://www.brainbytez.nl/download/1193/" title="Spotweb Filter Creator" desc="v0.6.0 (x86\_64-AppImage)" type="archive" align="" target="\_blank"\]
+
+ 
+
+**![](images/rpi-icon.png)**
+
+\[dl url="https://www.brainbytez.nl/download/823/" title="Spotweb Filter Creator" desc="v0.4.0 (RPi-linux-tar.gz)" type="archive" align="" target="\_blank"\]
+
+ 
+## 💻 Source
+
+[![Get it on GitHub](images/github-button.png "Get it on GitHub")](https://github.com/BrainB0ne/spotwebfc)
+
+[![Get it on Codeberg](images/codeberg.png "Get it on Codeberg")](https://codeberg.org/BrainB0ne/spotwebfc)
+
+## 🏛️ License
+
+```
+Spotweb Filter Creator
+Copyleft 2024
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+```
