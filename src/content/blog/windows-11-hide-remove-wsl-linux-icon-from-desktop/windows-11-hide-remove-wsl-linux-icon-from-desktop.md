@@ -1,0 +1,39 @@
+---
+title: "[Windows 11] Hide/Remove WSL Linux icon from Desktop"
+description: "[Windows 11] Hide/Remove WSL Linux icon from Desktop"
+date: "2023-11-29"
+tags: 
+  - "windows"
+---
+
+After installing WSL/Ubuntu 22.04 from the Microsoft Store on Windows 11, a Linux icon was added to the Desktop which could not be removed the usual way.
+
+After reading the following site I found a solution.
+
+[TweakNow - RegTweakHideDesktopIcons](https://www.tweaknow.com/RegTweakHideDesktopIcons.php)
+
+I added the CLSID for the Linux icon {B2B4A4D1-2754-4140-A2EB-9A76D9D7CDC6} to the HideDesktopIcons\\NewStartPanel section of Explorer at HKEY\_CURRENT\_USER. (See Registry file below)
+
+Then rebooted the system after adding the registry entry (shown below).
+
+After reboot the Linux icon was not present anymore on the desktop. Problem solved.
+
+A. Download the Registry File: \[download id="1160" template="title"\] OR B. Save and the following snippet to a .reg file and import it into the Registry Editor:
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
+"{B2B4A4D1-2754-4140-A2EB-9A76D9D7CDC6}"=dword:00000001
+
+```
+
+**Please read the following disclaimer before making changes to your device / software:**
+
+```
+Disclaimer
+
+* I'm not responsible for bricked devices, dead SD cards, thermonuclear war, or you getting fired because the alarm app failed.
+* YOU are choosing to make these modifications, and if you point the finger at me for messing up your device, I will laugh at you.
+* Your warranty will be void if you tamper with any part of your device / software.
+```

@@ -1,0 +1,27 @@
+---
+title: "[Release] Qt Minecraft Server v0.1.0"
+description: "[Release] Qt Minecraft Server v0.1.0"
+date: "2013-03-30"
+tags: 
+  - "applications"
+  - "linux"
+  - "windows-applications"
+---
+
+[![](images/qtmcserver-256x256-150x150.png "Qt Minecraft Server - Logo")](http://www.brainbytez.nl/wp-content/uploads/2013/03/qtmcserver-256x256.png)After receiving positive feedback on my tool Spotweb Filter Creator, I decided to start developing my next application.
+
+This time, it's something completely different.
+
+Well Minecraft fans, I present to you: [Qt Minecraft Server](http://www.brainbytez.nl/qt-minecraft-server/ "Qt Minecraft Server") :-) With Qt Minecraft Server you can manage your own Minecraft Server with a Graphical User Interface, instead of the Terminal.
+
+The official Minecraft Server package (.jar) can be downloaded from within Qt Minecraft Server. It's also possible to edit and save the server.properties file inside the application.
+
+At the moment, the Windows version of Qt Minecraft Server is already available for download from the [Qt Minecraft Server](http://www.brainbytez.nl/qt-minecraft-server/ "Qt Minecraft Server") project page.
+
+Linux versions will be available soon. Edit: Linux versions are also available now, I've built the Linux versions with Ubuntu 12.10 32-bit (x86) and Ubuntu 12.10 64-bit (x86\_64).
+
+Below you'll see a screenshot of Qt Minecraft Server.
+
+[![](images/qt-minecraft-server-screenshot-297x300.png "Qt Minecraft Server Screenshot")](http://www.brainbytez.nl/wp-content/uploads/2013/03/qt-minecraft-server-screenshot.png)
+
+And last but not least, as always, the source code is available on [GitHub](https://github.com/BrainB0ne/qtmcserver).

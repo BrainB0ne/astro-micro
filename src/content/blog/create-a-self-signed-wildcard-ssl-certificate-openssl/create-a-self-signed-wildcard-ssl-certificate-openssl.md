@@ -1,0 +1,48 @@
+---
+title: "Create a Self-Signed Wildcard SSL Certificate with OpenSSL"
+description: "Create a Self-Signed Wildcard SSL Certificate with OpenSSL"
+date: "2022-04-22"
+tags: 
+  - "linux-tutorials"
+  - "raspberry-pi-tutorials"
+---
+
+The following guide creates a Self-Signed SSL Certificate for internal use with a validity of 1 year. Sources used to create this guide:
+
+[Mozilla Wiki - SecurityEngineering/x509Certs](https://wiki.mozilla.org/SecurityEngineering/x509Certs) [Medium - Create your own Certificate Authority](https://priyalwalpita.medium.com/create-your-own-certificate-authority-47f49d0ba086)
+
+I used Raspberry Pi OS (bullseye) to create the SSL certificates.
+
+**Step 1 : Create the CA Private Key** `openssl genrsa -des3 -out CAPrivate.key 2048`
+
+**Step 2: Generate the CA Root certificate** `openssl req -x509 -new -nodes -key CAPrivate.key -sha256 -days 365 -out CAPrivate.pem`
+
+**Step 3 : Create a Private Key** `openssl genrsa -out MyPrivate.key 2048`
+
+**Step 4 : Generate the CSR** `openssl req -new -key MyPrivate.key -extensions v3_ca -out MyRequest.csr`
+
+**Step 5: Create extensions file to specify subjectAltName** Create an extensions file named: `openssl.ss.cnf`
+
+File Contents of `openssl.ss.cnf` (replace \*.mydomain.tld with your domain):
+
+```
+basicConstraints=CA:FALSE
+subjectAltName=DNS:*.mydomain.tld
+extendedKeyUsage=serverAuth
+```
+
+**Step 6: Generate the Certificate using the CSR** `openssl x509 -req -in MyRequest.csr -CA CAPrivate.pem -CAkey CAPrivate.key -CAcreateserial -extfile openssl.ss.cnf -out MyCert.crt -days 365 -sha256`
+
+**Step 7: Install the Certificate / Private Key on your Web Server / Application** Read the manual of the Web Server / Application to install SSL certificates.
+
+**Step 8: Copy the CA Root certificate and import it in the proper Certificate Store of the OS/Application** \[Windows\] Copy CAPrivate.pem to computer, rename to CAPrivate.crt and import to Trusted Root Authorities Store.
+
+**Please read the following disclaimer before making changes to your device / software:**
+
+```
+Disclaimer
+
+* I'm not responsible for bricked devices, dead SD cards, thermonuclear war, or you getting fired because the alarm app failed.
+* YOU are choosing to make these modifications, and if you point the finger at me for messing up your device, I will laugh at you.
+* Your warranty will be void if you tamper with any part of your device / software.
+```

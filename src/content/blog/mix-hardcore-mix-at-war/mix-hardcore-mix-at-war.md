@@ -1,0 +1,35 @@
+---
+title: "[Mix] Hardcore Mix At War"
+description: "[Mix] Hardcore Mix At War"
+date: "2024-11-19"
+tags: 
+  - "mix"
+---
+
+Back in the days I experimented with the DJ software MixMeister and created a mix of a selection of tracks from the album [Neophyte At War](https://www.discogs.com/release/19057921-Neophyte-At-War).
+
+Unfortunately I lost the mix file, or at least I can't find it anymore.🧐
+
+Well, I made a new version with the fantastic DJ software: [DJ.Studio](https://dj.studio/) Enjoy the mix on hearthis.at or YouTube!
+
+hearthis.at:
+
+<iframe 
+  id="hearthis_at_track_11497564"
+  src="https://app.hearthis.at/embed/11497564/transparent_black/?hcolor=&amp;color=&amp;style=2&amp;block_size=2&amp;block_space=1&amp;background=1&amp;waveform=0&amp;cover=0&amp;autoplay=0&amp;css="
+  width="100%"
+  height="150"
+  frameborder="0"
+  scrolling="no">
+    Listen to <a href="https://hearthis.at/brainb0ne/hardcore-mix-at-war/" target="_blank" rel="noopener">Hardcore Mix At War</a> <span>by</span>
+    <a href="https://hearthis.at/brainb0ne/" target="_blank" rel="noopener">BrainB0ne</a> <span>on</span> <a href="https://hearthis.at/" target="_blank" rel="noopener">hearthis.at</a>&nbsp; <div></div> &nbsp; <div></div>
+</iframe>
+
+YouTube:
+
+<iframe 
+  className="w-full aspect-video"
+  src="https://www.youtube.com/embed/yVpwqCXizPc"
+  title="YouTube Video"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>

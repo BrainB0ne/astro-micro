@@ -1,0 +1,66 @@
+---
+title: "Install HP Laserjet 1018 on Raspbian"
+description: "Install HP Laserjet 1018 on Raspbian"
+date: "2019-11-11"
+tags: 
+  - "raspberry-pi"
+---
+
+**\[Update: 26-2-2022\] The foo2zjs download link from rkkda seems to be offline.** **According to a post on the [Ubuntu Forum](https://askubuntu.com/questions/1345155/how-to-install-foo2zjs-tar-gz-when-website-doesnt-work) foo2zjs can still be downloaded from a mirror on [Github](https://github.com/koenkooi/foo2zjs).**
+
+I managed to successfully install the HP Laserjet 1018 printer on a Raspberry Pi 4 with Raspbian Buster by following the instructions below. It makes use of the [foo2zjs linux printer driver](http://foo2zjs.rkkda.com/).
+
+These instructions are based on andrum99's blog-post which is available on the [Internet Archive](https://web.archive.org/web/20150916044833/http://andrum99.blogspot.co.uk/2013/06/getting-hp-laserjet-1018-printer.html).
+
+1\. Install pre-requisite packages:
+
+`sudo apt-get update` `sudo apt-get install tix groff cups`
+
+2\. Add user pi to lpadmin group:
+
+`sudo usermod -a -G lpadmin pi`
+
+3\. Download and build foo2zjs:
+
+`wget -O foo2zjs.tar.gz http://foo2zjs.rkkda.com/foo2zjs.tar.gz` `tar zxf foo2zjs.tar.gz` `cd foo2zjs` `make`
+
+<!--more-->
+
+4\. Get the printer firmware:
+
+`./getweb 1018`
+
+5\. Install foo2zjs and tool to download firmware to printer. Also, restart CUPS:
+
+`sudo make install install-hotplug cups`
+
+6\. Plug in the HP Laserjet 1018 printer, and switch it on. Orange light should flash and the printer motor will run for a few seconds, indicating firmware has been downloaded successfully. Verify it has with:
+
+`usb_printerid /dev/usb/lp0`
+
+The output of this command should include FWVER:20051028 or similar. If no FWVER shown, firmware download has not worked.
+
+7\. Manually create cups printer (do not use the web interface):
+
+`sudo lpadmin -p hp1018 -v "usb://HP/LaserJet%201018" -E -P /usr/share/cups/model/HP-LaserJet_1018.ppd.gz`
+
+8\. Set system default printer to the one we just created:
+
+`sudo lpadmin -d "hp1018"`
+
+9\. Set default page size to A4:
+
+`sudo lpoptions -o media=A4` (use media=Letter to change back to letter if required)
+
+10\. Create a text file with the "Text Editor" application and use File -> Print... to print it.
+
+The selected hp1018 printer should print the text file, possibly with a delay of up to 5 seconds.
+
+**Please read the following disclaimer before making changes to your device / software:**
+
+```
+Disclaimer 
+* I'm not responsible for bricked devices, dead SD cards, thermonuclear war, or you getting fired because the alarm app failed. 
+* YOU are choosing to make these modifications, and if you point the finger at me for messing up your device, I will laugh at you. 
+* Your warranty will be void if you tamper with any part of your device / software.
+```
