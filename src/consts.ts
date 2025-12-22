@@ -32,8 +32,4 @@ export const SOCIALS: Socials = [
     NAME: "GitHub",
     HREF: "https://github.com/brainb0ne",
   },
-  {
-    NAME: "Website",
-    HREF: "https://www.brainbytez.eu",
-  },
 ];
