@@ -4,6 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { BLOG } from "@consts";
+import TagCloud from "@components/TagCloud.astro";
 
 const data = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -29,6 +30,8 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
   <Container>
     <aside data-pagefind-ignore>
       <div class="space-y-10">
+        <h1 class="animate font-semibold">Tags</h1>
+        <TagCloud />
         <div class="space-y-4">
           {
             years.map((year) => (
