@@ -1,8 +1,9 @@
-import type { Metadata, Site, Socials } from "@types";
+import type { Metadata, Site, Socials, Repos } from "@types";
 
 export const SITE: Site = {
   TITLE: "BrainByteZ",
   DESCRIPTION: "Just Another Geek Site.",
+  EMAIL: "webmaster@brainbytez.eu",
   NUM_POSTS_ON_HOMEPAGE: 5,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
@@ -32,14 +33,20 @@ export const CONTACT: Metadata = {
 export const SOCIALS: Socials = [
   {
     NAME: "X (formerly Twitter)",
+    EMOJI: "💬",
     HREF: "https://x.com/brainb0ne",
   },
+];
+
+export const REPOS: Repos = [
   {
     NAME: "GitHub",
+    EMOJI: "🖥️",
     HREF: "https://github.com/brainb0ne",
   },
   {
     NAME: "Codeberg",
+    EMOJI: "🖥️",
     HREF: "https://codeberg.org/brainb0ne",
   },
 ];

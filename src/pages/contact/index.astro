@@ -1,8 +1,9 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import { CONTACT } from "@consts";
+import { SITE, CONTACT, SOCIALS, REPOS } from "@consts";
 import BackToPrevious from "@components/BackToPrevious.astro";
+import Link from "@components/Link.astro";
 ---
 
 <Layout title={CONTACT.TITLE} description={CONTACT.DESCRIPTION}>
@@ -10,9 +11,66 @@ import BackToPrevious from "@components/BackToPrevious.astro";
     <aside data-pagefind-ignore>
       <div class="space-y-10">
         <BackToPrevious href="/"> Go to home page </BackToPrevious>
-        <div class="animate font-semibold text-black dark:text-white">
-          Contact
-        </div>
+        <section class="animate space-y-4">
+          <div class="animate font-semibold text-black dark:text-white">
+            Contact Me
+          </div>
+            <p>
+              If you want to contact me, reach out on social media or send a message.
+            </p>
+          <ul class="not-prose">
+            <div class="font-semibold text-black dark:text-white">
+              Social Media
+            </div>
+            {
+              SOCIALS.map((SOCIAL) => (
+                <li class="flex gap-x-2 text-nowrap">
+                  {SOCIAL.EMOJI}
+                  <Link
+                    href={SOCIAL.HREF}
+                    external
+                    aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
+                  >
+                    {SOCIAL.NAME}
+                  </Link>
+                </li>
+              ))
+            }
+          </ul>
+          <ul class="not-prose">
+            <div class="font-semibold text-black dark:text-white">
+              Repositories
+            </div>
+            {
+              REPOS.map((REPO) => (
+                <li class="flex gap-x-2 text-nowrap">
+                  {REPO.EMOJI}
+                  <Link
+                    href={REPO.HREF}
+                    external
+                    aria-label={`${SITE.TITLE} on ${REPO.NAME}`}
+                  >
+                    {REPO.NAME}
+                  </Link>
+                </li>
+              ))
+            }
+          </ul>
+          <ul class="not-prose">
+            <div class="font-semibold text-black dark:text-white">
+              Mail
+            </div>
+            <li class="flex gap-x-2 text-nowrap">
+              {"📧"}
+              <Link
+                href={`mailto:${SITE.EMAIL}`}
+                aria-label={`Email ${SITE.TITLE}`}
+              >
+                Send a message
+              </Link>
+            </li>
+          </ul>
+        </section>
       </div>
     </aside>
   </Container>
