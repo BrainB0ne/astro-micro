@@ -1,0 +1,13 @@
+---
+type Props = {
+  id: string;
+};
+
+const { id } = Astro.props;
+---
+
+<iframe 
+  class="w-full aspect-video"
+  src={`https://www.youtube.com/embed/${id}`}
+  title="YouTube Video"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
