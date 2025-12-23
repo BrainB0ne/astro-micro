@@ -6,6 +6,7 @@ import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import Callout from "@components/Callout.astro";
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -35,6 +36,12 @@ const projects: CollectionEntry<"projects">[] = (
                 <Link external href="https://www.brainbytez.nl">
                   BrainByteZ
                 </Link>
+              </p>
+              <p>
+                <Callout type="construction">
+                  Under construction: fasten your seatbelts!💺<br>
+                  Things might suddenly break 💔 or change 🔃 during updates.
+                </Callout>
               </p>
               <p>
                 This site will mostly be focused on tech/geek/gadget/programming stuff.
