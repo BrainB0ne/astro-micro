@@ -69,7 +69,7 @@ Pins A4-A7 are now configured as JTAG signals: TCK, TMS, TDO, TDI.
 
 \[caption id="attachment\_1052" align="aligncenter" width="480"\][![Arduino Mega Pinout Diagram](images/ArduinoMega-708x1024.png)](https://www.brainbytez.nl/wp-content/uploads/2021/12/ArduinoMega.png) Arduino Mega Pinout Diagram\[/caption\]
 
- 
+ 
 
 **Please read the following disclaimer before making changes to your device / software:**
 

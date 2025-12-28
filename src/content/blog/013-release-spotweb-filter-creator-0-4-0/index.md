@@ -23,4 +23,4 @@ For those that are interested, I've uploaded the translations to Transifex: [Cli
 
 The translation project is "Free For All", so feel free to contribute if you want Spotweb Filter Creator translated in your own native language :-)
 
-Downloads for Windows, Linux and Raspberry Pi are available at the [Spotweb Filter Creator](http://www.brainbytez.nl/spotweb-filter-creator/ "Spotweb Filter Creator") project page.
+Downloads for Windows, Linux and Raspberry Pi are available at the [Spotweb Filter Creator](http://www.brainbytez.nl/spotweb-filter-creator/ "Spotweb Filter Creator") project page.

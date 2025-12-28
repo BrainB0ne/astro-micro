@@ -15,4 +15,4 @@ Spotweb Filter Creator is gemaakt met behulp van de [Qt SDK](http://qt-project.o
 
 [![](images/screenshot_spotwebfc_v020-300x182.png "Spotweb Filter Creator Screenshot")](http://www.brainbytez.nl/wp-content/uploads/2012/10/screenshot_spotwebfc_v020.png)
 
-Meer informatie en download links zijn aanwezig op de [Spotweb Filter Creator](http://www.brainbytez.nl/spotweb-filter-creator/ "Spotweb Filter Creator") project pagina.
+Meer informatie en download links zijn aanwezig op de [Spotweb Filter Creator](http://www.brainbytez.nl/spotweb-filter-creator/ "Spotweb Filter Creator") project pagina.

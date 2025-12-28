@@ -6,7 +6,7 @@ tags:
   - "linux"
 ---
 
-Due to a request in the comments at the [Spotweb Filter Creator](http://www.brainbytez.nl/spotweb-filter-creator/ "Spotweb Filter Creator") page I have created a version of Spotweb Filter Creator for Linux 64-bit.
+Due to a request in the comments at the [Spotweb Filter Creator](http://www.brainbytez.nl/spotweb-filter-creator/ "Spotweb Filter Creator") page I have created a version of Spotweb Filter Creator for Linux 64-bit.
 
 First, I must say that I am very unfamiliar with packaging/distribution of Linux tools.
 
@@ -16,7 +16,7 @@ Here's a screenshot of Spotweb Filter Creator running on Ubuntu 12.04.
 
 [![](images/spotwebfc-ubuntu-x64-s-300x197.png "Spotweb Filter Creator Screenshot (Ubuntu 12.04-x64)")](http://www.brainbytez.nl/wp-content/uploads/2013/02/spotwebfc-ubuntu-x64-s.png)
 
-If you are running a Linux distribution, download the brand new Spotweb Filter Creator for Linux from the [Spotweb Filter Creator](http://www.brainbytez.nl/spotweb-filter-creator/ "Spotweb Filter Creator") project page.
+If you are running a Linux distribution, download the brand new Spotweb Filter Creator for Linux from the [Spotweb Filter Creator](http://www.brainbytez.nl/spotweb-filter-creator/ "Spotweb Filter Creator") project page.
 
 Feedback in the comments is always welcome :-)
 

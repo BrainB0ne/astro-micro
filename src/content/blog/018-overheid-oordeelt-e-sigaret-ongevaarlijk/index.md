@@ -14,4 +14,4 @@ De Raad van State is van mening dat de elektronische sigaret minder schadelijk i
 
 Volgens recent onderzoek blijkt dat de elektronische sigaret minder verslavend is dan de tabaksigaret. Ook blijkt nicotine lang niet zo verslavend te zijn als dat men ons doet geloven. De Harvard School of Public Health publiceerde in 2012 al dat nicotine replacement therapies (NRTs), zoals nicotinepleisters en -kauwgum, niet effectief lijken te zijn om de roker op lange termijn te laten stoppen. Zelfs niet wanneer dit gecombineerd wordt met een stoppen met roken therapie. De elektronische sigaret is daarin aanzienlijk succesvoller. Arts Philippe Presles, die onlangs een boek over de e-sigaret als therapie publiceerde, stelt zelfs: "Deze uitvinding zal verantwoordelijk zijn voor het redden van een recordaantal levens in de 21ste eeuw".
 
-Bron: ANP Link: [Overheid oordeelt: "E-sigaret ongevaarlijk"](http://www.perssupport.nl/apssite/permalink/89356 "Overheid oordeelt: \"E-sigaret ongevaarlijk\"")
+Bron: ANP Link: [Overheid oordeelt: "E-sigaret ongevaarlijk"](http://www.perssupport.nl/apssite/permalink/89356 "Overheid oordeelt: \"E-sigaret ongevaarlijk\"")

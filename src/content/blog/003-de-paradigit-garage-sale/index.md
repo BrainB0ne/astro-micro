@@ -18,7 +18,7 @@ Zo nieuwsgierig als ik ben, was ik toch vrijdag even een kijkje gaan nemen. Bij 
 
 [![](images/GarageSale-2-150x150.jpg "GarageSale-2")](http://www.brainbytez.nl/wp-content/uploads/2012/10/GarageSale-2.jpg)
 
-Geweldig! Op naar binnen, de garage in. Ik had me de garage groter voorgesteld dan dat hij in werkelijkheid was. Het was eigenlijk niet meer dan een toonbank met erachter een aantal stellages gevuld met notebooks en een stuk of 8 laptops die tentoongesteld waren als demo model. Na wat rondkijken viel me op dat er ook een stapeltje tablets bij de kassa lagen. Yarvik tablets. Deze tablets vallen in de categorie "Budget Tablets".
+Geweldig! Op naar binnen, de garage in. Ik had me de garage groter voorgesteld dan dat hij in werkelijkheid was. Het was eigenlijk niet meer dan een toonbank met erachter een aantal stellages gevuld met notebooks en een stuk of 8 laptops die tentoongesteld waren als demo model. Na wat rondkijken viel me op dat er ook een stapeltje tablets bij de kassa lagen. Yarvik tablets. Deze tablets vallen in de categorie "Budget Tablets".
 
 Eén van de tablets was een Yarvik TAB250, deze werd aangeboden voor een prijs van €39,-. Een hele mooie prijs, goedkoper heb ik ze nog nergens gezien.
 
@@ -38,7 +38,7 @@ Uiteindelijk is het wel gelukt om de Android Market werkend te krijgen op de Yar
 
 Toch gaf de Android Market nog niet alle beschikbare apps aan, ook niet na modificatie van het build.prop bestand.
 
-Een alternatieve market applicatie installeren is eigenlijk nog de snelste weg naar succes. De 1Mobile Market functioneert prima op het apparaat: [http://www.1mobile.com/app/market/](http://www.1mobile.com/app/market/)
+Een alternatieve market applicatie installeren is eigenlijk nog de snelste weg naar succes. De 1Mobile Market functioneert prima op het apparaat: [http://www.1mobile.com/app/market/](http://www.1mobile.com/app/market/)
 
 Ik zal verder geen uitgebreide review van de tablet gaan schrijven, want die zijn er al: [http://nl.hardware.info/reviews/2396/yarvik-tab250-review](http://nl.hardware.info/reviews/2396/yarvik-tab250-review)
 

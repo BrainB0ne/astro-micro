@@ -18,10 +18,10 @@ The official Minecraft Server package (.jar) can be downloaded from within Qt Mi
 
 At the moment, the Windows version of Qt Minecraft Server is already available for download from the [Qt Minecraft Server](http://www.brainbytez.nl/qt-minecraft-server/ "Qt Minecraft Server") project page.
 
-Linux versions will be available soon. Edit: Linux versions are also available now, I've built the Linux versions with Ubuntu 12.10 32-bit (x86) and Ubuntu 12.10 64-bit (x86\_64).
+Linux versions will be available soon. Edit: Linux versions are also available now, I've built the Linux versions with Ubuntu 12.10 32-bit (x86) and Ubuntu 12.10 64-bit (x86\_64).
 
 Below you'll see a screenshot of Qt Minecraft Server.
 
 [![](images/qt-minecraft-server-screenshot-297x300.png "Qt Minecraft Server Screenshot")](http://www.brainbytez.nl/wp-content/uploads/2013/03/qt-minecraft-server-screenshot.png)
 
-And last but not least, as always, the source code is available on [GitHub](https://github.com/BrainB0ne/qtmcserver).
+And last but not least, as always, the source code is available on [GitHub](https://github.com/BrainB0ne/qtmcserver).
