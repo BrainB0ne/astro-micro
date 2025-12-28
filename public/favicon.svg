@@ -10,7 +10,7 @@
    viewBox="0 0 10000 10000"
    id="svg4"
    sodipodi:docname="favicon.svg"
-   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -27,12 +27,12 @@
    inkscape:document-units="mm"
    showgrid="false"
    inkscape:zoom="1.0781771"
-   inkscape:cx="248.10395"
-   inkscape:cy="183.17955"
+   inkscape:cx="249.49519"
+   inkscape:cy="185.03454"
    inkscape:window-width="1920"
-   inkscape:window-height="1017"
-   inkscape:window-x="1912"
-   inkscape:window-y="-8"
+   inkscape:window-height="1008"
+   inkscape:window-x="1920"
+   inkscape:window-y="0"
    inkscape:window-maximized="1"
    inkscape:current-layer="Layer_x0020_1"
    inkscape:export-bgcolor="#ffffffff" />
@@ -54,11 +54,11 @@
    font-style="italic"
    font-weight="700">
 	<font-face
-   font-family="Ubuntu"
+   font-family="Ubuntu Sans"
    id="font-face1">
 		<font-face-src>
 			<font-face-name
-   name="Ubuntu Bold Italic" />
+   name="Ubuntu Sans Bold Italic" />
 		</font-face-src>
 	</font-face>
    <missing-glyph
@@ -114,16 +114,20 @@
   <metadata
    id="CorelCorpID_0Corel-Layer" />
   <text
-   x="342.06"
-   y="4465.17"
+   x="606.64331"
+   y="4465.1699"
    class="fil0 fnt0"
    id="text3"
-   style="fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-opacity:1">0x</text>
+   style="fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Ubuntu Sans';-inkscape-font-specification:'Ubuntu Sans Bold Italic'"
+     id="tspan282">0x</tspan></text>
   <text
-   x="2063.41"
+   x="2275.0769"
    y="8982.25"
    class="fil0 fnt0"
    id="text4"
-   style="fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-opacity:1">BB</text>
+   style="fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Ubuntu Sans';-inkscape-font-specification:'Ubuntu Sans Bold Italic'"
+     id="tspan284">BB</tspan></text>
  </g>
 </svg>
