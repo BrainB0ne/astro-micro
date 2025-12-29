@@ -22,3 +22,9 @@ export type Repos = {
   EMOJI: string;
   HREF: string;
 }[];
+
+export type Cryptos = {
+  TYPE: string;
+  ICON: string;
+  ADDRESS: string;
+}[];

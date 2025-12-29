@@ -1,9 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import { SITE, CONTACT, SOCIALS, REPOS } from "@consts";
+import { SITE, CONTACT, SOCIALS, REPOS, CRYPTOS } from "@consts";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import Link from "@components/Link.astro";
+import CryptoButton from "@components/CryptoButton.astro";
 ---
 
 <Layout title={CONTACT.TITLE} description={CONTACT.DESCRIPTION}>
@@ -15,9 +16,9 @@ import Link from "@components/Link.astro";
           <div class="animate font-semibold text-black dark:text-white">
             Contact Me
           </div>
-            <p>
-              If you want to contact me, reach out on social media or send a message.
-            </p>
+          <p>
+            If you want to contact me, reach out on social media or send a message.
+          </p>
           <ul class="not-prose">
             <div class="font-semibold text-black dark:text-white">
               Social Media
@@ -69,6 +70,27 @@ import Link from "@components/Link.astro";
                 Send a message
               </Link>
             </li>
+          </ul>
+          <br>
+          <p>
+            If you want to support my work, check out the options below.
+          </p>
+          <ul class="not-prose">
+            <div class="flex gap-2">
+              {
+                CRYPTOS.map((CRYPTO) => (
+                  <li>
+                    <CryptoButton
+                      type={CRYPTO.TYPE}
+                      address={CRYPTO.ADDRESS}
+                      icon={CRYPTO.ICON}
+                    >
+                      Donate {CRYPTO.TYPE}
+                    </CryptoButton>
+                  </li>
+                ))
+              }
+            </div>
           </ul>
         </section>
       </div>

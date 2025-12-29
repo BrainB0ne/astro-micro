@@ -1,0 +1,24 @@
+---
+type Props = {
+  type: string;
+  address: string;
+  icon: string;
+};
+
+const { type, address, icon } = Astro.props;
+---
+
+<a
+  href=`javascript:void(0);`
+  onclick=`javascript:window.prompt("To donate, please copy-paste my ${type} address to your ${type} software - I cannot do it automatically. To copy it, right-click the selected text and select 'Copy'. Then right-click the address field in your ${type} software and select 'Paste'.", '${address}');`
+  style="text-decoration:none"
+  class="not-prose group relative flex w-fit flex-nowrap rounded-sm border border-black/15 py-1.5 pl-7 pr-3 hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+>
+  <img 
+    class="absolute left-2 top-1/2 size-4 -translate-y-1/2 fill-none stroke-current stroke-2"
+    src=`/svg/${icon}.svg`
+    alt=`Donate ${type}` />
+  <div class="text-sm">
+    <slot />
+  </div>
+</a>
