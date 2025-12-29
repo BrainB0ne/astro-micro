@@ -13,4 +13,4 @@ The applications I have made are developed with Qt, and last week I developed a 
 
 My posts will be written in English and Dutch (mixed), it depends on the post. The layout of the site may change over time, it is still very much under construction.
 
-Thank you for visiting BrainByteZ and see you soon! :-D
+Thank you for visiting BrainByteZ and see you soon! 😀

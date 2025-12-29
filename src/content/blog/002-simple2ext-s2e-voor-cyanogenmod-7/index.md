@@ -21,7 +21,7 @@ Benodigdheden:
 - HTC Legend (rooted)
 - Cyanogenmod 7.x
 - micro SD kaart
-- S2E (simple2ext) gratis verkrijgbaar in de Google Play Store (voor meer info zie: [XDA Developers - S2E topic](http://forum.xda-developers.com/showthread.php?t=917377 "XDA Developers - S2E topic"))
+- S2E (simple2ext) gratis verkrijgbaar in de Google Play Store (voor meer info zie: [XDA Developers - S2E topic](https://forum.xda-developers.com/showthread.php?t=917377 "XDA Developers - S2E topic"))
 
 **Belangrijk! Maak een complete backup van je ROM mocht er iets fout gaan, alles is op eigen risico! Zoals de developer van simple2ext zegt: ONLY USE AT YOUR OWN RISK! BEFORE USING MAKE A FULL BACKUP, THE APPLICATION CAN HARM YOUR DEVICE.**
 
@@ -45,8 +45,8 @@ Benodigdheden:
 - De app zal om een reboot vragen, klik op reboot.
 - De eerste reboot duurt langer (heb even geduld), omdat alle data van het interne opslaggeheugen wordt verplaatst naar de ext3 partitie op de micro SD kaart.
 - Als de HTC Legend volledig is opgestart kun je ervoor kiezen om de apps die via de Google Apps2SD methode zijn verplaatst, nu weer terug te zetten naar je telefoongeheugen. Ik werkelijkheid worden de applicaties dan niet op je interne telefoongeheugen geplaatst, maar op je zojuist gemaakte ext3 partitie op de SD Kaart.
-- Veel plezier :-)
+- Veel plezier 😀
 
 Na het toepassen van deze methode laden de apps op de micro SD kaart zelfs nog iets sneller in na een reboot in vergelijking met de standaard Google Apps2SD methode was mijn ervaring.
 
-\[caption id="attachment\_397" align="alignnone" width="320"\][![](images/simple2ext.jpg "S2E Screenshot")](http://www.brainbytez.nl/wp-content/uploads/2012/11/simple2ext.jpg) S2E (simple2ext) screenshot\[/caption\]
+!["S2E (simple2ext) screenshot"](images/simple2ext.jpg)
