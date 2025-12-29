@@ -1,0 +1,19 @@
+<svg
+  fill="none"
+  width="800px"
+  height="800px"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+  id="digibyte"
+  data-name="Flat Line"
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon flat-line"
+>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      svg { stroke: lightgray; }
+    }
+  </style>
+  <path id="primary" d="M12.92,21l.26-2.29M15,3l-.26,2.29M9.15,19l-.23,2M11,3l-.23,2" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+  <path id="primary-2" data-name="primary" d="M8.27,9,7.12,19h4A7.82,7.82,0,0,0,16.33,17,7.87,7.87,0,0,0,19,12a6.12,6.12,0,0,0-6.19-7H5" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+</svg>

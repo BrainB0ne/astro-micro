@@ -62,4 +62,19 @@ export const CRYPTOS: Cryptos = [
     ICON: "currency-litecoin",
     ADDRESS: "Ldraeacsn4j5St9VpVTAbUfBAVTcZ6gAdX",
   },
+  {
+    TYPE: "Ethereum",
+    ICON: "currency-ethereum",
+    ADDRESS: "",
+  },
+  {
+    TYPE: "Digibyte",
+    ICON: "currency-digibyte",
+    ADDRESS: "",
+  },
+  {
+    TYPE: "Stellar",
+    ICON: "currency-stellar",
+    ADDRESS: "",
+  },
 ];

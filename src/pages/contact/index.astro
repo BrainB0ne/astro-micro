@@ -78,7 +78,7 @@ import CryptoButton from "@components/CryptoButton.astro";
             If you want to support my work, check out the options below.
           </p>
           <ul class="not-prose">
-            <div class="flex gap-2 text-nowrap">
+            <div class="flex flex-wrap gap-2 text-nowrap">
               {
                 CRYPTOS.map((CRYPTO) => (
                   <li>
@@ -87,7 +87,7 @@ import CryptoButton from "@components/CryptoButton.astro";
                       address={CRYPTO.ADDRESS}
                       icon={CRYPTO.ICON}
                     >
-                      Donate {CRYPTO.TYPE}
+                      {CRYPTO.TYPE}
                     </CryptoButton>
                   </li>
                 ))
