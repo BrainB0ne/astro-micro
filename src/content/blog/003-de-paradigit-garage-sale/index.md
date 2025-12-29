@@ -36,7 +36,7 @@ Ook ontdekte ik dat er een mislukte poging was gedaan om de Android Market te in
 
 Omdat ik met een schone tablet wil beginnen alvorens allerlei apps te gaan installeren, heb ik zelf natuurlijk even een factory reset uitgevoerd.
 
-Uiteindelijk is het wel gelukt om de Android Market werkend te krijgen op de Yarvik TAB250. Deze site heeft de oplossing geboden: [https://www.hembrow.eu/personal/yarviktab250.html](https://www.hembrow.eu/personal/yarviktab250.html)
+Uiteindelijk is het wel gelukt om de Android Market werkend te krijgen op de Yarvik TAB250. Deze site heeft de oplossing geboden: <a href="https://www.hembrow.eu/personal/yarviktab250.html" target="_blank">Hembrow</a>
 
 Toch gaf de Android Market nog niet alle beschikbare apps aan, ook niet na modificatie van het build.prop bestand.
 

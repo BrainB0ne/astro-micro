@@ -21,7 +21,7 @@ Benodigdheden:
 - HTC Legend (rooted)
 - Cyanogenmod 7.x
 - micro SD kaart
-- S2E (simple2ext) gratis verkrijgbaar in de Google Play Store (voor meer info zie: [XDA Developers - S2E topic](https://forum.xda-developers.com/showthread.php?t=917377 "XDA Developers - S2E topic"))
+- S2E (simple2ext) gratis verkrijgbaar in de Google Play Store (voor meer info zie: <a href="https://forum.xda-developers.com/showthread.php?t=917377" target="_blank">XDA Developers - S2E topic</a>)
 
 **Belangrijk! Maak een complete backup van je ROM mocht er iets fout gaan, alles is op eigen risico! Zoals de developer van simple2ext zegt: ONLY USE AT YOUR OWN RISK! BEFORE USING MAKE A FULL BACKUP, THE APPLICATION CAN HARM YOUR DEVICE.**
 
@@ -38,7 +38,7 @@ Benodigdheden:
 - Stop de micro SD kaart weer in je HTC Legend.
 - Zet de HTC Legend aan.
 - Ga naar de Google Play Store en download/installeer S2E (simple2ext).
-- Link -> [Google Play Store - S2E (simple2ext)](https://play.google.com/store/apps/details?id=ru.krikun.s2e "Google Play Store - S2E (simple2ext)")
+- Link -> <a href="https://play.google.com/store/apps/details?id=ru.krikun.s2e" target="_blank">Google Play Store - S2E (simple2ext)</a>
 - Start s2e en de applicatie zal root rechten vragen, geef de root rechten met het "onthouden" vinkje aan.
 - Als alles goed is gegaan zie je bovenin de app de grootte van de ext partitie.
 - Vink hetgene aan wat je naar je sd-ext partitie wil verplaatsen. (Ik heb gekozen voor: Applications, Private apps, Dalvik cache en Download cache)
