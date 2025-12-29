@@ -1,9 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import { SUPPORT, CRYPTOS } from "@consts";
+import { SUPPORT, CRYPTOS, DONATIONS } from "@consts";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import CryptoButton from "@components/CryptoButton.astro";
+import LinkButton from "@components/LinkButton.astro";
 ---
 
 <Layout title={SUPPORT.TITLE} description={SUPPORT.DESCRIPTION}>
@@ -18,6 +19,23 @@ import CryptoButton from "@components/CryptoButton.astro";
           <p>
             If you want to support me, check out the options below.
           </p>
+          <ul class="not-prose">
+            <div class="flex flex-wrap gap-2 text-nowrap">
+              {
+                DONATIONS.map((DONATION) => (
+                  <li>
+                    <LinkButton
+                      external
+                      href={DONATION.HREF}
+                      icon={DONATION.ICON}
+                    >
+                      {DONATION.NAME}
+                    </LinkButton>
+                  </li>
+                ))
+              }
+            </div>
+          </ul>
           <ul class="not-prose">
             <div class="flex flex-wrap gap-2 text-nowrap">
               {

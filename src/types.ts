@@ -23,6 +23,12 @@ export type Repos = {
   HREF: string;
 }[];
 
+export type Donations = {
+  NAME: string;
+  ICON: string;
+  HREF: string;
+}[];
+
 export type Cryptos = {
   TYPE: string;
   ICON: string;

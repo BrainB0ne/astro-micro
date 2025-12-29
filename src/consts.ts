@@ -1,4 +1,4 @@
-import type { Metadata, Site, Socials, Repos, Cryptos } from "@types";
+import type { Metadata, Site, Socials, Repos, Cryptos, Donations } from "@types";
 
 export const SITE: Site = {
   TITLE: "BrainByteZ",
@@ -54,6 +54,14 @@ export const REPOS: Repos = [
     NAME: "Codeberg",
     ICON: "codeberg",
     HREF: "https://codeberg.org/brainb0ne",
+  },
+];
+
+export const DONATIONS: Donations = [
+  {
+    NAME: "Buy Me a Coffee",
+    ICON: "bmc-logo",
+    HREF: "https://buymeacoffee.com/brainbytez",
   },
 ];
 
