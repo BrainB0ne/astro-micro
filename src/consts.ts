@@ -55,11 +55,11 @@ export const CRYPTOS: Cryptos = [
   {
     TYPE: "Bitcoin",
     ICON: "currency-bitcoin",
-    ADDRESS: "1AAUMQx3U19rYsThxpZTgxvGmQ6UYaEcdy",
+    ADDRESS: "bc1q9zm3f7eq5czccjaz3nz4mp72np7cxxkvkf8vhg",
   },
   {
     TYPE: "Litecoin",
     ICON: "currency-litecoin",
-    ADDRESS: "LanDLwJxvLPeHhdExdpSTHSe9shw7XWvLB",
+    ADDRESS: "Ldraeacsn4j5St9VpVTAbUfBAVTcZ6gAdX",
   },
 ];
