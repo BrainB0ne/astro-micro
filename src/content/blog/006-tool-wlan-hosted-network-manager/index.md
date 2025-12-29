@@ -15,13 +15,13 @@ Guess what, it's possible! Windows 7 has a built-in functionality to create a Vi
 
 Unfortunately this functionality is only available to you by firing up the command prompt and executing various commands manually.
 
-My freely available WLAN Hosted Network Manager is a small utility to help setting up a WLAN hotspot in Windows 7 using a GUI, so you don't have to type those commands anymore 😀
+My freely available WLAN Hosted Network Manager is a small utility to help setting up a WLAN hotspot in Windows 7 using a GUI, so you don't have to type those commands anymore. 😀
 
 With WLAN Hosted Network Manager you can create / start / stop a WLAN hostednetwork also known as Virtual WiFi Network.
 
 The GUI executes the needed netsh commands for you.
 
-!["WLAN Hosted Network Manager Screenshot"](images/whnm-screenshot.png)
+![WLAN Hosted Network Manager Screenshot](images/whnm-screenshot.png)
 
 The only thing you need to set up manually is Internet Connection Sharing on your Wired Network Adapter to the WiFi Miniport Adapter at Control Panel\Network and Internet\Network Connections.
 

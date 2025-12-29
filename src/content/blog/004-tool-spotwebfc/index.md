@@ -13,6 +13,6 @@ Ik heb de wiki-pagina <a href="https://github.com/spotweb/spotweb/wiki/Hoe-filte
 
 Spotweb Filter Creator is gemaakt met behulp van de <a href="https://qt-project.org/downloads" target="_blank">Qt SDK</a>, hierdoor is het mogelijk multi-platform (Windows/Linux) versies van Spotweb Filter Creator te maken.
 
-!["Spotweb Filter Creator Screenshot"](images/screenshot_spotwebfc_v020.png)
+![Spotweb Filter Creator Screenshot](images/screenshot_spotwebfc_v020.png)
 
 Meer informatie en download links zijn aanwezig op de [Spotweb Filter Creator](../../projects/spotweb-filter-creator) project pagina.

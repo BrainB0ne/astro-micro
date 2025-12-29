@@ -14,7 +14,7 @@ Microsoft Windows 8 is sinds gisteren officieel [verkrijgbaar](http://tweakers.n
 
 Er is in de afgelopen tijd enorm veel geschreven over dit "vernieuwende" besturingssysteem. Windows 8 gooit haar zelf opgebouwde historie de prullenbak in, weg met de startknop, weg met kleine icoontjes op het bureaublad. Vierkante en rechthoekige bont gekleurde tegels zijn ervoor in de plaats gekomen. "Microsoft Tiles", of "Microsoft Bricks" als naam was hier beter op z'n plaats geweest, maar dit terzijde. Applicaties draaien of in tegelvorm, of in fullscreen mode als erop wordt geklikt. Het ouderwetse vergroten/verkleinen/verplaatsen/sluiten van applicaties is er niet meer bij. (Tenzij een oude applicatie gemaakt voor Windows XP/Vista/7 wordt opgestart, hierover later meer.)
 
-[![](images/Windows8.png "Windows 8 - Start Screen")](http://www.brainbytez.nl/wp-content/uploads/2012/10/Windows8.png)
+![Windows 8 - Start Screen](images/Windows8.png)
 
 
 ## Developer / Consumer Preview
@@ -26,13 +26,13 @@ Enige tijd geleden heb ik zelf de Windows 8 Developer en Consumer Preview al een
 
 Gisteren was het dan zover, de release van Windows 8. En wat schetste mijn verbazing? Windows 8 kan aangeschaft worden voor 3 tientjes! Ik heb nog een netbook (Asus eeePC 1000H) draaiende op Windows XP in bezit. Ik bedacht dat dit misschien wel eens de ideale kanshebber zou zijn om Windows 8 op installeren, vanwege het kleine 10 inch scherm. Echter werkt de aanschaf niet zoals ik in gedachte had. De drie tientjes versie betreft namelijk een upgrade.
 
-[![](images/DrieTientjes.png "Windows 8 - Drie Tientjes")](http://www.brainbytez.nl/wp-content/uploads/2012/10/DrieTientjes.png)
+![Windows 8 - Drie Tientjes](images/DrieTientjes.png)
 
 Hiervoor moet een geldige (genuine) Windows XP/Vista/7 geinstalleerd zijn. Windows 8 wordt dan over het huidige besturingssysteem heen geinstalleerd. Een methode waarbij mij al snel de haren overeind gaan staan. Dit is duidelijk een "Jan met de pet"-oplossing of een "Henk & Ingrid"-methode, noem het zoals je wilt. Deze oplossing is verre van ideaal en erg omslachtig. Ik ben van de afdeling "clean installs" oftwel schone installaties. Een DVD branden, opstarten vanaf DVD, de C:\\ partitie formatteren en vervolgens het besturingssysteem installeren. Upgrade methodes waarbij gerommeld wordt met aanwezige bestanden en applicaties resulteren vaak in een gaar soepje met alle gevolgen en problemen van dien. Ik zie een soort van [DLL Hell](http://en.wikipedia.org/wiki/DLL_Hell) voor me, waarbij men oeverloos moet gaan zoeken naar oplossingen voor niet meer werkende, crashende of incorrect functionerende applicaties. Bovendien, als men in de toekomst Windows 8 weer opnieuw wil installeren, moet er eerst weer Windows XP/Vista/7 worden geinstalleerd alvorens men Windows 8 kan installeren. Erg omslachtig, en ongeschikt voor de gemiddelde tweaker. Natuurlijk kan men ook kiezen voor een fysieke retail versie in DVD vorm bij verschillende webshops, maar deze hebben al snel een prijskaartje van 125+ euro's. Zover gaat mijn nieuwsgierigheid naar een nieuw Windows besturingssysteem voor privé-gebruik nu ook weer niet..
 
 Overigens probeert [MyCom](http://www.mycom.nl/Product/Software-en-Boeken-Retail-Besturingssysteem/Microsoft-Windows-8-Pro-NL/1366096) een "Upgrade" versie te slijten aan klanten verpakt als "Retail" pakket. Erg verwarrend voor de niet-oplettende consument!
 
-[![](images/mycom_win8.png "Mycom-Windows8")](http://www.brainbytez.nl/wp-content/uploads/2012/10/mycom_win8.png)
+![Mycom-Windows8](images/mycom_win8.png)
 
 
 ## De Show-Stopper

@@ -45,8 +45,8 @@ Benodigdheden:
 - De app zal om een reboot vragen, klik op reboot.
 - De eerste reboot duurt langer (heb even geduld), omdat alle data van het interne opslaggeheugen wordt verplaatst naar de ext3 partitie op de micro SD kaart.
 - Als de HTC Legend volledig is opgestart kun je ervoor kiezen om de apps die via de Google Apps2SD methode zijn verplaatst, nu weer terug te zetten naar je telefoongeheugen. Ik werkelijkheid worden de applicaties dan niet op je interne telefoongeheugen geplaatst, maar op je zojuist gemaakte ext3 partitie op de SD Kaart.
-- Veel plezier 😀
+- Veel plezier! 😀
 
 Na het toepassen van deze methode laden de apps op de micro SD kaart zelfs nog iets sneller in na een reboot in vergelijking met de standaard Google Apps2SD methode was mijn ervaring.
 
-!["S2E (simple2ext) screenshot"](images/simple2ext.jpg)
+![S2E (simple2ext) screenshot](images/simple2ext.jpg)

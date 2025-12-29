@@ -8,15 +8,15 @@ tags:
 
 Afgelopen week ontving ik een nieuwsbrief van Paradigit in de mailbox, waar met niet te missen letters stond geschreven: 19/20 oktober GarageSale met dumpprijzen.
 
-!["GarageSale-Nieuwsbrief"](images/GarageSale-Nieuwsbrief.png)
+![GarageSale-Nieuwsbrief](images/GarageSale-Nieuwsbrief.png)
 
 Zo nieuwsgierig als ik ben, was ik toch vrijdag even een kijkje gaan nemen. Bij aankomst trof ik het volgende aan...
 
 <!--more-->
 
-!["GarageSale-1"](images/GarageSale-1.jpg)
+![GarageSale-1](images/GarageSale-1.jpg)
 
-!["GarageSale-2"](images/GarageSale-2.jpg)
+![GarageSale-2](images/GarageSale-2.jpg)
 
 Geweldig! Op naar binnen, de garage in. Ik had me de garage groter voorgesteld dan dat hij in werkelijkheid was. Het was eigenlijk niet meer dan een toonbank met erachter een aantal stellages gevuld met notebooks en een stuk of 8 laptops die tentoongesteld waren als demo model. Na wat rondkijken viel me op dat er ook een stapeltje tablets bij de kassa lagen. Yarvik tablets. Deze tablets vallen in de categorie "Budget Tablets".
 
@@ -26,9 +26,9 @@ Ondanks dat ik reeds in het bezit ben van een Transformer TF101 en Nexus 7 heb i
 
 Thuis aangekomen begon de "Uitpakparty". 😀 De tablet verkeerde in goede staat, het scherm ziet er nog prima uit, alleen de achterkant bevat enkele krasjes, maar dat mag de pret niet drukken.
 
-!["TAB250-1"](images/TAB250-1.jpg)
+![TAB250-1](images/TAB250-1.jpg)
 
-!["TAB250-2"](images/TAB250-2.jpg)
+![TAB250-2](images/TAB250-2.jpg)
 
 Zoals verwacht was de batterij helemaal leeg. Na een paar uurtjes opladen, de tablet aangezet. Toen viel me meteen op dat het niet om een winkel demo-model ging zoals Paradigit beweerde, maar om een terug gebrachte tablet van filiaal Paradigit Maastricht (volgens de sticker op de verpakking). Ik ontdekte namelijk dat er nog foto's op aanwezig waren, vermoedelijk afkomstig van de vorige eigenaresse, een meisje in haar tienerjaren. Ik kan er met m'n verstand niet bij dat mensen gewoon een tablet inleveren bij de winkel, zonder eerst zelf een factory reset te doen om alle persoonlijke informatie te verwijderen. Op z'n minst zou je verwachten dat de ouders hier op letten! De tablet zal maar in verkeerde handen vallen.. Ook snap ik niet goed dat Paradigit deze handeling (factory-reset) niet verricht voordat de tablet weer de verkoop in gaat.
 

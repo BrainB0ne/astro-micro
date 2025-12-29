@@ -14,9 +14,7 @@ The upgrade took some time, finally arrived at Windows 8, I checked what applica
 
 Surprisingly almost all applications worked as they should, but I have found one application which does not work anymore after the upgrade. Guess which one? You are right, Microsoft's own awful browser Internet Explorer 10 doesn't work on Windows 8 (on my PC). It's really mind-boggling that Microsoft can't get their own stuff working properly after an upgrade.
 
-[![](images/ie10-notworking.png "Internet Explorer 10 Stopped Working")](http://www.brainbytez.nl/wp-content/uploads/2012/11/ie10-notworking.png)
-
-<!--more-->
+![Internet Explorer 10 Stopped Working](images/ie10-notworking.png)
 
 As expected the "Check online for a solution and close the program" does nothing, it only closes the crash dialog. (Probably because it needs IE10?!?)
 
@@ -24,7 +22,7 @@ I already started Internet Explorer 10 without third-party browser addons. I als
 
 Well, I am not using Internet Explorer anyway for daily use, I am a die-hard Google Chrome user and thus I am using Chrome on Windows 8 which works as it should. I disabled Internet Explorer 10 on my system by un-checking the checkbox at the Add/Remove Windows Features dialog.
 
-I still want to know what is causing this mess, and get it to work. If anyone knows more about this crash or has a solution (besides re-installing Windows 8 of course) let me know in the comments below :)
+I still want to know what is causing this mess, and get it to work. If anyone knows more about this crash or has a solution (besides re-installing Windows 8 of course) let me know in the comments below. 😀
 
 Update
 
