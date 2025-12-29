@@ -1,10 +1,9 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import { SITE, CONTACT, SOCIALS, REPOS, CRYPTOS } from "@consts";
+import { SITE, CONTACT, SOCIALS, REPOS } from "@consts";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import LinkButton from "@components/LinkButton.astro";
-import CryptoButton from "@components/CryptoButton.astro";
 ---
 
 <Layout title={CONTACT.TITLE} description={CONTACT.DESCRIPTION}>
@@ -72,27 +71,6 @@ import CryptoButton from "@components/CryptoButton.astro";
                   Send a message
                 </LinkButton>
               </li>
-            </div>
-          </ul>
-          <br>
-          <p>
-            If you want to support my work, check out the options below.
-          </p>
-          <ul class="not-prose">
-            <div class="flex flex-wrap gap-2 text-nowrap">
-              {
-                CRYPTOS.map((CRYPTO) => (
-                  <li>
-                    <CryptoButton
-                      type={CRYPTO.TYPE}
-                      address={CRYPTO.ADDRESS}
-                      icon={CRYPTO.ICON}
-                    >
-                      {CRYPTO.TYPE}
-                    </CryptoButton>
-                  </li>
-                ))
-              }
             </div>
           </ul>
         </section>

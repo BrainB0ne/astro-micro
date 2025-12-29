@@ -30,6 +30,12 @@ export const CONTACT: Metadata = {
     "Contact me.",
 };
 
+export const SUPPORT: Metadata = {
+  TITLE: "Support",
+  DESCRIPTION:
+    "Support me.",
+};
+
 export const SOCIALS: Socials = [
   {
     NAME: "X / Twitter",
