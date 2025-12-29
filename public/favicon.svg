@@ -85,9 +85,9 @@
    type="text/css"
    id="style3">
    <![CDATA[
-    @font-face { font-family:"Ubuntu";font-variant:normal;font-style:italic;font-weight:bold;src:url("#FontID0") format(svg)}
+    @font-face { font-family:"Ubuntu Sans";font-variant:normal;font-style:italic;font-weight:bold;src:url("#FontID0") format(svg)}
     .fil0 {fill:black}
-    .fnt0 {font-style:italic;font-weight:bold;font-size:5291.67px;font-family:'Ubuntu'}
+    .fnt0 {font-style:italic;font-weight:bold;font-size:5291.67px;font-family:'Ubuntu Sans'}
    ]]>
   </style>
  <linearGradient
