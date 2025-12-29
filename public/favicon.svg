@@ -10,7 +10,7 @@
    viewBox="0 0 10000 10000"
    id="svg4"
    sodipodi:docname="favicon.svg"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -27,12 +27,12 @@
    inkscape:document-units="mm"
    showgrid="false"
    inkscape:zoom="1.0781771"
-   inkscape:cx="249.49519"
-   inkscape:cy="185.03454"
+   inkscape:cx="249.95894"
+   inkscape:cy="185.96203"
    inkscape:window-width="1920"
-   inkscape:window-height="1008"
-   inkscape:window-x="1920"
-   inkscape:window-y="0"
+   inkscape:window-height="1017"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
    inkscape:window-maximized="1"
    inkscape:current-layer="Layer_x0020_1"
    inkscape:export-bgcolor="#ffffffff" />
@@ -54,11 +54,11 @@
    font-style="italic"
    font-weight="700">
 	<font-face
-   font-family="Ubuntu Sans"
+   font-family="Ubuntu"
    id="font-face1">
 		<font-face-src>
 			<font-face-name
-   name="Ubuntu Sans Bold Italic" />
+   name="Ubuntu Bold Italic" />
 		</font-face-src>
 	</font-face>
    <missing-glyph
@@ -85,9 +85,9 @@
    type="text/css"
    id="style3">
    <![CDATA[
-    @font-face { font-family:"Ubuntu Sans";font-variant:normal;font-style:italic;font-weight:bold;src:url("#FontID0") format(svg)}
+    @font-face { font-family:"Ubuntu";font-variant:normal;font-style:italic;font-weight:bold;src:url("#FontID0") format(svg)}
     .fil0 {fill:black}
-    .fnt0 {font-style:italic;font-weight:bold;font-size:5291.67px;font-family:'Ubuntu Sans'}
+    .fnt0 {font-style:italic;font-weight:bold;font-size:5291.67px;font-family:'Ubuntu'}
    ]]>
   </style>
  <linearGradient
@@ -114,20 +114,20 @@
   <metadata
    id="CorelCorpID_0Corel-Layer" />
   <text
-   x="606.64331"
-   y="4465.1699"
+   x="342.06"
+   y="4518.0864"
    class="fil0 fnt0"
    id="text3"
    style="fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
-     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Ubuntu Sans';-inkscape-font-specification:'Ubuntu Sans Bold Italic'"
+     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Bold Italic'"
      id="tspan282">0x</tspan></text>
   <text
-   x="2275.0769"
-   y="8982.25"
+   x="2063.4099"
+   y="9035.167"
    class="fil0 fnt0"
    id="text4"
    style="fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
-     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Ubuntu Sans';-inkscape-font-specification:'Ubuntu Sans Bold Italic'"
+     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Bold Italic'"
      id="tspan284">BB</tspan></text>
  </g>
 </svg>
