@@ -24,45 +24,47 @@ import CryptoButton from "@components/CryptoButton.astro";
             <div class="font-semibold text-black dark:text-white">
               Social Media
             </div>
-            {
-              SOCIALS.map((SOCIAL) => (
-                <li class="flex gap-x-2 text-nowrap">
-                  {SOCIAL.EMOJI}
-                  <Link
-                    href={SOCIAL.HREF}
-                    external
-                    aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
-                  >
-                    {SOCIAL.NAME}
-                  </Link>
-                </li>
-              ))
-            }
+            <div class="flex flex-wrap gap-2 text-nowrap">
+              {
+                SOCIALS.map((SOCIAL) => (
+                  <li>
+                    <LinkButton
+                      external
+                      href={SOCIAL.HREF}
+                      icon={SOCIAL.ICON}
+                    >
+                      {SOCIAL.NAME}
+                    </LinkButton>
+                  </li>
+                ))
+              }
+            </div>
           </ul>
           <ul class="not-prose">
             <div class="font-semibold text-black dark:text-white">
               Repositories
             </div>
-            {
-              REPOS.map((REPO) => (
-                <li class="flex gap-x-2 text-nowrap">
-                  {REPO.EMOJI}
-                  <Link
-                    href={REPO.HREF}
-                    external
-                    aria-label={`${SITE.TITLE} on ${REPO.NAME}`}
-                  >
-                    {REPO.NAME}
-                  </Link>
-                </li>
-              ))
-            }
+            <div class="flex flex-wrap gap-2 text-nowrap">
+              {
+                REPOS.map((REPO) => (
+                  <li>
+                    <LinkButton
+                      external
+                      href={REPO.HREF}
+                      icon={REPO.ICON}
+                    >
+                      {REPO.NAME}
+                    </LinkButton>
+                  </li>
+                ))
+              }
+            </div>
           </ul>
           <ul class="not-prose">
             <div class="font-semibold text-black dark:text-white">
               Mail
             </div>
-            <div class="flex gap-2 text-nowrap">
+            <div class="flex flex-wrap gap-2 text-nowrap">
               <li>
                 <LinkButton
                   href={`mailto:${SITE.EMAIL}`}

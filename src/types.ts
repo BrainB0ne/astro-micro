@@ -13,13 +13,13 @@ export type Metadata = {
 
 export type Socials = {
   NAME: string;
-  EMOJI: string;
+  ICON: string;
   HREF: string;
 }[];
 
 export type Repos = {
   NAME: string;
-  EMOJI: string;
+  ICON: string;
   HREF: string;
 }[];
 

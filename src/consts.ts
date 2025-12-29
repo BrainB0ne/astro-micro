@@ -32,8 +32,8 @@ export const CONTACT: Metadata = {
 
 export const SOCIALS: Socials = [
   {
-    NAME: "X (formerly Twitter)",
-    EMOJI: "💬",
+    NAME: "X / Twitter",
+    ICON: "brand-x",
     HREF: "https://x.com/brainb0ne",
   },
 ];
@@ -41,12 +41,12 @@ export const SOCIALS: Socials = [
 export const REPOS: Repos = [
   {
     NAME: "GitHub",
-    EMOJI: "🖥️",
+    ICON: "github",
     HREF: "https://github.com/brainb0ne",
   },
   {
     NAME: "Codeberg",
-    EMOJI: "🖥️",
+    ICON: "codeberg",
     HREF: "https://codeberg.org/brainb0ne",
   },
 ];
