@@ -6,7 +6,7 @@ tags:
   - "announcements"
 ---
 
-After making some modifications, all project downloads are available again :)
+After making some modifications, all project downloads are available again. 😀
 
 The downloads are now hosted local instead of external.
 

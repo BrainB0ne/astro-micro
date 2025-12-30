@@ -8,7 +8,9 @@ tags:
   - "windows-applications"
 ---
 
-[![](images/qtmcserver-256x256-150x150.png "Qt Minecraft Server - Logo")](http://www.brainbytez.nl/wp-content/uploads/2013/03/qtmcserver-256x256.png)After receiving positive feedback on my tool Spotweb Filter Creator, I decided to start developing my next application.
+![Qt Minecraft Server - Logo](images/qtmcserver-256x256.png)
+
+After receiving positive feedback on my tool Spotweb Filter Creator, I decided to start developing my next application.
 
 This time, it's something completely different.
 
@@ -22,6 +24,6 @@ Linux versions will be available soon. Edit: Linux versions are also available n
 
 Below you'll see a screenshot of Qt Minecraft Server.
 
-[![](images/qt-minecraft-server-screenshot-297x300.png "Qt Minecraft Server Screenshot")](http://www.brainbytez.nl/wp-content/uploads/2013/03/qt-minecraft-server-screenshot.png)
+![Qt Minecraft Server Screenshot](images/qt-minecraft-server-screenshot.png)
 
 And last but not least, as always, the source code is available on [GitHub](https://github.com/BrainB0ne/qtmcserver).

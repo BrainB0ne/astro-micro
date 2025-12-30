@@ -14,6 +14,9 @@ Simply said, the Start button is pressed automatically.
 
 To use this feature, add the command line option -a to the executable. The easiest way is to make a shortcut and change the target field.
 
-e.g. Target: "C:\\Program Files (x86)\\WLAN Hosted Network Manager\\hostednetwork-gui.exe" **\-a**
+Target:
+```
+"C:\Program Files (x86)\WLAN Hosted Network Manager\hostednetwork-gui.exe" **-a**
+```
 
-Downloads are available here: [WLAN Hosted Network Manager](https://www.brainbytez.nl/wlan-hosted-network-manager/)
+Downloads are available here: [WLAN Hosted Network Manager](../../projects/wlan-hosted-network-manager)

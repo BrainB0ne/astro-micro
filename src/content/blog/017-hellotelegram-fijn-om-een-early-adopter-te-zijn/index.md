@@ -33,4 +33,5 @@ Met de overname van WhatsApp door Facebook gaan ook deze meer "vertrouwelijke" 1
 
 Afsluitend, de links naar Telegram voor Android en iOS.
 
-[![Google Play: Telegram Messenger](images/Available_GooglePlay_Button-300x103.png)](https://play.google.com/store/apps/details?id=org.telegram.messenger) [![iTunes AppStore: Telegram Messenger](images/Available_AppStore_Button-300x100.png)](https://itunes.apple.com/us/app/telegram-messenger/id686449807?ls=1&mt=8)
+[![Google Play: Telegram Messenger](images/Available_GooglePlay_Button-300x103.png)](https://play.google.com/store/apps/details?id=org.telegram.messenger)
+[![iTunes AppStore: Telegram Messenger](images/Available_AppStore_Button-300x100.png)](https://itunes.apple.com/us/app/telegram-messenger/id686449807?ls=1&mt=8)
