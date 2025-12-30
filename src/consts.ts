@@ -48,6 +48,16 @@ export const SOCIALS: Socials = [
     ICON: "brand-x",
     HREF: "https://x.com/brainb0ne",
   },
+  {
+    NAME: "Bluesky",
+    ICON: "brand-bluesky",
+    HREF: "https://bsky.app/profile/brainb0ne.bsky.social",
+  },
+  {
+    NAME: "Instagram",
+    ICON: "brand-instagram",
+    HREF: "https://www.instagram.com/brainb0ne",
+  },
 ];
 
 export const REPOS: Repos = [
