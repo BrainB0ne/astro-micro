@@ -79,16 +79,16 @@ export const CRYPTOS: Cryptos = [
   {
     TYPE: "Ethereum",
     ICON: "currency-ethereum",
-    ADDRESS: "",
+    ADDRESS: "0x0C9d56844bAd8c89F4dEd725bcE6263A8f5f9B42",
   },
   {
     TYPE: "Digibyte",
     ICON: "currency-digibyte",
-    ADDRESS: "",
+    ADDRESS: "D6ZWxrNfDrfZg61XcW6AtC9NXVKnuuViXM",
   },
   {
     TYPE: "Stellar",
     ICON: "currency-stellar",
-    ADDRESS: "",
+    ADDRESS: "GANGHPDVAAN5M3T6WSCAT43TDXUUZKE6FXJSFGYX4LWRDCVXNCIOBHVS",
   },
 ];
