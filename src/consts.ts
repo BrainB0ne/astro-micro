@@ -36,6 +36,12 @@ export const SUPPORT: Metadata = {
     "Support me.",
 };
 
+export const COPYRIGHT: Metadata = {
+  TITLE: "Copyright",
+  DESCRIPTION:
+    "Copyright information.",
+};
+
 export const SOCIALS: Socials = [
   {
     NAME: "X / Twitter",
