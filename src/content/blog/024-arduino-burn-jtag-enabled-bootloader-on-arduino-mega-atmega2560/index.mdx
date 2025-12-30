@@ -7,19 +7,21 @@ tags:
 ---
 
 import Callout from "@components/Callout.astro";
+import Link from "@components/Link.astro";
 
 To enable the JTAG Interface on an Arduino Mega the JTAGEN fuse bit must be set to zero.
 
 A modified Arduino bootloader with JTAGEN fuse bit enabled can be programmed by using an Arduino Uno as ISP (In-circuit Serial Programmer).
 
-The [Arduino IDE](https://www.arduino.cc/en/software) can be used to burn the bootloader after making the following modifications to \<Arduino IDE Path\>\hardware\arduino\avr\boards.txt
+The <Link external href="https://www.arduino.cc/en/software">Arduino IDE</Link> can be used to burn the bootloader after making the following modifications to \<Arduino IDE Path\>\hardware\arduino\avr\boards.txt
+
 ```
 "C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt"
 ```
 
-The following calculator can be useful to calculate the correct value: [Fusecalc](https://www.engbedded.com/fusecalc)
+The following calculator can be useful to calculate the correct value: <Link external href="https://www.engbedded.com/fusecalc">Fusecalc</Link>
 
-The **mega.menu.cpu.atmega2560.bootloader.high\_fuses** value is modified from 0xD8 to **0x98**
+The **mega.menu.cpu.atmega2560.bootloader.high_fuses** value is modified from 0xD8 to **0x98**
 
 ```
 ## Arduino Mega w/ ATmega2560
@@ -40,7 +42,7 @@ Connect the Arduino ISP (Arduino Uno) to the target (Arduino Mega). Connect the 
 
 ![Arduino Mega ICSP Header](images/mega-icsp-header.png)
 
-More information about creating an Arduino ISP (In-circuit Serial Programmer): [Tutorial ArduinoISP](https://www.arduino.cc/en/Tutorial/BuiltInExamples/ArduinoISP)
+More information about creating an Arduino ISP (In-circuit Serial Programmer): <Link external href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/ArduinoISP">Tutorial ArduinoISP</Link>
 
 When board, processor and port is setup correctly and the programmer is connected to the target the Bootloader can be burned from the Arduino IDE.
 
@@ -48,7 +50,8 @@ When board, processor and port is setup correctly and the programmer is connecte
 
 After burning the bootloader the JTAGEN fuse should be enabled.
 
-Additionally, clear the JTD bit in the MCUCR register. This can be done by creating a new Arduino Mega (ATmega2560) project with [Visual Studio Code](https://code.visualstudio.com) using the [PlatformIO IDE](https://platformio.org) extension.
+Additionally, clear the JTD bit in the MCUCR register.
+This can be done by creating a new Arduino Mega (ATmega2560) project with <Link external href="https://code.visualstudio.com">Visual Studio Code</Link> using the <Link external href="https://platformio.org">PlatformIO IDE</Link> extension.
 
 The following code will clear the JTD bit without changing the other bits in the MCUCR register:
 
