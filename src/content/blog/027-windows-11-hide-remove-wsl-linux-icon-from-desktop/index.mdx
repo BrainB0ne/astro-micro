@@ -8,12 +8,13 @@ tags:
 
 import Callout from "@components/Callout.astro";
 import Link from "@components/Link.astro";
+import DownloadLink from "@components/DownloadLink.astro";
 
 After installing WSL/Ubuntu 22.04 from the Microsoft Store on Windows 11, a Linux icon was added to the Desktop which could not be removed the usual way.
 
 After reading the following site I found a solution.
 
-[TweakNow - RegTweakHideDesktopIcons](https://www.tweaknow.com/RegTweakHideDesktopIcons.php)
+<Link external href="https://www.tweaknow.com/RegTweakHideDesktopIcons.php">TweakNow - RegTweakHideDesktopIcons</Link>
 
 I added the CLSID for the Linux icon \{B2B4A4D1-2754-4140-A2EB-9A76D9D7CDC6\} to the HideDesktopIcons\NewStartPanel section of Explorer at HKEY_CURRENT_USER. (See Registry file below)
 
@@ -21,7 +22,7 @@ Then rebooted the system after adding the registry entry (shown below).
 
 After reboot the Linux icon was not present anymore on the desktop. Problem solved.
 
-Download the Registry File: <Link href="https://www.brainbytez.nl/download/1160/">HideLinuxFromDesktop.reg</Link>
+Download the Registry File: <DownloadLink href="/downloads/HideLinuxFromDesktop.reg">HideLinuxFromDesktop.reg</DownloadLink>
 or save the following snippet to a .reg file and import it into the Registry Editor:
 
 ```
