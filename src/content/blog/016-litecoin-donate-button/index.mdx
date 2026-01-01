@@ -1,0 +1,39 @@
+---
+title: "Litecoin Donate Button"
+description: "Litecoin Donate Button"
+date: "2013-04-13"
+tags: 
+  - "web"
+---
+
+import Link from "@/components/Link.astro";
+
+![Litecoin](images/Litecoin.png)
+
+While reading stuff about Bitcoin, I learned that Bitcoin is not the only virtual currency out there.
+There are many more virtual currencies available, and one of them seems to be <Link external href="https://litecoin.org">Litecoin</Link>
+At the time of writing 1 Litecoin (LTC) is worth about $2,14 USD according to <Link external href="https://www.coingecko.com/en/coins/litecoin">CryptoCoinCharts</Link>.
+
+<sup>Update 2026-01-01: URL to cryptocoincharts.com replaced with coingecko.com (site redirects to coingecko.com)</sup>
+
+If I am informed correctly, mining of Litecoins on your consumer-PC should be easier than Bitcoins these days.
+
+Quote from Litecoin.org:
+
+> One of the aims of Litecoin was to provide a mining algorithm that could run at the same time, on the same hardware used to mine bitcoins. With the rise of specialized ASICs for Bitcoin, Litecoin continues to satisify these goals. It is unlikely for FPGA or ASIC mining to take over Litecoin until the currency is widely used.
+
+I was looking for a Litecoin donate button, but couldn't find one that fast. So I started Photoshopping, and made one myself based on the Bitcoin donate button.
+
+![Litecoin Donate Button](images/litecoindonate.png)
+
+Feel free to save this picture/button and post it on your own blog/website by right-clicking and selecting "Save image as.." or something similar. 😀
+
+**Update:** To create a working button from this image, add the following piece of javascript to your blog/website. You only have to modify the fields **\<put your Litecoin address here\>** by replacing it with your own Litecoin address, and the URL to the button image **src="./litecoindonate.png"** with the path to the button image on your server. 
+
+```html
+<a href="javascript:void(0);" onclick="javascript:window.prompt ('To donate, please copy-paste my Litecoin address to your Litecoin software - I cannot do it automatically.\nTo copy it, right-click the selected text and select \'Copy\'.\nThen right-click the address field in your Litecoin software and select \'Paste\'.', '<put your Litecoin address here>');">
+<img src="./litecoindonate.png" width="176" height="72" alt="Donate Litecoin" />
+</a>
+```
+
+<sup>Update 2026-01-01: URL to leo.bogert.de removed (site is offline)</sup>
