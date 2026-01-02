@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import { SITE, CONTACT, SOCIALS, REPOS } from "@consts";
+import { CONTACT, SOCIALS, REPOS } from "@consts";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import LinkButton from "@components/LinkButton.astro";
 ---
@@ -56,21 +56,6 @@ import LinkButton from "@components/LinkButton.astro";
                   </li>
                 ))
               }
-            </div>
-          </ul>
-          <ul class="not-prose">
-            <div class="font-semibold text-black dark:text-white">
-              Mail
-            </div>
-            <div class="flex flex-wrap gap-2 text-nowrap">
-              <li>
-                <LinkButton
-                  href={`mailto:${SITE.EMAIL}`}
-                  icon="mail"
-                >
-                  Send a message
-                </LinkButton>
-              </li>
             </div>
           </ul>
         </section>
