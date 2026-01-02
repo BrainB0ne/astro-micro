@@ -3,7 +3,7 @@ import type { Metadata, Site, Socials, Repos, Cryptos, Donations } from "@types"
 export const SITE: Site = {
   TITLE: "BrainByteZ",
   DESCRIPTION: "Just Another Geek Site.",
-  EMAIL: "webmaster@brainbytez.eu",
+  EMAIL: "contact@brainbytez.eu",
   NUM_POSTS_ON_HOMEPAGE: 5,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
