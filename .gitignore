@@ -1,6 +1,9 @@
 # generated cf-types: wrangler types
 worker-configuration.d.ts
 
+# development variables
+.dev.vars
+
 # build output
 dist/
 # generated types
