@@ -5,6 +5,7 @@ date: "2013-03-30"
 ---
 
 import LinkButton from "@components/LinkButton.astro";
+import DownloadLinkButton from "@components/DownloadLinkButton.astro";
 import Link from "@components/Link.astro";
 
 ## 👋 Introduction
@@ -31,20 +32,20 @@ The official Minecraft Server (.jar) package can be downloaded from within the a
 
 ### Windows
 <div class="flex flex-wrap gap-y-2">
-    <LinkButton href="https://www.brainbytez.nl/download/825/" icon="download">Qt Minecraft Server v0.1.0 (windows-installer)</LinkButton>
-    <LinkButton href="https://www.brainbytez.nl/download/827/" icon="download">Qt Minecraft Server v0.1.0 (windows-zip)</LinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/qtmcserver/releases/download/v0.1.0/qtmcserver-0.1.0-win32-setup.exe">Qt Minecraft Server v0.1.0 (windows-installer)</DownloadLinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/qtmcserver/releases/download/v0.1.0/qtmcserver-0.1.0-win32.zip">Qt Minecraft Server v0.1.0 (windows-zip)</DownloadLinkButton>
 </div>
 
 ### Linux
 <div class="flex flex-wrap gap-y-2">
-    <LinkButton href="https://www.brainbytez.nl/download/831/" icon="download">Qt Minecraft Server v0.1.0 (32bit-linux-tar.gz)</LinkButton>
-    <LinkButton href="https://www.brainbytez.nl/download/829/" icon="download">Qt Minecraft Server v0.1.0 (64bit-linux-tar.gz)</LinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/qtmcserver/releases/download/v0.1.0/qtmcserver-0.1.0-linux-x86.tar.gz">Qt Minecraft Server v0.1.0 (32bit-linux-tar.gz)</DownloadLinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/qtmcserver/releases/download/v0.1.0/qtmcserver-0.1.0-linux-x86_64.tar.gz">Qt Minecraft Server v0.1.0 (64bit-linux-tar.gz)</DownloadLinkButton>
 </div>
 
 ## 💻 Source
 <div class="flex gap-2">
-    <LinkButton external href="https://github.com/BrainB0ne/qtmcserver" icon="github">Available on GitHub</LinkButton>
-    <LinkButton external href="https://codeberg.org/BrainB0ne/qtmcserver" icon="codeberg">Get it on Codeberg</LinkButton>
+    <LinkButton external icon="github" href="https://github.com/BrainB0ne/qtmcserver">Available on GitHub</LinkButton>
+    <LinkButton external icon="codeberg" href="https://codeberg.org/BrainB0ne/qtmcserver">Get it on Codeberg</LinkButton>
 </div>
 
 ## 🏛️ License

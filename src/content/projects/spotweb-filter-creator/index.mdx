@@ -5,6 +5,7 @@ date: "2012-10-22"
 ---
 
 import LinkButton from "@components/LinkButton.astro";
+import DownloadLinkButton from "@components/DownloadLinkButton.astro";
 import Link from "@components/Link.astro";
 
 ## 🇳🇱 👋 Introductie
@@ -46,24 +47,24 @@ The saved filter file (MyFilters.xml) can then be uploaded to Spotweb at the fil
 
 ### Windows
 <div class="flex flex-wrap gap-y-2">
-    <LinkButton href="https://www.brainbytez.nl/download/1195/" icon="download">Spotweb Filter Creator v0.6.1 (windows-installer)</LinkButton>
-    <LinkButton href="https://www.brainbytez.nl/download/1197/" icon="download">Spotweb Filter Creator v0.6.1 (windows-zip)</LinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/spotwebfc/releases/download/v0.6.1/spotwebfc-0.6.1-win32-setup.exe">Spotweb Filter Creator v0.6.1 (windows-installer)</DownloadLinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/spotwebfc/releases/download/v0.6.1/spotwebfc-0.6.1-win32.zip">Spotweb Filter Creator v0.6.1 (windows-zip)</DownloadLinkButton>
 </div>
 
 ### Linux
 <div class="flex flex-wrap gap-y-2">
-    <LinkButton href="https://www.brainbytez.nl/download/1193/" icon="download">Spotweb Filter Creator v0.6.0 (x86_64-AppImage)</LinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/spotwebfc/releases/download/v0.6.0/Spotweb_Filter_Creator-0.6.0-x86_64.AppImage">Spotweb Filter Creator v0.6.0 (x86_64-AppImage)</DownloadLinkButton>
 </div>
 
 ### Raspberry Pi
 <div class="flex flex-wrap gap-y-2">
-    <LinkButton href="https://www.brainbytez.nl/download/823/" icon="download">Spotweb Filter Creator v0.4.0 (RPi-linux-tar.gz)</LinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/spotwebfc/releases/download/v0.4.0/spotwebfc-0.4.0-linux-rpi.tar.gz">Spotweb Filter Creator v0.4.0 (RPi-linux-tar.gz)</DownloadLinkButton>
 </div>
 
 ## 💻 Source
 <div class="flex gap-2">
-    <LinkButton external href="https://github.com/BrainB0ne/spotwebfc" icon="github">Available on GitHub</LinkButton>
-    <LinkButton external href="https://codeberg.org/BrainB0ne/spotwebfc" icon="codeberg">Get it on Codeberg</LinkButton>
+    <LinkButton external icon="github" href="https://github.com/BrainB0ne/spotwebfc">Available on GitHub</LinkButton>
+    <LinkButton external icon="codeberg" href="https://codeberg.org/BrainB0ne/spotwebfc">Get it on Codeberg</LinkButton>
 </div>
 
 ## 🏛️ License
