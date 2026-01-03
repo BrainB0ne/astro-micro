@@ -6,8 +6,55 @@ type Props = {
 const { icon } = Astro.props;
 ---
 
-<script is:inline>
-  import { sendTelegramMessage } from '../../config/telegram.ts';
+<form id="contact-form">
+  <section class="animate space-y-4">
+    <!-- Name Field -->
+    <div class="form-group flex flex-wrap gap-1">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" class="w-full px-3 py-2 rounded-sm border border-black/15 dark:border-white/20" required />
+      <div class="error-message text-sm hidden"></div>
+    </div>
+
+    <!-- Email Field -->
+    <div class="form-group flex flex-wrap gap-1">
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" class="w-full px-3 py-2 rounded-sm border border-black/15 dark:border-white/20" required />
+      <div class="error-message text-sm hidden"></div>
+    </div>
+
+    <!-- Subject Field -->
+    <div class="form-group flex flex-wrap gap-1">
+      <label for="subject">Subject *</label>
+      <input type="text" id="subject" name="subject" class="w-full px-3 py-2 rounded-sm border border-black/15 dark:border-white/20" required />
+      <div class="error-message text-sm hidden"></div>
+    </div>
+
+    <!-- Message Field -->
+    <div class="form-group flex flex-wrap gap-1">
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" rows="6" class="w-full px-3 py-2 rounded-sm border border-black/15 dark:border-white/20" required></textarea>
+      <div class="error-message text-sm hidden"></div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-btn" class="group relative flex w-fit flex-nowrap rounded-sm border border-black/15 py-1.5 pl-8 pr-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">
+    <img
+      class="absolute left-2 top-1/2 size-4 -translate-y-1/2 fill-none stroke-current stroke-2"
+      src=`/svg/${icon}.svg` />
+      <span class="btn-text text-sm">Send Message</span>
+      <span class="btn-loading text-sm hidden">Sending...</span>
+    </button>
+
+    <!-- Status Messages -->
+    <div id="form-success" class="hidden text-sm">Message sent successfully!</div>
+    <div id="form-error" class="hidden text-sm">
+      <span id="error-text">Failed to send message. Please try again.</span>
+    </div>
+  </section>
+</form>
+
+<script>
+  import { sendTelegramMessage } from '../config/telegram.ts';
   
   // Form validation rules
   const validationRules = {
@@ -21,35 +68,39 @@ const { icon } = Astro.props;
     email: {
       required: true,
       pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-      message: 'Please enter a valid email address'
+      message: 'Please enter a valid email address',
+      minLength: null,
+      maxLength: null
     },
     subject: {
       required: true,
       minLength: 5,
       maxLength: 100,
-      message: 'Subject must be 5-100 characters'
+      message: 'Subject must be 5-100 characters',
+      pattern: null
     },
     message: {
       required: true,
       minLength: 10,
       maxLength: 1000,
-      message: 'Message must be 10-1000 characters'
+      message: 'Message must be 10-1000 characters',
+      pattern: null
     }
   };
   
   // Get form elements
-  const form = document.getElementById('contact-form');
-  const submitBtn = document.getElementById('submit-btn');
-  const btnText = submitBtn.querySelector('.btn-text');
-  const btnLoading = submitBtn.querySelector('.btn-loading');
-  const successMessage = document.getElementById('form-success');
-  const errorMessage = document.getElementById('form-error');
-  const errorText = document.getElementById('error-text');
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const btnText = submitBtn!.querySelector('.btn-text');
+  const btnLoading = submitBtn!.querySelector('.btn-loading');
+  const successMessage = document.getElementById('form-success') as HTMLDivElement;
+  const errorMessage = document.getElementById('form-error') as HTMLDivElement;
+  const errorText = document.getElementById('error-text') as HTMLSpanElement;
   
   // Validation function
-  function validateField(field) {
+  function validateField(field: any) {
     const fieldName = field.name;
-    const rules = validationRules[fieldName];
+    const rules = validationRules[fieldName as keyof typeof validationRules];
     const value = field.value.trim();
     const errorElement = field.parentElement.querySelector('.error-message');
   
@@ -85,14 +136,14 @@ const { icon } = Astro.props;
     return true;
   }
   
-  function showFieldError(field, errorElement, message) {
+  function showFieldError(field: any, errorElement: any, message: any) {
     field.classList.add('border-error');
     errorElement.textContent = message;
     errorElement.classList.remove('hidden');
   }
   
   // Real-time validation
-  form.querySelectorAll('input, textarea').forEach(field => {
+  form!.querySelectorAll('input, textarea').forEach((field: any) => {
     // Validate on blur
     field.addEventListener('blur', () => {
       if (field.value.trim()) {
@@ -109,15 +160,15 @@ const { icon } = Astro.props;
   });
   
   // Form submission
-  form.addEventListener('submit', async (e) => {
+  form!.addEventListener('submit', async (e) => {
     e.preventDefault();
   
     // Hide previous messages
-    successMessage.classList.add('hidden');
-    errorMessage.classList.add('hidden');
+    successMessage!.classList.add('hidden');
+    errorMessage!.classList.add('hidden');
   
     // Validate all fields
-    const fields = form.querySelectorAll('input, textarea');
+    const fields = form!.querySelectorAll('input, textarea');
     let isValid = true;
   
     fields.forEach(field => {
@@ -128,7 +179,7 @@ const { icon } = Astro.props;
   
     if (!isValid) {
       // Scroll to first error
-      const firstError = form.querySelector('.border-error');
+      const firstError = form!.querySelector('.border-error');
       if (firstError) {
         firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
@@ -136,33 +187,33 @@ const { icon } = Astro.props;
     }
   
     // Show loading state
-    submitBtn.disabled = true;
-    btnText.classList.add('hidden');
-    btnLoading.classList.remove('hidden');
+    submitBtn!.disabled = true;
+    btnText!.classList.add('hidden');
+    btnLoading!.classList.remove('hidden');
   
     try {
       // Get form data
       const formData = new FormData(form);
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const subject = formData.get('subject');
-      const message = formData.get('message');
+      const name = formData.get('name') as string;
+      const email = formData.get('email') as string;
+      const subject = formData.get('subject') as string;
+      const message = formData.get('message') as string;
   
       // Send via Telegram
       const result = await sendTelegramMessage(name, email, subject, message);
   
       if (result.success) {
         // Show success message
-        successMessage.classList.remove('hidden');
+        successMessage!.classList.remove('hidden');
   
         // Reset form
-        form.reset();
+        form!.reset();
         fields.forEach(field => {
           field.classList.remove('border-success');
         });
   
         // Scroll to success message
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        successMessage!.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
         throw new Error(result.error || 'Failed to send message');
       }
@@ -171,63 +222,16 @@ const { icon } = Astro.props;
       console.error('Form submission error:', error);
   
       // Show error message
-      errorText.textContent = 'Failed to send message. Please try again or use direct email.';
-      errorMessage.classList.remove('hidden');
+      errorText!.textContent = 'Failed to send message. Please try again or use direct email.';
+      errorMessage!.classList.remove('hidden');
   
       // Scroll to error message
-      errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      errorMessage!.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } finally {
       // Reset button state
-      submitBtn.disabled = false;
-      btnText.classList.remove('hidden');
-      btnLoading.classList.add('hidden');
+      submitBtn!.disabled = false;
+      btnText!.classList.remove('hidden');
+      btnLoading!.classList.add('hidden');
     }
   });
 </script>
-
-<form id="contact-form">
-  <section class="animate space-y-4">
-    <!-- Name Field -->
-    <div class="form-group flex flex-wrap gap-1">
-      <label for="name">Name *</label>
-      <input type="text" id="name" name="name" class="w-full px-3 py-2 rounded-sm border border-black/15 dark:border-white/20" required />
-      <div class="error-message hidden"></div>
-    </div>
-
-    <!-- Email Field -->
-    <div class="form-group flex flex-wrap gap-1">
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="email" class="w-full px-3 py-2 rounded-sm border border-black/15 dark:border-white/20" required />
-      <div class="error-message hidden"></div>
-    </div>
-
-    <!-- Subject Field -->
-    <div class="form-group flex flex-wrap gap-1">
-      <label for="subject">Subject *</label>
-      <input type="text" id="subject" name="subject" class="w-full px-3 py-2 rounded-sm border border-black/15 dark:border-white/20" required />
-      <div class="error-message hidden"></div>
-    </div>
-
-    <!-- Message Field -->
-    <div class="form-group flex flex-wrap gap-1">
-      <label for="message">Message *</label>
-      <textarea id="message" name="message" rows="6" class="w-full px-3 py-2 rounded-sm border border-black/15 dark:border-white/20" required></textarea>
-      <div class="error-message hidden"></div>
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit" id="submit-btn" class="group relative flex w-fit flex-nowrap rounded-sm border border-black/15 py-1.5 pl-8 pr-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">
-    <img
-      class="absolute left-2 top-1/2 size-4 -translate-y-1/2 fill-none stroke-current stroke-2"
-      src=`/svg/${icon}.svg` />
-      <span class="btn-text">Send Message</span>
-      <span class="btn-loading hidden">Sending...</span>
-    </button>
-
-    <!-- Status Messages -->
-    <div id="form-success" class="hidden">Message sent successfully!</div>
-    <div id="form-error" class="hidden">
-      <span id="error-text">Failed to send message. Please try again.</span>
-    </div>
-  </section>
-</form>
