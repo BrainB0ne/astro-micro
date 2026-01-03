@@ -99,8 +99,8 @@ const { icon } = Astro.props;
   
   // Validation function
   function validateField(field: any) {
-    const fieldName = field.name;
-    const rules = validationRules[fieldName as keyof typeof validationRules];
+    const fieldName = field.name as keyof typeof validationRules;
+    const rules = validationRules[fieldName];
     const value = field.value.trim();
     const errorElement = field.parentElement.querySelector('.error-message');
   
