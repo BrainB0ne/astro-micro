@@ -4,7 +4,7 @@
   height="24"
   viewBox="0 0 24 24"
   fill="none"
-  stroke="currentColor"
+  stroke="#454545"
   stroke-width="2"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -12,7 +12,7 @@
 >
   <style>
     @media (prefers-color-scheme: dark) {
-      svg { stroke: lightgray; }
+      svg { stroke: #adadad; }
     }
   </style>
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
