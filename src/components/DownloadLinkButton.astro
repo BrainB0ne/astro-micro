@@ -1,0 +1,23 @@
+---
+type Props = {
+  href: string;
+  icon: string;
+};
+
+const { href, icon } = Astro.props;
+---
+
+<a
+  href={href}
+  download
+  target="_self"
+  style="text-decoration:none"
+  class="not-prose group relative flex w-fit flex-nowrap rounded-sm border border-black/15 py-1.5 pl-7 pr-3 hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+>
+  <img
+    class="absolute left-2 top-1/2 size-4 -translate-y-1/2 fill-none stroke-current stroke-2"
+    src=`/svg/${icon}.svg` />
+  <div class="text-sm">
+    <slot />
+  </div>
+</a>
