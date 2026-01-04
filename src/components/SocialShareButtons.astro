@@ -22,24 +22,24 @@ const { description, title } = Astro.props;
     buttons={buttons}
     description={description}
     title={title}
-/>
-
-<slot name="astro-social-share-css">
-  <style is:global>
-    .astro-social-share {
-      margin: 20px 0px;
-      height: 24px;
-    }
-    .astro-social-share a {
-      text-decoration: none;
-      margin-right: 10px;
-    }
-    .astro-social-share svg {
-      fill: currentColor;
-      height: 24px;
-    }
-    .astro-social-share svg:hover {
-      fill: #888888;
-    }
-  </style>
-</slot>
+>
+  <slot name="astro-social-share-css">
+    <style is:global>
+      .astro-social-share {
+        margin: 20px 0px;
+        height: 24px;
+      }
+      .astro-social-share a {
+        text-decoration: none;
+        margin-right: 10px;
+      }
+      .astro-social-share svg {
+        fill: currentColor;
+        height: 24px;
+      }
+      .astro-social-share svg:hover {
+        fill: #888888;
+      }
+    </style>
+  </slot>
+</SocialShare>
