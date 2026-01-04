@@ -6,7 +6,8 @@ type Props = {
 const { id } = Astro.props;
 ---
 
-<iframe 
+<iframe
+  style="border-radius: 10px;"
   id=`hearthis_at_track_${id}`
   src=`https://app.hearthis.at/embed/${id}/transparent_black/?hcolor=&amp;color=&amp;style=2&amp;block_size=2&amp;block_space=1&amp;background=1&amp;waveform=0&amp;cover=0&amp;autoplay=0&amp;css=`
   width="100%"
