@@ -1,0 +1,45 @@
+---
+type Props = {
+  description: string;
+  title: string;
+};
+
+import {
+  FacebookShareButton,
+  RedditShareButton,
+  ThreadsShareButton,
+  TwitterShareButton,
+  WhatsAppShareButton,
+  BlueskyShareButton,
+  SocialShare
+} from "astro-social-share";
+
+const buttons = [TwitterShareButton, BlueskyShareButton, FacebookShareButton, ThreadsShareButton, WhatsAppShareButton, RedditShareButton]
+const { description, title } = Astro.props;
+---
+
+<SocialShare
+    buttons={buttons}
+    description={description}
+    title={title}
+/>
+
+<slot name="astro-social-share-css">
+  <style is:global>
+    .astro-social-share {
+      margin: 20px 0px;
+      height: 24px;
+    }
+    .astro-social-share a {
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .astro-social-share svg {
+      fill: currentColor;
+      height: 24px;
+    }
+    .astro-social-share svg:hover {
+      fill: #888888;
+    }
+  </style>
+</slot>

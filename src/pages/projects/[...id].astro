@@ -8,6 +8,7 @@ import BackToPrevious from "@components/BackToPrevious.astro";
 import Link from "@components/Link.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 import Giscus from "@components/Giscus.astro";
+import SocialShareButtons from "@components/SocialShareButtons.astro";
 
 export async function getStaticPaths() {
   const projects = (await getCollection("projects"))
@@ -65,6 +66,9 @@ const { Content, headings } = await render(project);
     <TableOfContents headings={headings} />
     <article class="animate">
       <Content />
+      <div class="text-[light-dark(black/75,white/75)]">
+        <SocialShareButtons title={project.data.title} description={project.data.description} />
+      </div>
       <div class="mt-24">
         <Giscus />
       </div>

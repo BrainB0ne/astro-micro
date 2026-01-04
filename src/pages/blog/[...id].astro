@@ -8,6 +8,7 @@ import BackToPrevious from "@components/BackToPrevious.astro";
 import PostNavigation from "@components/PostNavigation.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 import Giscus from "@components/Giscus.astro";
+import SocialShareButtons from "@components/SocialShareButtons.astro";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -89,6 +90,9 @@ const { Content, headings } = await render(post);
     {headings.length > 0 && <TableOfContents headings={headings} />}
     <article class="animate">
       <Content />
+      <div class="text-[light-dark(black/75,white/75)]">
+        <SocialShareButtons title={post.data.title} description={post.data.description} />
+      </div>
       <div class="mt-24">
         <PostNavigation prevPost={prevPost} nextPost={nextPost} />
       </div>
