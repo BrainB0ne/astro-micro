@@ -315,16 +315,21 @@ const { title, description, image = "/images/logo.png" } = Astro.props;
     // expecting, e.g. by using `if ('discussion' in giscusData)`.
 
     // Experimental hack to set giscus theme correctly (on resize event).
-    // Setting the theme this way makes sure the giscus iframe is available when setting the theme. 
+    // Setting the theme this way makes sure the giscus iframe is available when setting the theme.
     if ('resizeHeight' in giscusData) {
       // console.log(giscusData);
       setGiscusTheme();
+
+      // Remove event listener after one resizeHeight (giscus) event, because the theme has been set correctly.
+      window.removeEventListener('message', handleMessage);
     }
   }
 
-  window.addEventListener('message', handleMessage);
-
   document.addEventListener("DOMContentLoaded", () => init());
   document.addEventListener("astro:after-swap", () => init());
+
+  // Add event listener to listen to (giscus) events
+  window.addEventListener('message', handleMessage);
+
   preloadTheme();
 </script>
