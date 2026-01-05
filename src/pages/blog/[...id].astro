@@ -93,10 +93,10 @@ const { Content, headings } = await render(post);
       <div class="text-[light-dark(black/75,white/75)]">
         <SocialShareButtons title={post.data.title} description={post.data.description} />
       </div>
-      <div class="mt-24">
+      <div class="mt-12">
         <PostNavigation prevPost={prevPost} nextPost={nextPost} />
       </div>
-      <div class="mt-24">
+      <div class="mt-12">
         <Giscus />
       </div>
     </article>
