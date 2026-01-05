@@ -109,7 +109,7 @@ const { title, description, image = "/images/logo.png" } = Astro.props;
 <script is:inline>
   function init() {
     // Add event listener to listen to (giscus) events
-    window.addEventListener('message', handleMessage);
+    window.addEventListener("message", handleMessage);
 
     preloadTheme();
     onScroll();
@@ -302,29 +302,29 @@ const { title, description, image = "/images/logo.png" } = Astro.props;
       // experimental: set giscus theme faster without reloading comments.
       giscus.contentWindow.postMessage(
       { giscus: { setConfig: { theme: isDark ? "dark" : "light" } } },
-        'https://giscus.app'
+        "https://giscus.app"
       );
     }  
   };
 
   function handleMessage(event) {
-    if (event.origin !== 'https://giscus.app') return;
-    if (!(typeof event.data === 'object' && event.data.giscus)) return;
+    if (event.origin !== "https://giscus.app") return;
+    if (!(typeof event.data === "object" && event.data.giscus)) return;
 
     const giscusData = event.data.giscus;
 
     // Do whatever you want with it, e.g. `console.log(giscusData)`.
     // You'll need to make sure that `giscusData` contains the message you're
-    // expecting, e.g. by using `if ('discussion' in giscusData)`.
+    // expecting, e.g. by using `if ("discussion" in giscusData)`.
 
     // Experimental hack to set giscus theme correctly (on resize event).
     // Setting the theme this way makes sure the giscus iframe is available when setting the theme.
-    if ('resizeHeight' in giscusData) {
+    if ("resizeHeight" in giscusData) {
       // console.log(giscusData);
       setGiscusTheme();
 
       // Remove event listener after one resizeHeight (giscus) event, because the theme has been set correctly.
-      window.removeEventListener('message', handleMessage);
+      window.removeEventListener("message", handleMessage);
     }
   }
 
