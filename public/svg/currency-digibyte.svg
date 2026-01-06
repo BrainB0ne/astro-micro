@@ -3,7 +3,7 @@
   width="800px"
   height="800px"
   viewBox="0 0 24 24"
-  stroke="#454545"
+  stroke="#3e3e3e"
   id="digibyte"
   data-name="Flat Line"
   xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +11,7 @@
 >
   <style>
     @media (prefers-color-scheme: dark) {
-      svg { stroke: #adadad; }
+      svg { stroke: #c5c5c5; }
     }
   </style>
   <path id="primary" d="M12.92,21l.26-2.29M15,3l-.26,2.29M9.15,19l-.23,2M11,3l-.23,2" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>

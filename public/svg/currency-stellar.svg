@@ -3,7 +3,7 @@
   width="800px"
   height="800px"
   viewBox="0 0 24 24"
-  stroke="#454545"
+  stroke="#3e3e3e"
   id="stellar"
   data-name="Flat Line"
   xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +11,7 @@
 >
   <style>
     @media (prefers-color-scheme: dark) {
-      svg { stroke: #adadad; }
+      svg { stroke: #c5c5c5; }
     }
   </style>
   <path id="primary" d="M21,6.22,4,13H4a8.43,8.43,0,0,1-.06-1,7.86,7.86,0,0,1,.87-3.62A8,8,0,0,1,11.94,4a7.88,7.88,0,0,1,2.67.46" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
