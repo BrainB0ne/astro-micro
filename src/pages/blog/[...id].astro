@@ -92,7 +92,7 @@ const { Content, headings } = await render(post);
     {headings.length > 0 && <TableOfContents headings={headings} />}
     <article class="animate">
       <Content />
-      <div class="mt-6 flex group items-center justify-between text-[light-dark(black/75,white/75)]">
+      <div class="group mt-6 flex flex-wrap gap-2 items-center justify-between text-[light-dark(black/75,white/75)]">
         <ul class="not-prose">
           <div class="flex flex-wrap gap-2 text-nowrap">
             {
