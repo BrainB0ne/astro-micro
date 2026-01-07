@@ -17,7 +17,6 @@
 #     \______________________________/
 
 User-agent: *
-Content-signal: ai-train=no,search=yes,ai-input=no
 Disallow: /_astro/
 Disallow: /pagefind/
 Disallow: /downloads/
