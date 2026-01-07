@@ -1,0 +1,86 @@
+---
+title: "Astro Micro - Set Giscus Theme Modification"
+description: "Description of Astro Micro theme modifications"
+date: "2026-01-07"
+tags: 
+  - "astro"
+---
+
+import Link from "@components/Link.astro";
+
+I made a modification to the <Link external href="https://astro-micro.vercel.app">Astro Micro</Link> 🔬 theme that I wanted to share.
+
+I noticed that Giscus iframe theme is not properly set initially when the blog pages are loaded.
+This occurs probably due to setting the Giscus theme too early, at a time the Giscus iframe is not loaded yet.
+The result is that the default Giscus theme is set (data-theme value from Giscus iframe).
+
+I fixed the issue by making a couple of modifications to component: Head.astro.
+
+The idea that I came up with while reading the advanced usage section of the <Link external href="https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md">Giscus docs</Link>, is to make use of an event listener.
+The event listener will catch and process the resizeHeight event of the Giscus iframe.
+At this time (resizeHeight event) the iframe present to set the theme, so now is the time to call setGiscusTheme().
+After one resizeHeight event the event listener is removed, because it is not needed anymore.
+To make sure the Giscus comments are not reloaded/refreshed completely on resizeHeight but only switch colors, I modified the existing setGiscusTheme() a little bit.
+
+See code snippets below. 🤓
+
+**Code snippet of existing init() function: added window.addEventListener**
+```js
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+    updateThemeButtons();
+    addCopyCodeButtons();
+    setGiscusTheme();
+
+    // Add event listener to listen to (giscus) events
+    window.addEventListener("message", handleMessage);
+```
+
+**Code snippet of existing setGiscusTheme():<br/>
+added giscus.contentWindow.postMessage call**
+```js
+  const setGiscusTheme = () => {
+    const giscus = document.querySelector(".giscus-frame");
+
+    const isDark = document.documentElement.classList.contains("dark");
+
+    if (giscus) {
+      // original code to set giscus theme.
+      //const url = new URL(giscus.src);
+      //url.searchParams.set("theme", isDark ? "dark" : "light");
+      //giscus.src = url.toString();
+
+      // experimental: set giscus theme faster without reloading comments.
+      giscus.contentWindow.postMessage(
+      { giscus: { setConfig: { theme: isDark ? "dark" : "light" } } },
+        "https://giscus.app"
+      );
+    }  
+  };
+```
+
+**Code snippet of new handleMessage(event) function**
+```js
+  function handleMessage(event) {
+    if (event.origin !== "https://giscus.app") return;
+    if (!(typeof event.data === "object" && event.data.giscus)) return;
+
+    const giscusData = event.data.giscus;
+
+    // Do whatever you want with it, e.g. `console.log(giscusData)`.
+    // You'll need to make sure that `giscusData` contains the message you're
+    // expecting, e.g. by using `if ("discussion" in giscusData)`.
+
+    // Experimental hack to set giscus theme correctly (on resize event).
+    // Setting the theme this way makes sure the giscus iframe is available when setting the theme.
+    if ("resizeHeight" in giscusData) {
+      // console.log(giscusData);
+      setGiscusTheme();
+
+      // Remove event listener after one resizeHeight (giscus) event, because the theme has been set correctly.
+      window.removeEventListener("message", handleMessage);
+    }
+  }
+```
