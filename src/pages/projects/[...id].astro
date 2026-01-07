@@ -9,6 +9,8 @@ import Link from "@components/Link.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 import Giscus from "@components/Giscus.astro";
 import SocialShareButtons from "@components/SocialShareButtons.astro";
+import LinkButton from "@components/LinkButton.astro";
+import { DONATIONS } from "@consts";
 
 export async function getStaticPaths() {
   const projects = (await getCollection("projects"))
@@ -66,7 +68,24 @@ const { Content, headings } = await render(project);
     <TableOfContents headings={headings} />
     <article class="animate">
       <Content />
-      <div class="text-[light-dark(black/75,white/75)]">
+      <div class="mt-6 flex group items-center justify-between text-[light-dark(black/75,white/75)]">
+        <ul class="not-prose">
+          <div class="flex flex-wrap gap-2 text-nowrap">
+            {
+              DONATIONS.map((DONATION) => (
+                <li>
+                  <LinkButton
+                    external
+                    href={DONATION.HREF}
+                    icon={DONATION.ICON}
+                  >
+                    {DONATION.NAME}
+                  </LinkButton>
+                </li>
+              ))
+            }
+          </div>
+        </ul>
         <SocialShareButtons title={project.data.title} description={project.data.description} />
       </div>
       <div class="mt-12">
