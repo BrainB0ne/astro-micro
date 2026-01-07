@@ -17,6 +17,7 @@
 #     \______________________________/
 
 User-agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Disallow: /_astro/
 Disallow: /pagefind/
 Disallow: /downloads/
@@ -24,5 +25,3 @@ Disallow: /svg/
 Disallow: /images/
 
 Sitemap: https://www.brainbytez.eu/sitemap-index.xml
-
-Content-Signal: ai-train=no, search=yes, ai-input=no
