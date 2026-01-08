@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "Astro",
+    "url": "https://astro.build"
+  },
+  {
+    "id": 2,
+    "title": "Python",
+    "url": "https://python.org"
+  }
+]

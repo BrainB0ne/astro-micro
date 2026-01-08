@@ -19,6 +19,12 @@ const projects: CollectionEntry<"projects">[] = (
   .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+
+const skills = (await getCollection("skills"))
+  .sort((a, b) => b.data.id.valueOf() - a.data.id.valueOf());
+
+const links = (await getCollection("links"))
+  .sort((a, b) => b.data.id.valueOf() - a.data.id.valueOf());
 ---
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -107,6 +113,44 @@ const projects: CollectionEntry<"projects">[] = (
               ))
             }
           </ul>
+        </section>
+
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-y-2">
+            <h2 class="font-semibold text-black dark:text-white">
+              Skills
+            </h2>
+          </div>
+          <ul class="not-prose flex flex-col gap-2">
+            {
+              skills.map((skill) => (
+                <li>
+                  {skill.data.name}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-y-2">
+            <h2 class="font-semibold text-black dark:text-white">
+              External Links
+            </h2>
+          </div>
+          <div class="animate flex flex-wrap gap-2">
+            {
+              links.map((link) => (
+              <a
+                  href={`${link.data.url}`}
+                  target="blank"
+                  class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+              >
+                {link.data.title}
+              </a>
+              ))
+            }
+          </div>
         </section>
       </div>
     </aside>
