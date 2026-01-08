@@ -1,14 +1,22 @@
 [
   {
     "id": 1,
-    "name": "Python"
+    "name": "C"
   },
   {
     "id": 2,
-    "name": "C/C++"
+    "name": "C++"
   },
   {
     "id": 3,
+    "name": "C#"
+  },
+  {
+    "id": 4,
     "name": "Qt"
+  },
+  {
+    "id": 5,
+    "name": "Python"
   }
 ]

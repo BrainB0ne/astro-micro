@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+
+const skills = (await getCollection("skills"))
+  .sort((a, b) => a.data.id.valueOf() - b.data.id.valueOf());
+---
+
+<div class="animate flex flex-wrap gap-2">
+{
+  skills.map((skill) => (
+    <div class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">
+      {skill.data.name}
+    </div>
+  ))
+}
+</div>
