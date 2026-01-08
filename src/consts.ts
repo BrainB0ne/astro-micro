@@ -4,7 +4,7 @@ export const SITE: Site = {
   TITLE: "BrainByteZ",
   DESCRIPTION: "Just Another Geek Site.",
   EMAIL: "contact@brainbytez.eu",
-  URL: "https://www.brainbytez.eu",
+  RSS: "https://www.brainbytez.eu/rss.xml",
   NUM_POSTS_ON_HOMEPAGE: 5,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
