@@ -6,8 +6,9 @@ type Props = {
 const { icon } = Astro.props;
 ---
 
-<form id="contact-form">
+<form id="contact-form" method="post">
   <section class="animate space-y-4">
+
     <!-- Name Field -->
     <div class="form-group flex flex-wrap gap-1">
       <label for="name">Name *</label>
@@ -36,6 +37,10 @@ const { icon } = Astro.props;
       <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
     </div>
 
+    <div id="cf-turnstile" data-sitekey="0x4AAAAAACLk6qj_DXmpvUoj"></div>
+    <!-- Hidden field automatically added: -->
+    <!-- <input type="hidden" name="cf-turnstile-response" value="TOKEN_VALUE" /> -->
+
     <!-- Submit Button -->
     <button type="submit" id="submit-btn" class="group relative flex w-fit flex-nowrap rounded-sm border border-black/15 py-1.5 pl-8 pr-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">
     <img
@@ -53,9 +58,22 @@ const { icon } = Astro.props;
   </section>
 </form>
 
+<script 
+  is:inline>
+  document.addEventListener('astro:page-load', () => {
+    // This runs on first page load and after every navigation.
+    turnstile.render('#cf-turnstile', {
+        sitekey: "0x4AAAAAACLk6qj_DXmpvUoj",
+        callback: function(token) {
+            console.log(`Challenge Success ${token}`);
+        },
+    });
+  });
+</script>
+
 <script>
   import { sendTelegramMessage } from '../config/telegram.ts';
-  
+
   // Form validation rules
   const validationRules = {
     name: {
@@ -99,6 +117,10 @@ const { icon } = Astro.props;
   
   // Validation function
   function validateField(field: any) {
+    if (field.type === "hidden") {
+      return true;
+    }
+
     const fieldName = field.name as keyof typeof validationRules;
     const rules = validationRules[fieldName];
     const value = field.value.trim();
@@ -106,27 +128,27 @@ const { icon } = Astro.props;
   
     // Clear previous errors
     field.classList.remove('border-error', 'border-success');
-    errorElement.classList.add('hidden');
+    errorElement?.classList.add('hidden');
   
     // Required validation
-    if (rules.required && !value) {
+    if (rules?.required && !value) {
       showFieldError(field, errorElement, 'This field is required');
       return false;
     }
   
     // Length validation
-    if (rules.minLength && value.length < rules.minLength) {
+    if (rules?.minLength && value.length < rules.minLength) {
       showFieldError(field, errorElement, rules.message);
       return false;
     }
   
-    if (rules.maxLength && value.length > rules.maxLength) {
+    if (rules?.maxLength && value.length > rules.maxLength) {
       showFieldError(field, errorElement, rules.message);
       return false;
     }
   
     // Pattern validation
-    if (rules.pattern && !rules.pattern.test(value)) {
+    if (rules?.pattern && !rules.pattern.test(value)) {
       showFieldError(field, errorElement, rules.message);
       return false;
     }
@@ -194,13 +216,14 @@ const { icon } = Astro.props;
     try {
       // Get form data
       const formData = new FormData(form);
-      const name = formData.get('name') as string;
-      const email = formData.get('email') as string;
-      const subject = formData.get('subject') as string;
-      const message = formData.get('message') as string;
-  
+      const name = formData.get('name')?.toString() || '';
+      const email = formData.get('email')?.toString() || '';
+      const subject = formData.get('subject')?.toString() || '';
+      const message = formData.get('message')?.toString() || '';
+      const cf_turnstile_response = formData.get('cf-turnstile-response')?.toString() || '';
+
       // Send via Telegram
-      const result = await sendTelegramMessage(name, email, subject, message);
+      const result = await sendTelegramMessage(name, email, subject, message, cf_turnstile_response);
   
       if (result.success) {
         // Show success message
