@@ -80,62 +80,41 @@ const { icon } = Astro.props;
 
 <script>
   import { sendTelegramMessage } from '../config/telegram.ts';
-
-  document.addEventListener('astro:page-load', () => {
-    // This runs on first page load and after every navigation.
-    var pathName = window.location.pathname;
-    if (pathName === '/contact/' || pathName === '/contact') {
-      initForm();
-    }
-  });
-</script>
-
-<script>
-  import { sendTelegramMessage } from '../config/telegram.ts';
-
-  // Form validation rules
-  const validationRules = {
-    name: {
-      required: true,
-      minLength: 2,
-      maxLength: 50,
-      pattern: /^[a-zA-Z\s'-]+$/,
-      message: 'Name must be 2-50 characters'
-    },
-    email: {
-      required: true,
-      pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-      message: 'Please enter a valid email address',
-      minLength: null,
-      maxLength: null
-    },
-    subject: {
-      required: true,
-      minLength: 5,
-      maxLength: 100,
-      message: 'Subject must be 5-100 characters',
-      pattern: null
-    },
-    message: {
-      required: true,
-      minLength: 10,
-      maxLength: 1000,
-      message: 'Message must be 10-1000 characters',
-      pattern: null
-    }
-  };
-  
-  // Get form elements
-  const form = document.getElementById('contact-form') as HTMLFormElement;
-  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
-  const btnText = submitBtn.querySelector('.btn-text') as HTMLSpanElement;
-  const btnLoading = submitBtn.querySelector('.btn-loading') as HTMLSpanElement;
-  const successMessage = document.getElementById('form-success') as HTMLDivElement;
-  const errorMessage = document.getElementById('form-error') as HTMLDivElement;
-  const errorText = document.getElementById('error-text') as HTMLSpanElement;
   
   // Validation function
   function validateField(field: any) {
+    // Form validation rules
+    const validationRules = {
+      name: {
+        required: true,
+        minLength: 2,
+        maxLength: 50,
+        pattern: /^[a-zA-Z\s'-]+$/,
+        message: 'Name must be 2-50 characters'
+      },
+      email: {
+        required: true,
+        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        message: 'Please enter a valid email address',
+        minLength: null,
+        maxLength: null
+      },
+      subject: {
+        required: true,
+        minLength: 5,
+        maxLength: 100,
+        message: 'Subject must be 5-100 characters',
+        pattern: null
+      },
+      message: {
+        required: true,
+        minLength: 10,
+        maxLength: 1000,
+        message: 'Message must be 10-1000 characters',
+        pattern: null
+      }
+    };
+
     const fieldName = field.name as keyof typeof validationRules;
     const rules = validationRules[fieldName];
     const value = field.value.trim();
@@ -282,89 +261,5 @@ const { icon } = Astro.props;
         btnLoading.classList.add('hidden');
       }
     });
-  
-    // Clear errors when typing
-    field.addEventListener('input', () => {
-      if (field.classList.contains('border-error')) {
-        validateField(field);
-      }
-    });
-  });
-  
-  // Form submission
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-  
-    // Hide previous messages
-    successMessage.classList.add('hidden');
-    errorMessage.classList.add('hidden');
-  
-    // Validate all fields
-    const fields = form.querySelectorAll('input, textarea');
-    let isValid = true;
-  
-    fields.forEach(field => {
-      if (!validateField(field)) {
-        isValid = false;
-      }
-    });
-  
-    if (!isValid) {
-      // Scroll to first error
-      const firstError = form.querySelector('.border-error');
-      if (firstError) {
-        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-      return;
-    }
-  
-    // Show loading state
-    submitBtn.disabled = true;
-    btnText.classList.add('hidden');
-    btnLoading.classList.remove('hidden');
-  
-    try {
-      // Get form data
-      const formData = new FormData(form);
-      const name = formData.get('name')?.toString() || '';
-      const email = formData.get('email')?.toString() || '';
-      const subject = formData.get('subject')?.toString() || '';
-      const message = formData.get('message')?.toString() || '';
-      const cf_turnstile_response = formData.get('cf-turnstile-response')?.toString() || '';
-
-      // Send via Telegram
-      const result = await sendTelegramMessage(name, email, subject, message, cf_turnstile_response);
-  
-      if (result.success) {
-        // Show success message
-        successMessage.classList.remove('hidden');
-  
-        // Reset form
-        form.reset();
-        fields.forEach(field => {
-          field.classList.remove('border-success');
-        });
-  
-        // Scroll to success message
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        throw new Error(result.error || 'Failed to send message');
-      }
-  
-    } catch (error) {
-      console.error('Form submission error:', error);
-  
-      // Show error message
-      errorText.textContent = 'Failed to send message. Please check all required fields and try again.';
-      errorMessage.classList.remove('hidden');
-  
-      // Scroll to error message
-      errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    } finally {
-      // Reset button state
-      submitBtn.disabled = false;
-      btnText.classList.remove('hidden');
-      btnLoading.classList.add('hidden');
-    }
-  });
+  }
 </script>
