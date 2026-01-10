@@ -117,10 +117,6 @@ const { icon } = Astro.props;
   
   // Validation function
   function validateField(field: any) {
-    if (field.type === "hidden") {
-      return true;
-    }
-
     const fieldName = field.name as keyof typeof validationRules;
     const rules = validationRules[fieldName];
     const value = field.value.trim();
