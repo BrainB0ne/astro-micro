@@ -8,8 +8,7 @@ export async function sendTelegramMessage(
   name: string,
   email: string,
   subject: string,
-  message: string,
-  cf_turnstile_response: string
+  message: string
 ): Promise<{ success: boolean; error?: string }> {
   try {
     // Call the Cloudflare Function endpoint
@@ -23,7 +22,6 @@ export async function sendTelegramMessage(
         email,
         subject,
         message,
-        cf_turnstile_response,
       }),
     });
 
