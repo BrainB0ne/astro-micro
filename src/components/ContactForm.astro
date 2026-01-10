@@ -67,7 +67,7 @@ const { icon } = Astro.props;
     if (pathName === "/contact/" || pathName === "/contact") {
       try {
         turnstile.render('#cf-turnstile', {
-          sitekey: "1x00000000000000000000AA",
+          sitekey: "0x4AAAAAACLk6qj_DXmpvUoj",
           callback: function(token) {
             console.log(`Challenge Success: ${token}`);
           },
