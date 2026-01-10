@@ -80,7 +80,15 @@ const { icon } = Astro.props;
 
 <script>
   import { sendTelegramMessage } from '../config/telegram.ts';
-  
+
+  document.addEventListener('astro:page-load', () => {
+    // This runs on first page load and after every navigation.
+    var pathName = window.location.pathname;
+    if (pathName === '/contact/' || pathName === '/contact') {
+      initForm();
+    }
+  });
+
   // Validation function
   function validateField(field: any) {
     // Form validation rules
