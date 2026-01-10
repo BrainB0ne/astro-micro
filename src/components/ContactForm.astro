@@ -8,7 +8,6 @@ const { icon } = Astro.props;
 
 <form id="contact-form">
   <section class="animate space-y-4">
-
     <!-- Name Field -->
     <div class="form-group flex flex-wrap gap-1">
       <label for="name">Name *</label>
@@ -257,7 +256,7 @@ const { icon } = Astro.props;
         console.error('Form submission error:', error);
     
         // Show error message
-        errorText.textContent = 'Failed to send message. Please check all required fields and try again.';
+        errorText.textContent = 'Failed to send message. Please check all required fields, (reload this page) and try again.';
         errorMessage.classList.remove('hidden');
     
         // Scroll to error message
