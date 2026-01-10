@@ -58,18 +58,17 @@ const { icon } = Astro.props;
   </section>
 </form>
 
-<script is:inline>
-  function turnstileRender() {
+<script 
+  is:inline>
+  document.addEventListener('astro:page-load', () => {
+    // This runs on first page load and after every navigation.
     turnstile.render('#cf-turnstile', {
       sitekey: "0x4AAAAAACLk6qj_DXmpvUoj",
-      callback: function (token) {
-        console.log("Success:", token);
+      callback: function(token) {
+        console.log(`Challenge Success: ${token}`);
       },
     });
-  }
-
-  // This runs on first page load and after every navigation.
-  document.addEventListener('astro:page-load', () => turnstileRender());
+  });
 </script>
 
 <script>
