@@ -37,7 +37,7 @@ const { icon } = Astro.props;
       <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
     </div>
 
-    <div id="cf-turnstile" data-sitekey="0x4AAAAAACLk6qj_DXmpvUoj"></div>
+    <div id="cf-turnstile"></div>
     <!-- Hidden field automatically added: -->
     <!-- <input type="hidden" name="cf-turnstile-response" value="TOKEN_VALUE" /> -->
 
@@ -60,14 +60,23 @@ const { icon } = Astro.props;
 
 <script 
   is:inline>
+
   document.addEventListener('astro:page-load', () => {
     // This runs on first page load and after every navigation.
-    turnstile.render('#cf-turnstile', {
-      sitekey: "0x4AAAAAACLk6qj_DXmpvUoj",
-      callback: function(token) {
-        console.log(`Challenge Success: ${token}`);
-      },
-    });
+    var pathName = window.location.pathname;
+    if (pathName === "/contact/" || pathName === "/contact") {
+      try {
+        turnstile.render('#cf-turnstile', {
+          sitekey: "1x00000000000000000000AA",
+          callback: function(token) {
+            console.log(`Challenge Success: ${token}`);
+          },
+        });
+      }
+      catch(error) {
+        console.error(`${error}`);
+      }
+    }
   });
 </script>
 
