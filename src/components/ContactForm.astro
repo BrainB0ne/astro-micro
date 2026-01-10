@@ -58,6 +58,20 @@ const { icon } = Astro.props;
   </section>
 </form>
 
+<script is:inline>
+  function turnstileRender() {
+    turnstile.render('#cf-turnstile', {
+      sitekey: "0x4AAAAAACLk6qj_DXmpvUoj",
+      callback: function (token) {
+        console.log("Success:", token);
+      },
+    });
+  }
+
+  // This runs on first page load and after every navigation.
+  document.addEventListener('astro:page-load', () => turnstileRender());
+</script>
+
 <script>
   import { sendTelegramMessage } from '../config/telegram.ts';
 

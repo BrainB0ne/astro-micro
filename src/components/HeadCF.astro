@@ -17,17 +17,3 @@ const { title, description } = Astro.props;
   src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
   defer>
 </script>
-
-<script is:inline>
-  function turnstileRender() {
-    turnstile.render('#cf-turnstile', {
-      sitekey: "0x4AAAAAACLk6qj_DXmpvUoj",
-      callback: function (token) {
-        console.log("Success:", token);
-      },
-    });
-  }
-
-  // This runs on first page load and after every navigation.
-  document.addEventListener('astro:page-load', () => turnstileRender());
-</script>
