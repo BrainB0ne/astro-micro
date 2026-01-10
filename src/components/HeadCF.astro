@@ -21,13 +21,16 @@ const { title, description } = Astro.props;
 
 <script
   is:inline>
-  document.addEventListener('astro:page-load', () => {
-    // This runs on first page load and after every navigation.
+
+  function turnstileRender() {
     turnstile.render('#cf-turnstile', {
       sitekey: "0x4AAAAAACLk6qj_DXmpvUoj",
       callback: function (token) {
         console.log("Success:", token);
       },
     });
-  });
+  }
+
+  // This runs on first page load and after every navigation.
+  document.addEventListener('astro:page-load', () => turnstileRender());
 </script>
