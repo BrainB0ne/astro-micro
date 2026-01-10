@@ -13,15 +13,12 @@ const { title, description } = Astro.props;
 
 <Head title={`${title} | ${SITE.TITLE}`} description={description} />
 
-<script
-  is:inline 
+<script is:inline 
   src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
   defer>
 </script>
 
-<script
-  is:inline>
-
+<script is:inline>
   function turnstileRender() {
     turnstile.render('#cf-turnstile', {
       sitekey: "0x4AAAAAACLk6qj_DXmpvUoj",
