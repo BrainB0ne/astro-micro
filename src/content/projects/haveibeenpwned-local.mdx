@@ -11,7 +11,7 @@ import DownloadLinkButton from "@components/DownloadLinkButton.astro";
 import Callout from "@components/Callout.astro";
 
 ## 👋 Introduction
-Have I Been Pwned Local is a Qt GUI application to check passwords against a locally stored HaveIBeenPwned SQLite Database.
+HaveIBeenPwned-Local is a Qt GUI application to check passwords against a locally stored HaveIBeenPwned SQLite Database.
 This project is developed with Qt 6.9.3.
 
 This application can also convert a NTLM-hash text file to a SQLite database by running: hibp2sqlite.
@@ -29,20 +29,23 @@ Then, download all NTLM hashes to a single txt file called pwnedpasswords_ntlm.t
 haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm
 ```
 
-_Menu -> Database -> Convert_ starts a conversion process with hibp2sqlite.
+_Menu -> Database -> Convert_ starts a "Text to SQLite" conversion process with hibp2sqlite.
 
-**Caution!**
+<Callout type="warning">
+**Make sure there is enough free space on your drive since this file is at the time of writing ~70 GB.**
+**The conversion to SQLite with hibp2sqlite takes another ~180 GB for the SQLite database file.**
+</Callout>
 
-Make sure there is enough free space on your drive since this file is at the time of writing \~70 GB.
-The conversion to SQLite with hibp2sqlite takes another \~180 GB for the SQLite database file.
-
-Credits to the author of the following article since it gave me the idea to create this tool.
-<Link external href="https://medium.com/analytics-vidhya/creating-a-local-version-of-the-haveibeenpwned-password-database-with-python-and-sqlite-918a7b6a238a">Creating a local version of the Haveibeenpwned password database (with Python and SQLite)</Link>
+<Callout type="info">
+Credits to the <Link external href="https://medium.com/@chris-inmodis">author</Link> of
+<Link external href="https://medium.com/analytics-vidhya/creating-a-local-version-of-the-haveibeenpwned-password-database-with-python-and-sqlite-918a7b6a238a">this article</Link>
+since it gave me the idea to create this tool.
+</Callout>
 
 ## ❗ Build Requirements
-[Windows]
-- Microsoft Visual Studio 2022
-- Qt SDK 6.9.3 / Qt Creator 18
+- Windows
+  - Microsoft Visual Studio 2022
+  - Qt SDK 6.9.3 / Qt Creator 18
 
 ## 🖼️ Screenshots
 ![haveibeenpwned-local-password-check](images/haveibeenpwned-local-password-check.png)
@@ -59,8 +62,8 @@ YOU are choosing to make these modifications, and if you point the finger at me 
 
 ### Windows
 <div class="flex flex-wrap gap-y-2">
-    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/haveibeenpwned-local/releases/download/v0.2.0/haveibeenpwned-local-0.2.0-x64-setup.exe">Have I Been Pwned Local v0.2.0 (x64) (windows-installer)</DownloadLinkButton>
-    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/haveibeenpwned-local/releases/download/v0.2.0/haveibeenpwned-local-0.2.0-x64.zip">Have I Been Pwned Local v0.2.0 (x64) (windows-zip)</DownloadLinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/haveibeenpwned-local/releases/download/v0.2.0/haveibeenpwned-local-0.2.0-x64-setup.exe">Have I Been Pwned Local v0.2.0 (x64-windows-installer)</DownloadLinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/haveibeenpwned-local/releases/download/v0.2.0/haveibeenpwned-local-0.2.0-x64.zip">Have I Been Pwned Local v0.2.0 (x64-windows-zip)</DownloadLinkButton>
 </div>
 
 ### Linux
