@@ -1,0 +1,100 @@
+---
+title: "hibp2sqlite"
+description: "Create a HaveIBeenPwned SQLite Database from a NTLM-hash text file"
+date: "2026-01-11"
+draft: false
+---
+
+import Link from "@components/Link.astro";
+import LinkButton from "@components/LinkButton.astro";
+import DownloadLinkButton from "@components/DownloadLinkButton.astro";
+import Callout from "@components/Callout.astro";
+
+## 👋 Introduction
+hibp2sqlite is a terminal application to create a HaveIBeenPwned SQLite Database from a NTLM-hash text file.
+
+This project is developed with Qt 6.9.3.
+
+To obtain the NTLM-hash text file, use <Link external href="https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader">PwnedPasswordsDownloader</Link> from HaveIBeenPwned.
+
+Install PwnedPasswordsDownloader by following the instructions described on the link above.
+
+Then, download all NTLM hashes to a single txt file called pwnedpasswords_ntlm.txt
+
+```batch
+haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm
+```
+
+<Callout type="warning">
+**Make sure there is enough free space on your drive since this file is at the time of writing ~70 GB.**
+**The conversion to SQLite with hibp2sqlite takes another ~180 GB for the SQLite database file.**
+**Please note that the conversion process takes a couple of hours, so grab a cup of coffee ☕**
+</Callout>
+
+```batch
+Usage: hibp2sqlite.exe [options] source destination
+
+Options:
+  -?, -h, --help  Displays help on commandline options.
+  -v, --version   Displays version information.
+  -l, --license   Displays license information.
+
+Arguments:
+  source          Source NTLM-hash text file to process.
+  destination     Destination SQLite database.
+```
+
+<Callout type="info">
+The example folder contains a small text file with 3 NTLM hashes, and the resulting SQLite file for testing purposes.
+</Callout>
+
+If you are looking for a GUI application to start this console application and query the SQLite database, check out: [HaveIBeenPwned-Local](../../projects/haveibeenpwned-local).
+
+<Callout type="info">
+Credits to the <Link external href="https://medium.com/@chris-inmodis">author</Link> of
+<Link external href="https://medium.com/analytics-vidhya/creating-a-local-version-of-the-haveibeenpwned-password-database-with-python-and-sqlite-918a7b6a238a">this article</Link>
+since it gave me the idea to create this tool.
+</Callout>
+
+## ❗ Build Requirements
+- Windows
+  - Microsoft Visual Studio 2022
+  - Qt SDK 6.9.3 / Qt Creator 18
+
+## ⚠️ Disclaimer
+<Callout type="warning">
+I'm not responsible for bricked devices, dead SD cards, thermonuclear war, or you getting fired because the alarm app failed.
+YOU are choosing to make these modifications, and if you point the finger at me for messing up your device, I will laugh at you.
+</Callout>
+
+## 📥 Downloads
+
+### Windows
+<div class="flex flex-wrap gap-y-2">
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/hibp2sqlite/releases/download/v0.2.0/hibp2sqlite-0.2.0-x64.zip">hibp2sqlite v0.2.0 (x64-windows-zip)</DownloadLinkButton>
+</div>
+
+## 💻 Source
+<div class="flex gap-2">
+    <LinkButton external icon="github" href="https://github.com/BrainB0ne/hibp2sqlite">Available on GitHub</LinkButton>
+    <LinkButton external icon="codeberg" href="https://codeberg.org/BrainB0ne/hibp2sqlite">Get it on Codeberg</LinkButton>
+</div>
+
+## 🏛️ License
+
+```
+hibp2sqlite
+Copyleft 2025
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+```
