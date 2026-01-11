@@ -69,8 +69,8 @@ const { Content, headings } = await render(project);
     <article class="animate">
       <Content />
       <div class="group mt-6 flex flex-wrap gap-2 items-center justify-between text-[light-dark(black/75,white/75)]">
-        <ul class="not-prose">
-          <div class="flex flex-wrap gap-2 text-nowrap">
+        <div class="flex flex-wrap gap-2 text-nowrap">
+          <ul class="not-prose">
             {
               DONATIONS.map((DONATION) => (
                 <li>
@@ -84,8 +84,8 @@ const { Content, headings } = await render(project);
                 </li>
               ))
             }
-          </div>
-        </ul>
+          </ul>
+        </div>
         <SocialShareButtons title={project.data.title} description={project.data.description} />
       </div>
       <div class="mt-12">
