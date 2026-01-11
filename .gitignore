@@ -1,3 +1,6 @@
+# google site verification file
+public/google*.html
+
 # generated cf-types: wrangler types
 worker-configuration.d.ts
 
