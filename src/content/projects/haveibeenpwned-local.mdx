@@ -2,7 +2,7 @@
 title: "HaveIBeenPwned-Local"
 description: "Qt GUI application to check passwords against a local HIPB SQLite Database"
 date: "2026-01-11"
-draft: true
+draft: false
 ---
 
 import Link from "@components/Link.astro";
@@ -12,6 +12,7 @@ import Callout from "@components/Callout.astro";
 
 ## 👋 Introduction
 HaveIBeenPwned-Local is a Qt GUI application to check passwords against a locally stored HaveIBeenPwned SQLite Database.
+
 This project is developed with Qt 6.9.3.
 
 This application can also convert a NTLM-hash text file to a SQLite database by running: hibp2sqlite.
@@ -34,6 +35,7 @@ _Menu -> Database -> Convert_ starts a "Text to SQLite" conversion process with 
 <Callout type="warning">
 **Make sure there is enough free space on your drive since this file is at the time of writing ~70 GB.**
 **The conversion to SQLite with hibp2sqlite takes another ~180 GB for the SQLite database file.**
+**Please note that the conversion process takes a couple of hours, so grab a cup of coffee ☕**
 </Callout>
 
 <Callout type="info">
@@ -49,7 +51,6 @@ since it gave me the idea to create this tool.
 
 ## 🖼️ Screenshots
 ![haveibeenpwned-local-password-check](images/haveibeenpwned-local-password-check.png)
-
 ![haveibeenpwned-local-password-check-linux](images/haveibeenpwned-local-password-check-linux.png)
 
 ## ⚠️ Disclaimer
@@ -62,13 +63,13 @@ YOU are choosing to make these modifications, and if you point the finger at me 
 
 ### Windows
 <div class="flex flex-wrap gap-y-2">
-    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/haveibeenpwned-local/releases/download/v0.2.0/haveibeenpwned-local-0.2.0-x64-setup.exe">Have I Been Pwned Local v0.2.0 (x64-windows-installer)</DownloadLinkButton>
-    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/haveibeenpwned-local/releases/download/v0.2.0/haveibeenpwned-local-0.2.0-x64.zip">Have I Been Pwned Local v0.2.0 (x64-windows-zip)</DownloadLinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/haveibeenpwned-local/releases/download/v0.2.0/haveibeenpwned-local-0.2.0-x64-setup.exe">HaveIBeenPwned-Local v0.2.0 (x64-windows-installer)</DownloadLinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/haveibeenpwned-local/releases/download/v0.2.0/haveibeenpwned-local-0.2.0-x64.zip">HaveIBeenPwned-Local v0.2.0 (x64-windows-zip)</DownloadLinkButton>
 </div>
 
 ### Linux
 <div class="flex flex-wrap gap-y-2">
-    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/haveibeenpwned-local/releases/download/v0.2.0/HaveIBeenPwned-Local-0.2.0-x86_64.AppImage">Have I Been Pwned Local v0.2.0 (x86_64-AppImage)</DownloadLinkButton>
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/haveibeenpwned-local/releases/download/v0.2.0/HaveIBeenPwned-Local-0.2.0-x86_64.AppImage">HaveIBeenPwned-Local v0.2.0 (x86_64-AppImage)</DownloadLinkButton>
 </div>
 
 ## 💻 Source
