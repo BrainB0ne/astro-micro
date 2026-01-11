@@ -17,10 +17,6 @@
 #     \______________________________/
 
 User-agent: *
-Disallow: /_astro/
-Disallow: /pagefind/
 Disallow: /downloads/
-Disallow: /svg/
-Disallow: /images/
 
 Sitemap: https://www.brainbytez.eu/sitemap-index.xml
