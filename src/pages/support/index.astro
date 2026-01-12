@@ -19,40 +19,32 @@ import LinkButton from "@components/LinkButton.astro";
           <p>
             If you want to support me, check out the options below.
           </p>
-          <ul class="not-prose">
-            <div class="flex flex-wrap gap-2 text-nowrap">
-              {
-                DONATIONS.map((DONATION) => (
-                  <li>
-                    <LinkButton
-                      external
-                      href={DONATION.HREF}
-                      icon={DONATION.ICON}
-                    >
-                      {DONATION.NAME}
-                    </LinkButton>
-                  </li>
-                ))
-              }
-            </div>
-          </ul>
-          <ul class="not-prose">
-            <div class="flex flex-wrap gap-2 text-nowrap">
-              {
-                CRYPTOS.map((CRYPTO) => (
-                  <li>
-                    <CryptoButton
-                      type={CRYPTO.TYPE}
-                      address={CRYPTO.ADDRESS}
-                      icon={CRYPTO.ICON}
-                    >
-                      {CRYPTO.TYPE}
-                    </CryptoButton>
-                  </li>
-                ))
-              }
-            </div>
-          </ul>
+          <div class="mt-6 flex flex-wrap gap-2 text-nowrap not-prose">
+            {
+              DONATIONS.map((DONATION) => (
+                <LinkButton
+                  external
+                  href={DONATION.HREF}
+                  icon={DONATION.ICON}
+                >
+                  {DONATION.NAME}
+                </LinkButton>
+              ))
+            }
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2 text-nowrap not-prose">
+            {
+              CRYPTOS.map((CRYPTO) => (
+                <CryptoButton
+                  type={CRYPTO.TYPE}
+                  address={CRYPTO.ADDRESS}
+                  icon={CRYPTO.ICON}
+                >
+                  {CRYPTO.TYPE}
+                </CryptoButton>
+              ))
+            }
+          </div>
         </section>
       </div>
     </aside>

@@ -81,7 +81,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     const requestBody = new URLSearchParams({
       secret:
         turnstileSiteSecret,
-      response: data.cf_turnstile_response
+      response: data.cf_turnstile_response,
     });
 
     const turnstileVerifyResponse = await fetch(
@@ -91,7 +91,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: requestBody.toString()
+        body: requestBody.toString(),
       });
 
     const turnstileVerifyData = (await turnstileVerifyResponse.json()) as TurnstileVerifyResponse;

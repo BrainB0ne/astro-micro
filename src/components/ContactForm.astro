@@ -44,7 +44,8 @@ const { icon } = Astro.props;
     <button type="submit" id="submit-btn" class="group relative flex w-fit flex-nowrap rounded-sm border border-black/15 py-1.5 pl-8 pr-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">
     <img
       class="absolute left-2 top-1/2 size-4 -translate-y-1/2 fill-none stroke-current stroke-2"
-      src=`/svg/${icon}.svg` />
+      src=`/svg/${icon}.svg`
+      alt="submit" />
       <span class="btn-text text-sm">Send Message</span>
       <span class="btn-loading text-sm hidden">Sending...</span>
     </button>
@@ -61,10 +62,10 @@ const { icon } = Astro.props;
   document.addEventListener('astro:page-load', () => {
     // This runs on first page load and after every navigation.
     var pathName = window.location.pathname;
-    if (pathName === "/contact/" || pathName === "/contact") {
+    if (pathName === '/contact/' || pathName === '/contact') {
       try {
         turnstile.render('#cf-turnstile', {
-          sitekey: "0x4AAAAAACLk6qj_DXmpvUoj",
+          sitekey: '0x4AAAAAACLk6qj_DXmpvUoj', // '1x00000000000000000000AA',
           callback: function(token) {
             console.log(`Challenge Success: ${token}`);
           },
@@ -232,7 +233,7 @@ const { icon } = Astro.props;
         const subject = formData.get('subject')?.toString() || '';
         const message = formData.get('message')?.toString() || '';
         const cf_turnstile_response = formData.get('cf-turnstile-response')?.toString() || '';
-
+    
         // Send via Telegram
         const result = await sendTelegramMessage(name, email, subject, message, cf_turnstile_response);
     
