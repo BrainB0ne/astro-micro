@@ -4,6 +4,7 @@
 interface Env {
   TELEGRAM_BOT_TOKEN: string;
   TELEGRAM_CHAT_ID: string;
+  TURNSTILE_SITE_SECRET: string;
 }
 
 interface ContactFormData {
@@ -11,6 +12,11 @@ interface ContactFormData {
   email: string;
   subject: string;
   message: string;
+  cf_turnstile_response: string;
+}
+
+interface TurnstileVerifyResponse {
+  success: boolean;
 }
 
 // CORS headers for the response
@@ -25,8 +31,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     // Get environment variables
     const botToken = context.env.TELEGRAM_BOT_TOKEN;
     const chatId = context.env.TELEGRAM_CHAT_ID;
+    const turnstileSiteSecret = context.env.TURNSTILE_SITE_SECRET;
 
-    if (!botToken || !chatId) {
+    if (!botToken || !chatId || !turnstileSiteSecret) {
       return new Response(
         JSON.stringify({
           success: false,
@@ -51,6 +58,53 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         }),
         {
           status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
+    }
+
+    // Validate that Turnstile response is not null/unknown or empty
+    if (!data.cf_turnstile_response) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'Missing Turnstile response',
+        }),
+        {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
+    }
+
+    const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+    const requestBody = new URLSearchParams({
+      secret:
+        turnstileSiteSecret,
+      response: data.cf_turnstile_response,
+    });
+
+    const turnstileVerifyResponse = await fetch(
+      url,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: requestBody.toString(),
+      });
+
+    const turnstileVerifyData = (await turnstileVerifyResponse.json()) as TurnstileVerifyResponse;
+
+    if (!turnstileVerifyData.success) {
+      console.error('Turnstile verify error:', turnstileVerifyData);
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'Invalid Turnstile',
+        }),
+        {
+          status: 500,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         }
       );
