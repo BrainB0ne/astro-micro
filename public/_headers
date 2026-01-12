@@ -1,3 +1,12 @@
+/*
+  Access-Control-Allow-Origin: *
+  
+https://:project.pages.dev/*
+  Access-Control-Allow-Origin: https://staging.:project.pages.dev/
+
+/_astro/*
+  Cache-Control: public, max-age=31556952, immutable
+
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
 
