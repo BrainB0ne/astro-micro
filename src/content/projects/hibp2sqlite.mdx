@@ -25,27 +25,12 @@ Then, download all NTLM hashes to a single txt file called pwnedpasswords_ntlm.t
 haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm
 ```
 
+After downloading pwnedpasswords_ntlm.txt, run hibp2sqlite. (See Usage ℹ️)
+
 <Callout type="warning">
 **Make sure there is enough free space on your drive since this file is at the time of writing ~70 GB.**
 **The conversion to SQLite with hibp2sqlite takes another ~180 GB for the SQLite database file.**
 **Please note that the conversion process takes a couple of hours, so grab a cup of coffee ☕**
-</Callout>
-
-```batch
-Usage: hibp2sqlite.exe [options] source destination
-
-Options:
-  -?, -h, --help  Displays help on commandline options.
-  -v, --version   Displays version information.
-  -l, --license   Displays license information.
-
-Arguments:
-  source          Source NTLM-hash text file to process.
-  destination     Destination SQLite database.
-```
-
-<Callout type="info">
-The example folder contains a small text file with 3 NTLM hashes, and the resulting SQLite file for testing purposes.
 </Callout>
 
 If you are looking for a GUI application to start this console application and query the SQLite database, check out: [HaveIBeenPwned-Local](../../projects/haveibeenpwned-local).
@@ -61,6 +46,36 @@ since it gave me the idea to create this tool.
   - Microsoft Visual Studio 2022
   - Qt SDK 6.9.3 / Qt Creator 18
 
+## ℹ️ Usage
+
+### Windows
+```batch
+Usage: hibp2sqlite.exe [options] source destination
+
+Options:
+  -?, -h, --help  Displays help on commandline options.
+  -v, --version   Displays version information.
+  -l, --license   Displays license information.
+
+Arguments:
+  source          Source NTLM-hash text file to process.
+  destination     Destination SQLite database.
+```
+
+### Linux
+```bash
+Usage: hibp2sqlite-{version}.AppImage [options] source destination
+
+Options:
+  -?, -h, --help  Displays help on commandline options.
+  -v, --version   Displays version information.
+  -l, --license   Displays license information.
+
+Arguments:
+  source          Source NTLM-hash text file to process.
+  destination     Destination SQLite database.
+```
+
 ## ⚠️ Disclaimer
 <Callout type="warning">
 I'm not responsible for bricked devices, dead SD cards, thermonuclear war, or you getting fired because the alarm app failed.
@@ -72,6 +87,14 @@ YOU are choosing to make these modifications, and if you point the finger at me 
 ### Windows
 <div class="flex flex-wrap gap-y-2">
     <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/hibp2sqlite/releases/download/v0.2.0/hibp2sqlite-0.2.0-x64.zip">hibp2sqlite v0.2.0 (x64-windows-zip)</DownloadLinkButton>
+</div>
+<Callout type="info">
+The example folder inside the zip archive contains a small text file with 3 NTLM hashes, and the resulting SQLite file for testing purposes.
+</Callout>
+
+### Linux
+<div class="flex flex-wrap gap-y-2">
+    <DownloadLinkButton icon="download" href="https://codeberg.org/BrainB0ne/hibp2sqlite/releases/download/v0.2.0/hibp2sqlite-0.2.0-x86_64.AppImage">hibp2sqlite v0.2.0 (x86_64-AppImage)</DownloadLinkButton>
 </div>
 
 ## 💻 Source
