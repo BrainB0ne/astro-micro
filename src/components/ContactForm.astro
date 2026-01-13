@@ -36,7 +36,7 @@ const { icon } = Astro.props;
       <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
     </div>
 
-    <div id="cf-turnstile"></div>
+    <div id="cf-turnstile" />
     <!-- Hidden field automatically added: -->
     <!-- <input type="hidden" name="cf-turnstile-response" value="TOKEN_VALUE" /> -->
 
@@ -59,38 +59,103 @@ const { icon } = Astro.props;
 </form>
 
 <script is:inline>
-  document.addEventListener('astro:page-load', () => {
-    // This runs on first page load and after every navigation.
-    var pathName = window.location.pathname;
-    if (pathName === '/contact/' || pathName === '/contact') {
-      try {
-        turnstile.render('#cf-turnstile', {
-          sitekey: '0x4AAAAAACLk6qj_DXmpvUoj', // '1x00000000000000000000AA',
-          callback: function(token) {
-            console.log(`Challenge Success: ${token}`);
-          },
-        });
-      }
-      catch(error) {
-        console.error(`${error}`);
-      }
+  function turnstileRender() {
+    const turnstileElement = document.getElementById('cf-turnstile');
+    if (!(turnstileElement instanceof HTMLElement)) return;
+
+    try {
+      turnstile.render('#cf-turnstile', {
+        sitekey: '0x4AAAAAACLk6qj_DXmpvUoj', // '1x00000000000000000000AA',
+        callback: function(token) {
+          console.log(`Challenge Success: ${token}`);
+        },
+      });
     }
-  });
+    catch(error) {
+      console.error(`${error}`);
+    }
+  }
+
+  document.addEventListener('astro:page-load', () => turnstileRender());
 </script>
 
 <script>
   import { sendTelegramMessage } from '../config/telegram.ts';
 
-  document.addEventListener('astro:page-load', () => {
-    // This runs on first page load and after every navigation.
-    var pathName = window.location.pathname;
-    if (pathName === '/contact/' || pathName === '/contact') {
-      initForm();
-    }
-  });
-
   // Validation function
-  function validateField(field: any) {
+  function validateField(field: any, validationRules: any) {
+
+    const fieldName = field.name as keyof typeof validationRules;
+    const rules = validationRules[fieldName];
+
+    if (!rules) return;
+
+    const value = field.value.trim();
+    const errorElement = field.parentElement.querySelector('.error-message');
+
+    if (!errorElement) return;
+  
+    // Clear previous errors
+    field.classList.remove('border-error', 'border-success');
+    errorElement.classList.add('hidden');
+  
+    // Required validation
+    if (rules.required && !value) {
+      showFieldError(field, errorElement, 'This field is required');
+      return false;
+    }
+  
+    // Length validation
+    if (rules.minLength && value.length < rules.minLength) {
+      showFieldError(field, errorElement, rules.message);
+      return false;
+    }
+  
+    if (rules.maxLength && value.length > rules.maxLength) {
+      showFieldError(field, errorElement, rules.message);
+      return false;
+    }
+  
+    // Pattern validation
+    if (rules.pattern && !rules.pattern.test(value)) {
+      showFieldError(field, errorElement, rules.message);
+      return false;
+    }
+  
+    // Show success state
+    field.classList.add('border-success');
+    return true;
+  }
+  
+  function showFieldError(field: any, errorElement: any, message: any) {
+    field.classList.add('border-error');
+    errorElement.textContent = message;
+    errorElement.classList.remove('hidden');
+  }
+
+  function initForm() {
+    // Get form elements
+    const form = document.getElementById('contact-form');
+    if (!(form instanceof HTMLFormElement)) return;
+
+    const submitBtn = document.getElementById('submit-btn');
+    if (!(submitBtn instanceof HTMLButtonElement)) return;
+
+    const btnText = submitBtn.querySelector('.btn-text');
+    if (!(btnText instanceof HTMLSpanElement)) return;
+
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    if (!(btnLoading instanceof HTMLSpanElement)) return;
+
+    const successMessage = document.getElementById('form-success');
+    if (!(successMessage instanceof HTMLDivElement)) return;
+
+    const errorMessage = document.getElementById('form-error');
+    if (!(errorMessage instanceof HTMLDivElement)) return;
+
+    const errorText = document.getElementById('error-text');
+    if (!(errorText instanceof HTMLSpanElement)) return;
+
     // Form validation rules
     const validationRules = {
       name: {
@@ -123,72 +188,19 @@ const { icon } = Astro.props;
       }
     };
 
-    const fieldName = field.name as keyof typeof validationRules;
-    const rules = validationRules[fieldName];
-    const value = field.value.trim();
-    const errorElement = field.parentElement.querySelector('.error-message');
-  
-    // Clear previous errors
-    field.classList.remove('border-error', 'border-success');
-    errorElement?.classList.add('hidden');
-  
-    // Required validation
-    if (rules?.required && !value) {
-      showFieldError(field, errorElement, 'This field is required');
-      return false;
-    }
-  
-    // Length validation
-    if (rules?.minLength && value.length < rules.minLength) {
-      showFieldError(field, errorElement, rules.message);
-      return false;
-    }
-  
-    if (rules?.maxLength && value.length > rules.maxLength) {
-      showFieldError(field, errorElement, rules.message);
-      return false;
-    }
-  
-    // Pattern validation
-    if (rules?.pattern && !rules.pattern.test(value)) {
-      showFieldError(field, errorElement, rules.message);
-      return false;
-    }
-  
-    // Show success state
-    field.classList.add('border-success');
-    return true;
-  }
-  
-  function showFieldError(field: any, errorElement: any, message: any) {
-    field.classList.add('border-error');
-    errorElement.textContent = message;
-    errorElement.classList.remove('hidden');
-  }
-
-  function initForm() {
-    // Get form elements
-    const form = document.getElementById('contact-form') as HTMLFormElement;
-    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
-    const btnText = submitBtn.querySelector('.btn-text') as HTMLSpanElement;
-    const btnLoading = submitBtn.querySelector('.btn-loading') as HTMLSpanElement;
-    const successMessage = document.getElementById('form-success') as HTMLDivElement;
-    const errorMessage = document.getElementById('form-error') as HTMLDivElement;
-    const errorText = document.getElementById('error-text') as HTMLSpanElement;
-
     // Real-time validation
     form.querySelectorAll('input, textarea').forEach((field: any) => {
       // Validate on blur
       field.addEventListener('blur', () => {
         if (field.value.trim()) {
-          validateField(field);
+          validateField(field, validationRules);
         }
       });
     
       // Clear errors when typing
       field.addEventListener('input', () => {
         if (field.classList.contains('border-error')) {
-          validateField(field);
+          validateField(field, validationRules);
         }
       });
     });
@@ -206,7 +218,7 @@ const { icon } = Astro.props;
       let isValid = true;
     
       fields.forEach(field => {
-        if (!validateField(field)) {
+        if (!validateField(field, validationRules)) {
           isValid = false;
         }
       });
@@ -270,4 +282,7 @@ const { icon } = Astro.props;
       }
     });
   }
+
+  initForm();
+  document.addEventListener('astro:after-swap', () => initForm());
 </script>
