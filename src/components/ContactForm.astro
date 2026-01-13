@@ -204,10 +204,10 @@ const { icon } = Astro.props;
       try {
         // Get form data
         const formData = new FormData(form);
-        const name = formData.get('name') as string;
-        const email = formData.get('email') as string;
-        const subject = formData.get('subject') as string;
-        const message = formData.get('message') as string;
+        const name = formData.get('name')?.toString() || '';
+        const email = formData.get('email')?.toString() || '';
+        const subject = formData.get('subject')?.toString() || '';
+        const message = formData.get('message')?.toString() || '';
     
         // Send via Telegram
         const result = await sendTelegramMessage(name, email, subject, message);
