@@ -51,17 +51,36 @@ const { icon } = Astro.props;
     </button>
 
     <!-- Status Messages -->
-    <div id="form-success" class="hidden text-sm text-[light-dark(var(--color-green-600),var(--color-green-400))]">Message sent successfully!</div>
-    <div id="form-error" class="hidden text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))]">
+    <div id="form-success" class="hidden u-form-send-success text-sm text-[light-dark(var(--color-green-600),var(--color-green-400))]">Message sent successfully!</div>
+    <div id="form-error" class="hidden u-form-send-error text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))]">
       <span id="error-text">Failed to send message. Please try again.</span>
     </div>
   </section>
 </form>
 
 <script is:inline>
+  function resetTurnstile() {
+    let widgetSelector = '#cf-turnstile';
+    
+    try {
+      console.log("Trying to reset Turnstile with widgetSelector =", widgetSelector);
+      if (widgetSelector && turnstile && typeof turnstile.reset === "function") {
+        turnstile.reset(widgetSelector);
+        console.log("Turnstile reset");
+        } else {
+          console.log("Turnstile or reset function is undefined");
+        }
+      } catch (e) {
+        console.error("Error resetting Turnstile:", e);
+      }
+  }
+
   function turnstileRender() {
     const turnstileElement = document.getElementById('cf-turnstile');
     if (!(turnstileElement instanceof HTMLElement)) return;
+
+    let triggerWhenVisibleSelectorSuccess = '.u-form-send-success';
+    let triggerWhenVisibleSelectorError = '.u-form-send-error';
 
     try {
       turnstile.render('#cf-turnstile', {
@@ -71,9 +90,35 @@ const { icon } = Astro.props;
         },
       });
     }
-    catch(error) {
-      console.error(`${error}`);
+    catch(e) {
+      console.error("Error rendering Turnstile:", e);
     }
+
+    const observerSuccess = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        const target = mutation.target;
+        if (!target.classList.contains('hidden')) {
+          console.log("Resetting Turnstile");
+          resetTurnstile();
+        }
+      });
+    });
+
+    const targetNodesSuccess = document.querySelectorAll(triggerWhenVisibleSelectorSuccess);
+    observerSuccess.observe(targetNodesSuccess[0], { attributes: true });
+
+    const observerError = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        const target = mutation.target;
+        if (!target.classList.contains('hidden')) {
+          console.log("Resetting Turnstile");
+          resetTurnstile();
+        }
+      });
+    });
+
+    const targetNodesError = document.querySelectorAll(triggerWhenVisibleSelectorError);
+    observerError.observe(targetNodesError[0], { attributes: true });
   }
 
   document.addEventListener('astro:page-load', () => turnstileRender());
