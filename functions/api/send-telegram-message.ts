@@ -21,7 +21,7 @@ interface TurnstileVerifyResponse {
 
 // CORS headers for the response
 const corsHeaders = {
-  'Access-Control-Allow-Origin': '*', // In production, replace with your domain
+  'Access-Control-Allow-Origin': 'https://www.brainbytez.eu', // In production, replace with your domain
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
 };
