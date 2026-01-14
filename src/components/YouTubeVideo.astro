@@ -7,9 +7,10 @@ interface Props {
   src: string;
   title?: string;
   className?: string;
+  idx: string;
 }
 
-const { src, title = "YouTube video player", className } = Astro.props;
+const { src, title = "YouTube video player", className, idx = "0" } = Astro.props;
 
 const embedUrl = getYoutubeEmbedUrl(src);
 const thumbnail = await getYoutubeThumbnail(src);
@@ -17,8 +18,8 @@ const isPlayable = Boolean(embedUrl);
 const ariaLabel = isPlayable ? "Play YouTube video" : "YouTube video unavailable";
 ---
 
-<div id="youtube-frame" class:list={["relative aspect-video h-full w-full cursor-pointer overflow-hidden", className]} data-youtube-video>
-  <youtube-button>
+<youtube-button data-idx={idx}>
+  <div id=`youtube-frame-${idx}` class:list={["relative aspect-video h-full w-full cursor-pointer overflow-hidden", className]} data-youtube-video>
     <button
       type="button"
       class="absolute inset-0 aspect-video h-full w-full overflow-hidden"
@@ -41,47 +42,48 @@ const ariaLabel = isPlayable ? "Play YouTube video" : "YouTube video unavailable
         <Play class="h-40 w-40 text-white opacity-70 transition-opacity group-hover:opacity-100" />
       </span>
     </button>
-  </youtube-button>
-</div>
+  </div>
+</youtube-button>
 
 <script>
-  customElements.define(
-    'youtube-button',
-    class extends HTMLElement {
-      connectedCallback() {
-        const root = document.getElementById("youtube-frame");
-        if (!(root instanceof HTMLElement)) return;
+  class YouTubeButton extends HTMLElement {
+    connectedCallback() {
+      const idx = this.dataset.idx;
 
-        const trigger = document.querySelector("[data-youtube-trigger]");
-        if (!(trigger instanceof HTMLButtonElement)) return;
+      const root = document.getElementById(`youtube-frame-${idx}`);
+      if (!(root instanceof HTMLElement)) return;
 
-        const embedUrl = trigger.dataset.embedUrl?.toString() || '';
-        const title = trigger.dataset.videoTitle?.toString() || '';
-        if (!embedUrl) return;
+      const trigger = root.querySelector("[data-youtube-trigger]");
+      if (!(trigger instanceof HTMLButtonElement)) return;
 
-        const activate = () => {
-          const iframe = document.createElement("iframe");
-          iframe.src = embedUrl;
-          iframe.title = title;
-          iframe.allow =
-            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-          iframe.allowFullscreen = true;
-          iframe.loading = "lazy";
-          iframe.referrerPolicy = "strict-origin-when-cross-origin";
-          iframe.classList.add("w-full", "h-full", "absolute", "inset-0");
+      const embedUrl = trigger.dataset.embedUrl?.toString() || '';
+      const title = trigger.dataset.videoTitle?.toString() || '';
+      if (!embedUrl) return;
 
-          root.replaceChildren(iframe);
-        };
+      const activate = () => {
+        const iframe = document.createElement("iframe");
+        iframe.src = embedUrl;
+        iframe.title = title;
+        iframe.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        iframe.loading = "lazy";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.classList.add("w-full", "h-full", "absolute", "inset-0");
 
-        // click and accessibility activation
-        trigger.addEventListener("click", activate, { once: true });
-        trigger.addEventListener("keydown", (event) => {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            activate();
-          }
-        }, { once: true });
-      }
+        root.replaceChildren(iframe);
+      };
+
+      // click and accessibility activation
+      trigger.addEventListener("click", activate, { once: true });
+      trigger.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          activate();
+        }
+      }, { once: true });
     }
-  );
+  }
+
+  customElements.define("youtube-button", YouTubeButton);
 </script>
