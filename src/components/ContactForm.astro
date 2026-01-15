@@ -97,6 +97,8 @@ const { icon } = Astro.props;
     const observerSuccess = new MutationObserver(mutations => {
       mutations.forEach(mutation => {
         const target = mutation.target;
+        if (!(target instanceof Element)) return;
+
         if (!target.classList.contains('hidden')) {
           console.log("Resetting Turnstile");
           resetTurnstile();
@@ -110,6 +112,8 @@ const { icon } = Astro.props;
     const observerError = new MutationObserver(mutations => {
       mutations.forEach(mutation => {
         const target = mutation.target;
+        if (!(target instanceof Element)) return;
+
         if (!target.classList.contains('hidden')) {
           console.log("Resetting Turnstile");
           resetTurnstile();
