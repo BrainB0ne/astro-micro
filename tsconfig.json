@@ -4,8 +4,6 @@
   "exclude": ["dist"],
   "compilerOptions": {
     "strict": true,
-    "allowImportingTsExtensions": true,
-    "allowJs": true,
     "baseUrl": ".",
     "paths": {
       "@*": ["./src/*"]
