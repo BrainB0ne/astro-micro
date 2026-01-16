@@ -3,9 +3,10 @@ type Props = {
   href: string;
   external?: boolean;
   icon: string;
+  loading?: "eager" | "lazy" | null | undefined;
 };
 
-const { href, external, icon } = Astro.props;
+const { href, external, icon, loading="eager" } = Astro.props;
 ---
 
 <a
@@ -17,7 +18,8 @@ const { href, external, icon } = Astro.props;
   <img
     class="absolute left-2 top-1/2 size-4 -translate-y-1/2 fill-none stroke-current stroke-2"
     src=`/svg/${icon}.svg`
-    alt=`${icon}` />
+    alt=`${icon}`
+    loading={loading} />
   <div class="text-sm">
     <slot />
   </div>
