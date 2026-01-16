@@ -67,12 +67,12 @@ const { icon } = Astro.props;
       if (widgetSelector && turnstile && typeof turnstile.reset === "function") {
         turnstile.reset(widgetSelector);
         console.log("Turnstile reset");
-        } else {
-          console.log("Turnstile or reset function is undefined");
-        }
-      } catch (e) {
-        console.error("Error resetting Turnstile:", e);
+      } else {
+        console.error("Turnstile or reset function is undefined");
       }
+    } catch (e) {
+      console.error("Error resetting Turnstile:", e);
+    }
   }
 
   function turnstileRender() {
@@ -86,8 +86,17 @@ const { icon } = Astro.props;
       turnstile.render('#cf-turnstile', {
         sitekey: '0x4AAAAAACLk6qj_DXmpvUoj', // '1x00000000000000000000AA',
         callback: function(token) {
-          console.log(`Challenge Success: ${token}`);
+          console.log('Challenge Success:', token);
         },
+        'error-callback': function(errorCode) {
+          console.log('Challenge Error:', errorCode);
+        },
+        'expired-callback': function() {
+          console.log('Token expired');
+        },
+        'timeout-callback': function() {
+          console.log('Challenge timed out');
+        }
       });
     }
     catch(e) {
@@ -100,7 +109,6 @@ const { icon } = Astro.props;
         if (!(target instanceof Element)) return;
 
         if (!target.classList.contains('hidden')) {
-          console.log("Resetting Turnstile");
           resetTurnstile();
         }
       });
@@ -115,7 +123,6 @@ const { icon } = Astro.props;
         if (!(target instanceof Element)) return;
 
         if (!target.classList.contains('hidden')) {
-          console.log("Resetting Turnstile");
           resetTurnstile();
         }
       });
