@@ -8,7 +8,16 @@ import favicons from "astro-favicons";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.brainbytez.eu",
-  integrations: [sitemap(), mdx(), pagefind(), favicons()],
+  integrations: [
+    sitemap(),
+    mdx(),
+    pagefind(),
+    favicons({
+      name: "BrainByteZ",
+      short_name: "0xBB",
+      manifest: {},
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
