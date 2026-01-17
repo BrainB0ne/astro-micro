@@ -298,6 +298,10 @@ const { icon } = Astro.props;
         const message = formData.get('message')?.toString() || '';
         const cf_turnstile_response = formData.get('cf-turnstile-response')?.toString() || '';
 
+        if (!cf_turnstile_response) {
+          throw new Error('Failed to send message: missing Turnstile response');
+        }
+
         // Send via Telegram
         const result = await sendTelegramMessage(name, email, subject, message, cf_turnstile_response);
 
