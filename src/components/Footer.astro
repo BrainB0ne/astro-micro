@@ -3,6 +3,8 @@ import Container from "@components/Container.astro";
 import { SITE } from "@consts";
 import BackToTop from "@components/BackToTop.astro";
 import Link from "@components/Link.astro";
+
+const rssURL = (new URL(SITE.RSS, Astro.site)).toString();
 ---
 
 <footer class="animate">
@@ -16,7 +18,7 @@ import Link from "@components/Link.astro";
       <div class="flex items-center gap-1.5">
         <Link underline={false} href="/copyright">&copy; {new Date().getFullYear()} • {SITE.TITLE} 😎</Link>
         {"/"}
-        <Link external underline={false} href={SITE.RSS}>
+        <Link external underline={false} href={rssURL}>
           <img
             class="size-4"
             src="/svg/rss.svg"

@@ -67,6 +67,7 @@ interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const rssURL = (new URL(SITE.RSS, Astro.site)).toString();
 
 const { title, description, image = "/images/logo.png" } = Astro.props;
 ---
@@ -77,7 +78,7 @@ const { title, description, image = "/images/logo.png" } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 <!-- RSS Feed URL -->
-<link rel="alternate" type="application/rss+xml" title=`${SITE.TITLE} Blog RSS Feed` href={SITE.RSS} />
+<link rel="alternate" type="application/rss+xml" title=`${SITE.TITLE} Blog RSS Feed` href={rssURL} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
