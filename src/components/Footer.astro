@@ -16,7 +16,7 @@ const rssURL = (new URL(SITE.RSS, Astro.site)).toString();
     </div>
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-1.5">
-        <Link underline={false} href="/copyright">&copy; {new Date().getFullYear()} • {SITE.TITLE} 😎</Link>
+        <Link underline={false} href="/copyright">&copy; {SITE.COPYRIGHT_YEAR_FIRSTPUB}-{new Date().getFullYear()} • {SITE.TITLE}</Link>
         {"/"}
         <Link external underline={false} href={rssURL}>
           <img
