@@ -80,6 +80,11 @@ export const DONATIONS: Donations = [
     ICON: "bmc-logo",
     HREF: "https://buymeacoffee.com/brainbytez",
   },
+  {
+    NAME: "Ko-fi",
+    ICON: "kofi",
+    HREF: "https://ko-fi.com/brainbytez",
+  },
 ];
 
 export const CRYPTOS: Cryptos = [
