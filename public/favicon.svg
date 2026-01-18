@@ -7,7 +7,7 @@
    viewBox="0 0 135.46666 135.46667"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="favicon.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -23,15 +23,16 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="2.0535658"
-     inkscape:cx="434.60989"
-     inkscape:cy="126.36556"
+     inkscape:zoom="1.0267829"
+     inkscape:cx="434.36641"
+     inkscape:cy="223.51366"
      inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="1912"
-     inkscape:window-y="-8"
+     inkscape:window-height="1008"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2" />
+     inkscape:current-layer="layer2"
+     showgrid="false" />
   <defs
      id="defs1" />
   <g
@@ -40,13 +41,13 @@
      inkscape:label="Layer 2"
      style="fill:#ffffff">
     <rect
-       style="fill:#ffffff;stroke-width:0.2642"
+       style="fill:#ffffff;stroke-width:0.283775"
        id="rect1"
-       width="131.03326"
-       height="131.65736"
-       x="1.7929637"
-       y="1.8108717"
-       transform="matrix(1,0,0.00759882,0.99997113,0,0)" />
+       width="141.05235"
+       height="141.10118"
+       x="-3.0604112"
+       y="-2.6715372"
+       transform="matrix(1,0,0.00763236,0.99997087,0,0)" />
   </g>
   <g
      inkscape:label="Layer 1"
