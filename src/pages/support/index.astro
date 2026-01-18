@@ -36,6 +36,7 @@ import LinkButton from "@components/LinkButton.astro";
             {
               CRYPTOS.map((CRYPTO) => (
                 <CryptoButton
+                  uid={CRYPTO.ID}
                   type={CRYPTO.TYPE}
                   address={CRYPTO.ADDRESS}
                   icon={CRYPTO.ICON}
