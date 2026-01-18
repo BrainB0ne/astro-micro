@@ -17,7 +17,7 @@
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
     "@fontsource/fira-code": "^5.2.7",
-    "@fontsource/ubuntu-sans": "^5.2.10",
+    "@fontsource/firago": "^5.2.5",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.11",
     "astro-favicons": "^3.1.5",
