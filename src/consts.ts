@@ -56,6 +56,11 @@ export const SOCIALS: Socials = [
     HREF: "https://bsky.app/profile/brainb0ne.bsky.social",
   },
   {
+    NAME: "Mastodon",
+    ICON: "brand-mastodon",
+    HREF: "https://mastodon.nl/@brainb0ne",
+  },
+  {
     NAME: "Instagram",
     ICON: "brand-instagram",
     HREF: "https://www.instagram.com/brainb0ne",
