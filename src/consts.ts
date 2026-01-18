@@ -61,6 +61,11 @@ export const SOCIALS: Socials = [
     HREF: "https://mastodon.nl/@brainb0ne",
   },
   {
+    NAME: "Threads",
+    ICON: "brand-threads",
+    HREF: "https://www.threads.com/@brainb0ne",
+  },
+  {
     NAME: "Instagram",
     ICON: "brand-instagram",
     HREF: "https://www.instagram.com/brainb0ne",
