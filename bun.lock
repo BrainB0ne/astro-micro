@@ -9,8 +9,8 @@
         "@astrojs/mdx": "^4.3.13",
         "@astrojs/rss": "^4.0.15",
         "@astrojs/sitemap": "^3.7.0",
-        "@fontsource/ubuntu-sans": "^5.2.10",
-        "@fontsource/ubuntu-sans-mono": "^5.2.10",
+        "@fontsource/fira-code": "^5.2.7",
+        "@fontsource/firago": "^5.2.5",
         "@tailwindcss/vite": "^4.1.18",
         "astro": "^5.16.11",
         "astro-favicons": "^3.1.5",
@@ -148,9 +148,9 @@
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.27.0", "", { "os": "win32", "cpu": "x64" }, "sha512-aIitBcjQeyOhMTImhLZmtxfdOcuNRpwlPNmlFKPcHQYPhEssw75Cl1TSXJXpMkzaua9FUetx/4OQKq7eJul5Cg=="],
 
-    "@fontsource/ubuntu-sans": ["@fontsource/ubuntu-sans@5.2.10", "", {}, "sha512-WoKIcxe7HkOOu2YWydcReg04sY1E4k5lhlQfNQxPtcGTCesK8lG+r8cxL2aG54TYKKZ8cr250DIA1FE4PVWX3A=="],
+    "@fontsource/fira-code": ["@fontsource/fira-code@5.2.7", "", {}, "sha512-tnB9NNund9TwIym8/7DMJe573nlPEQb+fKUV5GL8TBYXjIhDvL0D7mgmNVNQUPhXp+R7RylQeiBdkA4EbOHPGQ=="],
 
-    "@fontsource/ubuntu-sans-mono": ["@fontsource/ubuntu-sans-mono@5.2.10", "", {}, "sha512-xVynEXEAODzLLJVcdLfSUJr963odyZmo/3Nq55fy74zXID8Zj9OR4U7xtfLxkEMYz0Z78ukLr4OdXIRUvjPHww=="],
+    "@fontsource/firago": ["@fontsource/firago@5.2.5", "", {}, "sha512-11vSR9Vyh0Tp/ChtheVSsK3yP9UGUUV5xJCdSOE8xNsQH/NZIGF36p0aeFTQ6uzBBaxaVjCGm0LEIFmxAwJoRw=="],
 
     "@img/colour": ["@img/colour@1.0.0", "", {}, "sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw=="],
 

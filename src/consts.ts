@@ -56,6 +56,16 @@ export const SOCIALS: Socials = [
     HREF: "https://bsky.app/profile/brainb0ne.bsky.social",
   },
   {
+    NAME: "Mastodon",
+    ICON: "brand-mastodon",
+    HREF: "https://mastodon.nl/@brainb0ne",
+  },
+  {
+    NAME: "Threads",
+    ICON: "brand-threads",
+    HREF: "https://www.threads.com/@brainb0ne",
+  },
+  {
     NAME: "Instagram",
     ICON: "brand-instagram",
     HREF: "https://www.instagram.com/brainb0ne",
@@ -90,26 +100,31 @@ export const DONATIONS: Donations = [
 
 export const CRYPTOS: Cryptos = [
   {
+    ID: "bitcoin",
     TYPE: "Bitcoin",
     ICON: "currency-bitcoin",
     ADDRESS: "bc1q9zm3f7eq5czccjaz3nz4mp72np7cxxkvkf8vhg",
   },
   {
+    ID: "litecoin",
     TYPE: "Litecoin",
     ICON: "currency-litecoin",
     ADDRESS: "Ldraeacsn4j5St9VpVTAbUfBAVTcZ6gAdX",
   },
   {
+    ID: "ethereum",
     TYPE: "Ethereum",
     ICON: "currency-ethereum",
     ADDRESS: "0x0C9d56844bAd8c89F4dEd725bcE6263A8f5f9B42",
   },
   {
+    ID: "digibyte",
     TYPE: "Digibyte",
     ICON: "currency-digibyte",
     ADDRESS: "D6ZWxrNfDrfZg61XcW6AtC9NXVKnuuViXM",
   },
   {
+    ID: "stellar",
     TYPE: "Stellar",
     ICON: "currency-stellar",
     ADDRESS: "GANGHPDVAAN5M3T6WSCAT43TDXUUZKE6FXJSFGYX4LWRDCVXNCIOBHVS",

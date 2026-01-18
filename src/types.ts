@@ -32,6 +32,7 @@ export type Donations = {
 }[];
 
 export type Cryptos = {
+  ID: string;
   TYPE: string;
   ICON: string;
   ADDRESS: string;
