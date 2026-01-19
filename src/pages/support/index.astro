@@ -3,7 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import { SUPPORT, CRYPTOS, DONATIONS } from "@consts";
 import BackToPrevious from "@components/BackToPrevious.astro";
-import CryptoButton from "@components/CryptoButton.astro";
+import CryptoButtonV2 from "@components/CryptoButtonV2.astro";
 import LinkButton from "@components/LinkButton.astro";
 ---
 
@@ -35,14 +35,14 @@ import LinkButton from "@components/LinkButton.astro";
           <div class="mt-6 flex flex-wrap gap-2 text-nowrap not-prose">
             {
               CRYPTOS.map((CRYPTO) => (
-                <CryptoButton
+                <CryptoButtonV2
                   uid={CRYPTO.ID}
                   type={CRYPTO.TYPE}
                   address={CRYPTO.ADDRESS}
                   icon={CRYPTO.ICON}
                 >
                   {CRYPTO.TYPE}
-                </CryptoButton>
+                </CryptoButtonV2>
               ))
             }
           </div>

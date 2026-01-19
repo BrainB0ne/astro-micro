@@ -1,0 +1,90 @@
+---
+type Props = {
+  uid: string;
+  type: string;
+  address: string;
+  icon: string;
+};
+
+const { uid, type, address, icon } = Astro.props;
+---
+
+<button
+  class="not-prose group relative flex w-fit flex-nowrap text-sm rounded-sm border border-black/15 py-1.5 pl-7 pr-3 hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+  onclick={`dialog_${uid}.showModal()`}>
+    <img 
+      class="absolute left-2 top-1/2 size-4 -translate-y-1/2 fill-none stroke-current stroke-2"
+      src=`/svg/${icon}.svg`
+      alt=`${type}` />
+    {type}
+</button>
+
+<dialog id=`dialog_${uid}` class="d-modal d-modal-middle">
+  <div class="d-modal-box w-fit max-w-(--breakpoint-md) text-sm">
+    <h3 class="text-lg font-bold">Thanks for your support!</h3>
+    <p class="py-4 text-wrap">
+      To donate, please copy-paste the {type} address in your {type} wallet.<br><br>
+      1. Select the {type} address below, right-click and select 'Copy'.<br>
+      2. Or Click the "Copy to Clipboard" button.<br>
+      3. Right-click the address field in your {type} wallet and select 'Paste'.
+    </p>
+    <div class="py-2">{type} Address</div>
+    <input type="text" value={address} id=`address_${uid}` name="address" class="w-full px-2 py-1.5 rounded-sm border border-black/15 dark:border-white/20" readonly />
+    <div class="py-4 flex justify-center-safe">
+      <copy-button data-uid={uid}>
+        <button
+          id=`copy-button-${uid}`
+          class="not-prose group relative flex w-fit flex-nowrap text-sm rounded-sm border border-black/15 py-1.5 pl-2.5 pr-3 hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+        >📋 Copy to Clipboard</button>
+      </copy-button>
+    </div>
+    <div class="d-modal-action">
+      <form method="dialog">
+        <button
+          class="not-prose group relative flex w-fit flex-nowrap text-sm rounded-sm border border-black/15 py-1.5 pl-2.5 pr-3 hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+        >❌ Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  class ButtonCopy extends HTMLElement {
+    connectedCallback() {
+      const uid = this.dataset.uid?.toString() || "";
+
+      console.log({uid});
+      const root = document.getElementById(`copy-button-${uid}`);
+      if (!(root instanceof HTMLButtonElement)) return;
+
+      console.log(root);
+
+      const activate = () => {
+        // Get the text field
+        const copyText = document.getElementById(`address_${uid}`);
+        if (!(copyText instanceof HTMLInputElement)) return;
+
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value);
+
+        // Alert the copied text
+        // window.alert("Copied to clipboard: " + copyText.value);
+      };
+
+      // click and accessibility activation
+      root.addEventListener("click", activate, { once: false });
+      root.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          activate();
+        }
+      }, { once: false });
+    }
+  }
+
+  customElements.define("copy-button", ButtonCopy);
+</script>
