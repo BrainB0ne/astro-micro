@@ -1,0 +1,36 @@
+---
+import Modal from './Modal.astro';
+
+type Props = {
+  uid: string;
+  type: string;
+  address: string;
+  icon: string;
+};
+
+const { uid, type, address, icon } = Astro.props;
+
+---
+
+<Modal id=`dialog${uid}` open={type} type={type} icon={icon}>
+  <main slot="main">
+    <p>
+      To donate, please copy-paste my {type} address to your {type} software,<br>
+      I cannot do it automatically.<br>
+      To copy it, right-click the selected text and select 'Copy'.<br>
+      Then right-click the address field in your {type} software and select 'Paste'.
+    </p>
+    <hr>
+    <br>
+    <p>{type} Address:<br>
+    <hr>
+      {address}
+    <hr>
+    </p>
+  </main>
+  <button 
+    slot="close"
+    class="not-prose group relative flex w-fit flex-nowrap text-sm rounded-sm border border-black/15 py-1.5 pl-3 pr-3 hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">
+      Close
+  </button>
+</Modal>
