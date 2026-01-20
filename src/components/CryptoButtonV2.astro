@@ -19,24 +19,22 @@ const { uid, type, address, icon } = Astro.props;
     {type}
 </button>
 
-<dialog id=`dialog_${uid}` class="d-modal">
-  <div class="d-modal-box w-fit max-w-2xl text-sm">
+<dialog id=`dialog_${uid}` class="d-modal d-modal-middle">
+  <div class="d-modal-box w-fit max-w-(--breakpoint-md) text-sm">
     <h3 class="text-lg font-bold">Thanks for your support!</h3>
-    <p class="py-4">
+    <p class="py-4 text-wrap">
       To donate, please copy-paste the {type} address in your {type} wallet.<br><br>
       1. Select the {type} address below, right-click and select 'Copy'.<br>
       2. Right-click the address field in your {type} wallet and select 'Paste'.
     </p>
     <hr>
     <br>
-    <p>
-      {type} Address:<br>
-      <b>{address}</b>
-    </p>
+    <p>{type} Address</p>
+    <label class="d-input w-fit">{address}</label>
     <div class="d-modal-action">
       <form method="dialog">
         <button
-          class="not-prose group relative flex w-fit flex-nowrap text-sm rounded-sm border border-black/15 py-1.5 pl-2 pr-3 hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+          class="not-prose group relative flex w-fit flex-nowrap text-sm rounded-sm border border-black/15 py-1.5 pl-3 pr-3 hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
         >❌ Close</button>
       </form>
     </div>
