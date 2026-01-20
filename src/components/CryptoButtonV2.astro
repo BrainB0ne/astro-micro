@@ -27,10 +27,9 @@ const { uid, type, address, icon } = Astro.props;
       1. Select the {type} address below, right-click and select 'Copy'.<br>
       2. Right-click the address field in your {type} wallet and select 'Paste'.
     </p>
-    <hr>
     <br>
     <p>{type} Address</p>
-    <label class="d-input w-fit">{address}</label>
+    <label class="d-input w-fit border-black/15 dark:border-white/20">{address}</label>
     <div class="d-modal-action">
       <form method="dialog">
         <button
