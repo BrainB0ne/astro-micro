@@ -9,6 +9,24 @@
   logs: true;
 }
 
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-base-100: oklch(97% 0 0);
+  --color-base-200: oklch(95% 0 0);
+  --color-base-300: oklch(93% 0 0);
+  --color-base-content: oklch(25% 0 0);
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: false;
+  --color-base-100: oklch(20% 0 0);
+  --color-base-200: oklch(18% 0 0);
+  --color-base-300: oklch(16% 0 0);
+  --color-base-content: oklch(75% 0 0);
+}
+
 @plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
