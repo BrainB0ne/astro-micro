@@ -6,7 +6,7 @@
   include: ;
   exclude: properties;
   prefix: "d-";
-  logs: true;
+  logs: false;
 }
 
 @plugin "daisyui/theme" {
