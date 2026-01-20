@@ -25,10 +25,10 @@ const { uid, type, address, icon } = Astro.props;
     <p class="py-4 text-wrap">
       To donate, please copy-paste the {type} address in your {type} wallet.<br><br>
       1. Select the {type} address below, right-click and select 'Copy'.<br>
-      2. Right-click the address field in your {type} wallet and select 'Paste'.
+      2. Or Click the "Copy to Clipboard" button.<br>
+      3. Right-click the address field in your {type} wallet and select 'Paste'.
     </p>
     <div class="py-2">{type} Address</div>
-    <!-- <input type="text" value={address} id=`address_${uid}` class="d-input w-full border border-black/15 dark:border-white/20" readonly /> -->
     <input type="text" value={address} id=`address_${uid}` name="address" class="w-full px-2 py-1.5 rounded-sm border border-black/15 dark:border-white/20" readonly />
     <div class="py-4 flex justify-center-safe">
       <copy-button data-uid={uid}>
@@ -72,7 +72,7 @@ const { uid, type, address, icon } = Astro.props;
         navigator.clipboard.writeText(copyText.value);
 
         // Alert the copied text
-        // alert("Copied to clipboard: " + copyText.value);
+        // window.alert("Copied to clipboard: " + copyText.value);
       };
 
       // click and accessibility activation
