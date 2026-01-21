@@ -19,8 +19,8 @@ const { uid, type, address, icon } = Astro.props;
     {type}
 </button>
 
-<dialog id=`dialog_${uid}` class="d-modal d-modal-middle">
-  <div class="d-modal-box w-fit max-w-(--breakpoint-md) text-sm">
+<dialog id=`dialog_${uid}` class="du-modal du-modal-middle">
+  <div class="du-modal-box w-fit max-w-(--breakpoint-md) text-sm">
     <h3 class="text-lg font-bold">Thanks for your support!</h3>
     <p class="py-4 text-wrap">
       To donate, please copy-paste the {type} address in your {type} wallet.<br><br>
@@ -40,7 +40,7 @@ const { uid, type, address, icon } = Astro.props;
         />
       </copy-button>
     </div>
-    <div class="d-modal-action">
+    <div class="du-modal-action">
       <form method="dialog">
         <button
           class="not-prose group relative flex w-fit flex-nowrap text-sm rounded-sm border border-black/15 py-1.5 pl-2.5 pr-3 hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
