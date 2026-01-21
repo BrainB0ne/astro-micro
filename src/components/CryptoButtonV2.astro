@@ -35,7 +35,7 @@ const { uid, type, address, icon } = Astro.props;
         <button
           id=`copy-button-${uid}`
           class="not-prose group relative flex w-fit flex-nowrap text-sm rounded-sm border border-black/15 py-1.5 pl-2.5 pr-3 hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
-        >📋 Copy to Clipboard</button>
+        >📋 Copy Address to Clipboard</button>
       </copy-button>
     </div>
     <div class="d-modal-action">
@@ -71,8 +71,8 @@ const { uid, type, address, icon } = Astro.props;
         // Copy the text inside the text field
         navigator.clipboard.writeText(copyText.value);
 
-        // Alert the copied text
-        // window.alert("Copied to clipboard: " + copyText.value);
+        // Change button text to "Copied Address to Clipboard"
+        root.innerHTML = "✅ Address Copied to Clipboard";
       };
 
       // click and accessibility activation
