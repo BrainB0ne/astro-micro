@@ -9,8 +9,8 @@
         "@astrojs/mdx": "^4.3.13",
         "@astrojs/rss": "^4.0.15",
         "@astrojs/sitemap": "^3.7.0",
-        "@fontsource/fira-code": "^5.2.7",
-        "@fontsource/firago": "^5.2.5",
+        "@fontsource-variable/noto-sans": "^5.2.10",
+        "@fontsource-variable/noto-sans-mono": "^5.2.10",
         "@tailwindcss/vite": "^4.1.18",
         "astro": "^5.16.11",
         "astro-favicons": "^3.1.5",
@@ -149,9 +149,9 @@
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.27.0", "", { "os": "win32", "cpu": "x64" }, "sha512-aIitBcjQeyOhMTImhLZmtxfdOcuNRpwlPNmlFKPcHQYPhEssw75Cl1TSXJXpMkzaua9FUetx/4OQKq7eJul5Cg=="],
 
-    "@fontsource/fira-code": ["@fontsource/fira-code@5.2.7", "", {}, "sha512-tnB9NNund9TwIym8/7DMJe573nlPEQb+fKUV5GL8TBYXjIhDvL0D7mgmNVNQUPhXp+R7RylQeiBdkA4EbOHPGQ=="],
+    "@fontsource-variable/noto-sans": ["@fontsource-variable/noto-sans@5.2.10", "", {}, "sha512-wyFgKkFu7jki5kEL8qv7avjQ8rxHX0J/nhLWvbR9T0hOH1HRKZEvb9EW9lMjZfWHHfEzKkYf5J+NadwgCS7TXA=="],
 
-    "@fontsource/firago": ["@fontsource/firago@5.2.5", "", {}, "sha512-11vSR9Vyh0Tp/ChtheVSsK3yP9UGUUV5xJCdSOE8xNsQH/NZIGF36p0aeFTQ6uzBBaxaVjCGm0LEIFmxAwJoRw=="],
+    "@fontsource-variable/noto-sans-mono": ["@fontsource-variable/noto-sans-mono@5.2.10", "", {}, "sha512-N8w7TRt24aD17P4eV9GDNiV4M5FSbeZ91dfWPtlTi5EvH15KAyjGiC7rvXnG3VTo/nb6gQuIXNlTDgH3cz652g=="],
 
     "@img/colour": ["@img/colour@1.0.0", "", {}, "sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw=="],
 
