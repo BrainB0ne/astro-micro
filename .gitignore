@@ -37,3 +37,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# vs-code settings file
+.vscode/settings.json
+
