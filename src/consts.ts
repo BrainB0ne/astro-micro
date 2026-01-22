@@ -66,9 +66,9 @@ export const SOCIALS: Socials = [
     HREF: "https://www.threads.com/@brainb0ne",
   },
   {
-    NAME: "Instagram",
-    ICON: "brand-instagram",
-    HREF: "https://www.instagram.com/brainb0ne",
+    NAME: "Telegram",
+    ICON: "brand-telegram",
+    HREF: "https://t.me/brainbytez",
   },
 ];
 
