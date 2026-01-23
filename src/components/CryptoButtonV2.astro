@@ -73,11 +73,18 @@ const { uid, type, address, icon } = Astro.props;
         copyText.setSelectionRange(0, 99999); // For mobile devices
 
         // Copy the text inside the text field
-        navigator.clipboard.writeText(copyText.value);
+        const response = navigator.clipboard.writeText(copyText.value);
 
-        // Change button text to "Copied Address to Clipboard"
-        if (root.innerHTML !== copiedButtonText) {
-          root.innerHTML = copiedButtonText;
+        if (!response) {
+          console.error("[Clipboard] Copy to Clipboard failed");
+          return;
+        }
+        else {
+          console.log("[Clipboard] Address copied to Clipboard");
+          if (root.innerHTML !== copiedButtonText) {
+            // Change button text to "Copied Address to Clipboard"
+            root.innerHTML = copiedButtonText;
+          }
         }
       };
 
@@ -106,8 +113,8 @@ const { uid, type, address, icon } = Astro.props;
       if (!(copyButton instanceof HTMLButtonElement)) return;
 
       const activate = () => {
-        // Reset button text
         if (copyButton.innerHTML !== initialButtonText) {
+          // Reset button text
           copyButton.innerHTML = initialButtonText;
         }
       };
