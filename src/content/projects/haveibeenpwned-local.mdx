@@ -9,6 +9,9 @@ import Link from "@components/Link.astro";
 import LinkButton from "@components/LinkButton.astro";
 import DownloadLinkButton from "@components/DownloadLinkButton.astro";
 import Callout from "@components/Callout.astro";
+import { Image } from "astro:assets";
+import screenshotImage1 from "images/haveibeenpwned-local-password-check.png";
+import screenshotImage2 from "images/haveibeenpwned-local-password-check-linux.png";
 
 ## 👋 Introduction
 HaveIBeenPwned-Local is a Qt GUI application to check passwords against a locally stored HaveIBeenPwned SQLite Database.
@@ -27,7 +30,7 @@ Then, download all NTLM hashes to a single txt file called pwnedpasswords_ntlm.t
 haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm
 ```
 
-_Menu -> Database -> Convert_ starts a "Text to SQLite" conversion process with hibp2sqlite.
+_File -> Database -> Convert_ starts a "Text to SQLite" conversion process with hibp2sqlite.
 
 <Callout type="warning">
 **Make sure there is enough free space on your drive since this file is at the time of writing ~70 GB.**
@@ -47,9 +50,24 @@ since it gave me the idea to create this tool.
   - Qt SDK 6.9.3 / Qt Creator 18
 
 ## 🖼️ Screenshots
-![haveibeenpwned-local-password-check](images/haveibeenpwned-local-password-check.png)
-
-![haveibeenpwned-local-password-check-linux](images/haveibeenpwned-local-password-check-linux.png)
+<div class="du-carousel w-full">
+  <div id="item1" class="du-carousel-item w-full">
+    <Image
+      src={screenshotImage1}
+      class="w-fit"
+      alt="haveibeenpwned-local-password-check" />
+  </div>
+  <div id="item2" class="du-carousel-item w-full">
+    <Image
+      src={screenshotImage2}
+      class="w-fit"
+      alt="haveibeenpwned-local-password-check-linux" />
+  </div>
+</div>
+<div class="flex w-full justify-center gap-2 py-2">
+  <a href="#item1" class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">1</a>
+  <a href="#item2" class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">2</a>
+</div>
 
 ## ⚠️ Disclaimer
 <Callout type="warning">

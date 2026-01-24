@@ -8,6 +8,9 @@ draft: false
 import LinkButton from "@components/LinkButton.astro";
 import DownloadLinkButton from "@components/DownloadLinkButton.astro";
 import Link from "@components/Link.astro";
+import { Image } from "astro:assets";
+import screenshotImage1 from "images/screenshot_spotwebfc_v020.png";
+import screenshotImage2 from "images/spotwebfc-ubuntu-x64-480x315.png";
 
 ## 🇳🇱 👋 Introductie
 Spotweb Filter Creator is een tool om het aanmaken van <Link external href="https://github.com/spotweb">Spotweb</Link> Filter XML bestanden te vereenvoudigen.
@@ -37,9 +40,24 @@ If all filters satisfactorily have been created, it can be saved in XML format w
 The saved filter file (MyFilters.xml) can then be uploaded to Spotweb at the filter preferences.
 
 ## 🖼️ Screenshots
-![Spotweb Filter Creator Screenshot](images/screenshot_spotwebfc_v020.png)
-
-![Spotweb Filter Creator Screenshot (Ubuntu 12.04-x64)](images/spotwebfc-ubuntu-x64-480x315.png)
+<div class="du-carousel w-full">
+  <div id="item1" class="du-carousel-item w-full">
+    <Image
+      src={screenshotImage1}
+      class="w-fit"
+      alt="Spotweb Filter Creator Screenshot" />
+  </div>
+  <div id="item2" class="du-carousel-item w-full">
+    <Image
+      src={screenshotImage2}
+      class="w-fit"
+      alt="Spotweb Filter Creator Screenshot (Ubuntu 12.04-x64)" />
+  </div>
+</div>
+<div class="flex w-full justify-center gap-2 py-2">
+  <a href="#item1" class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">1</a>
+  <a href="#item2" class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">2</a>
+</div>
 
 ## 📥 Downloads
 
