@@ -9,6 +9,8 @@ import type { CollectionEntry } from "astro:content";
 import Callout from "@components/Callout.astro";
 import LinkCloud from "@components/LinkCloud.astro";
 import SkillCloud from "@components/SkillCloud.astro";
+import { Image } from 'astro:assets';
+import assetsLogoImage from '../assets/logo.png';
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -36,7 +38,7 @@ const projects: CollectionEntry<"projects">[] = (
               <p>
                 <div class="du-avatar">
                   <div class="w-48 rounded-full">
-                    <img src="/images/logo.png" />
+                    <Image src={assetsLogoImage} alt="BrainByteZ Logo" />
                   </div>
                 </div>
               </p>
