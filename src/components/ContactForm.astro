@@ -10,30 +10,41 @@ const { icon } = Astro.props;
   <section class="animate space-y-4">
     <!-- Name Field -->
     <div class="form-group flex flex-wrap gap-1">
-      <label for="name">Name *</label>
-      <input type="text" id="name" name="name" class="w-full px-2 py-1 rounded-sm border border-black/15 dark:border-white/20" required />
-      <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
+      <label class="du-input w-full rounded-sm border border-black/15 dark:border-white/20">
+        Name
+        <input type="text" id="name" name="name" class="grow" placeholder="John Doe" required />
+        <span class="du-badge du-badge-soft du-badge-xs">Required</span>
+        <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
+      </label>
     </div>
 
     <!-- Email Field -->
     <div class="form-group flex flex-wrap gap-1">
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="email" class="w-full px-2 py-1 rounded-sm border border-black/15 dark:border-white/20" required />
-      <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
+      <label class="du-input w-full rounded-sm border border-black/15 dark:border-white/20">
+        E-mail
+        <input type="email" id="email" name="email" class="grow" placeholder="john.doe@yourdomain.com" required />
+        <span class="du-badge du-badge-soft du-badge-xs">Required</span>
+        <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
+      </label>
     </div>
 
     <!-- Subject Field -->
     <div class="form-group flex flex-wrap gap-1">
-      <label for="subject">Subject *</label>
-      <input type="text" id="subject" name="subject" class="w-full px-2 py-1 rounded-sm border border-black/15 dark:border-white/20" required />
-      <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
+      <label class="du-input w-full rounded-sm border border-black/15 dark:border-white/20">
+        Subject
+        <input type="text" id="subject" name="subject" class="grow" placeholder="I have a question about ..." required />
+        <span class="du-badge du-badge-soft du-badge-xs">Required</span>
+        <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
+      </label>
     </div>
 
     <!-- Message Field -->
     <div class="form-group flex flex-wrap gap-1">
-      <label for="message">Message *</label>
-      <textarea id="message" name="message" rows="6" class="w-full px-2 py-1 rounded-sm border border-black/15 dark:border-white/20" required></textarea>
-      <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
+      <fieldset class="du-fieldset w-full">
+        <textarea id="message" name="message" rows="6" class="du-textarea w-full rounded-sm border border-black/15 dark:border-white/20" placeholder="Message" required />
+        <span class="du-badge du-badge-soft du-badge-xs">Required</span>
+        <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
+      </fieldset>
     </div>
 
     <div id="cf-turnstile" />
