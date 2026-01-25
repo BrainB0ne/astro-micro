@@ -6,7 +6,7 @@
   Permissions-Policy: interest-cohort=()
 
 https://:project.pages.dev/*
-  Access-Control-Allow-Origin: https://staging.:project.pages.dev/
+  Access-Control-Allow-Origin: https://dev.:project.pages.dev/
 
 /_astro/*
   Cache-Control: public, max-age=31556952, immutable
