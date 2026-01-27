@@ -36,9 +36,11 @@ const { icon } = Astro.props;
       <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
     </div>
 
-    <div id="cf-turnstile" data-theme="auto" data-size="flexible"/>
-    <!-- Hidden field automatically added: -->
-    <!-- <input type="hidden" name="cf-turnstile-response" value="TOKEN_VALUE" /> -->
+    <div style="max-width: 768px;">
+      <div id="cf-turnstile" data-theme="auto" data-size="flexible"></div>
+      <!-- Hidden field automatically added: -->
+      <!-- <input type="hidden" name="cf-turnstile-response" value="TOKEN_VALUE" /> -->
+    </div>
 
     <!-- Submit Button -->
     <button type="submit" id="submit-btn" class="group relative flex w-fit flex-nowrap rounded-sm border border-black/15 py-1.5 pl-8 pr-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">
