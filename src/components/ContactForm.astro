@@ -8,55 +8,62 @@ const { icon } = Astro.props;
 
 <form id="contact-form">
   <section class="animate space-y-4">
-    <!-- Name Field -->
-    <div class="form-group flex flex-wrap gap-1">
-      <label for="name">Name *</label>
-      <input type="text" id="name" name="name" placeholder="User" class="w-full px-2 py-1 rounded-sm border border-black/15 dark:border-white/20" required />
-      <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
-    </div>
+    <div class="du-card bg-base-100 shadow-sm">
+      <div class="du-card-body">
+        <h2 class="du-card-title font-semibold text-black dark:text-white">Contact Form</h2>
+        <!-- Name Field -->
+        <div class="form-group flex flex-wrap gap-1">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" placeholder="User" class="w-full px-2 py-1 rounded-sm border border-black/15 dark:border-white/20" required />
+          <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
+        </div>
 
-    <!-- Email Field -->
-    <div class="form-group flex flex-wrap gap-1">
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="email" placeholder="user@example.com" class="w-full px-2 py-1 rounded-sm border border-black/15 dark:border-white/20" required />
-      <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
-    </div>
+        <!-- Email Field -->
+        <div class="form-group flex flex-wrap gap-1">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="user@example.com" class="w-full px-2 py-1 rounded-sm border border-black/15 dark:border-white/20" required />
+          <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
+        </div>
 
-    <!-- Subject Field -->
-    <div class="form-group flex flex-wrap gap-1">
-      <label for="subject">Subject *</label>
-      <input type="text" id="subject" name="subject" placeholder="I have a question about ..." class="w-full px-2 py-1 rounded-sm border border-black/15 dark:border-white/20" required />
-      <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
-    </div>
+        <!-- Subject Field -->
+        <div class="form-group flex flex-wrap gap-1">
+          <label for="subject">Subject *</label>
+          <input type="text" id="subject" name="subject" placeholder="I have a question about ..." class="w-full px-2 py-1 rounded-sm border border-black/15 dark:border-white/20" required />
+          <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
+        </div>
 
-    <!-- Message Field -->
-    <div class="form-group flex flex-wrap gap-1">
-      <label for="message">Message *</label>
-      <textarea id="message" name="message" rows="6" placeholder="Write your message here ..." class="w-full px-2 py-1 rounded-sm border border-black/15 dark:border-white/20" required></textarea>
-      <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
-    </div>
+        <!-- Message Field -->
+        <div class="form-group flex flex-wrap gap-1">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="6" placeholder="Write your message here ..." class="w-full px-2 py-1 rounded-sm border border-black/15 dark:border-white/20" required></textarea>
+          <div class="error-message text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))] hidden"></div>
+        </div>
 
-    <div style="max-width: 768px;">
-      <div id="cf-turnstile" data-theme="auto" data-size="flexible"></div>
-      <!-- Hidden field automatically added: -->
-      <!-- <input type="hidden" name="cf-turnstile-response" value="TOKEN_VALUE" /> -->
-    </div>
+        <div style="max-width: 768px;">
+          <div id="cf-turnstile" data-theme="auto" data-size="flexible"></div>
+          <!-- Hidden field automatically added: -->
+          <!-- <input type="hidden" name="cf-turnstile-response" value="TOKEN_VALUE" /> -->
+        </div>
 
-    <!-- Submit Button -->
-    <button type="submit" id="submit-btn" class="group relative flex w-fit flex-nowrap rounded-sm border border-black/15 py-1.5 pl-8 pr-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">
-    <img
-      class="absolute left-2 top-1/2 size-4 -translate-y-1/2 fill-none stroke-current stroke-2"
-      src=`/svg/${icon}.svg`
-      alt="submit"
-      loading="lazy" />
-      <span class="btn-text text-sm">Send Message</span>
-      <span class="btn-loading text-sm hidden">Sending...</span>
-    </button>
+        <div class="du-card-actions justify-end">
+          <!-- Submit Button -->
+          <button type="submit" id="submit-btn" class="group relative flex w-fit flex-nowrap rounded-sm border border-black/15 py-1.5 pl-8 pr-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">
+          <img
+            class="absolute left-2 top-1/2 size-4 -translate-y-1/2 fill-none stroke-current stroke-2"
+            src=`/svg/${icon}.svg`
+            alt="submit"
+            loading="lazy" />
+            <span class="btn-text text-sm">Send Message</span>
+            <span class="btn-loading text-sm hidden">Sending...</span>
+          </button>
+        </div>
 
-    <!-- Status Messages -->
-    <div id="form-success" class="hidden u-form-send-success text-sm text-[light-dark(var(--color-green-600),var(--color-green-400))]">Message sent successfully!</div>
-    <div id="form-error" class="hidden u-form-send-error text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))]">
-      <span id="error-text">Failed to send message. Please try again.</span>
+        <!-- Status Messages -->
+        <div id="form-success" class="hidden u-form-send-success text-sm text-[light-dark(var(--color-green-600),var(--color-green-400))]">Message sent successfully!</div>
+        <div id="form-error" class="hidden u-form-send-error text-sm text-[light-dark(var(--color-red-600),var(--color-red-400))]">
+          <span id="error-text">Failed to send message. Please try again.</span>
+        </div>
+      </div>
     </div>
   </section>
 </form>
