@@ -4,13 +4,12 @@ import Container from "@components/Container.astro";
 import { SITE, HOME } from "@consts";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
+import HomeIntro from "@components/HomeIntro.astro";
+import HomeCard from "@components/HomeCard.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-// import Callout from "@components/Callout.astro";
 import LinkCloud from "@components/LinkCloud.astro";
 import SkillCloud from "@components/SkillCloud.astro";
-import { Image } from 'astro:assets';
-import assetsLogoImage from '../assets/logo.png';
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -28,81 +27,13 @@ const projects: CollectionEntry<"projects">[] = (
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <aside data-pagefind-ignore>
-      <div class="du-card du-card-side bg-base-100 shadow-sm">
-        <figure>
-          <Image src={assetsLogoImage} layout="constrained" width={196} alt=`${SITE.TITLE} Logo` />
-        </figure>
-        <div class="du-card-body">
-          <h1 class="du-card-title text-2xl font-semibold">
-            {SITE.TITLE}
-          </h1>
-          <h2 class="du-card-title text-base font-semibold">
-            {HOME.DESCRIPTION} 😎
-          </h2>
-          <p>
-            A new home for
-            <Link external href="https://www.brainbytez.nl">
-              BrainByteZ
-            </Link>
-          </p>
-          <div class="du-card-actions justify-end">
-            <a
-              href="/blog"
-              target="_self"
-              class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
-            >Go to blog</a>
-            <a
-              href="/projects"
-              target="_self"
-              class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
-            >Go to projects</a>
-          </div>
-        </div>
-      </div>
-      <br>
-      <h1 class="text-lg font-semibold">
-        👋 Hello there ...
-      </h1>
       <div class="space-y-16">
         <section>
-          <article class="space-y-4">
-            <span>
-              <!--
-              <p>
-                <Callout type="construction">
-                  Under construction: fasten your seatbelts💺<br>
-                  Things might suddenly break 💔 or change 🔃 during updates.
-                </Callout>
-              </p>
-              -->
-              <p>
-                This site will mostly be focused on tech/geek/gadget/programming stuff.
-              </p>
-              <p>
-                I will also share my applications/projects on this page.<br>
-                Feel free to have a look at the 
-                <Link href="/projects">
-                  projects
-                </Link> section or read through the
-                <Link href="/blog">
-                  blog
-                </Link> where I will announce project updates and write about other (tech) topics.
-              </p>
-              <p>
-                My blog posts are written in English (🇺🇸) and/or Dutch (🇳🇱).
-              </p>
-              <p>
-                All my blog posts (comments excluded) are migrated to this
-                <Link external href="https://astro.build">
-                  Astro
-                </Link> 🚀 static-site.<br>
-                The current theme for this page is the minimalistic
-                <Link external href="https://astro-micro.vercel.app">
-                  Astro Micro
-                </Link> 🔬
-              </p>
-            </span>
-          </article>
+          <HomeCard />
+        </section>
+
+        <section>
+          <HomeIntro />
         </section>
 
         <section class="animate space-y-6">

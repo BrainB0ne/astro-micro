@@ -1,0 +1,38 @@
+---
+import { SITE, HOME } from "@consts";
+import Link from "@components/Link.astro";
+import { Image } from 'astro:assets';
+import assetsLogoImage from '../assets/logo.png';
+---
+
+<div class="du-card du-card-side bg-base-100 shadow-sm">
+  <figure>
+    <Image src={assetsLogoImage} layout="constrained" width={196} alt=`${SITE.TITLE} Logo` />
+  </figure>
+  <div class="du-card-body">
+    <h1 class="du-card-title text-2xl font-semibold">
+      {SITE.TITLE}
+    </h1>
+    <h2 class="du-card-title text-base font-semibold">
+      {HOME.DESCRIPTION} 😎
+    </h2>
+    <p>
+      A new home for
+      <Link external href="https://www.brainbytez.nl">
+        BrainByteZ
+      </Link>
+    </p>
+    <div class="du-card-actions justify-end">
+      <a
+        href="/blog"
+        target="_self"
+        class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+      >Go to blog</a>
+      <a
+        href="/projects"
+        target="_self"
+        class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+      >Go to projects</a>
+    </div>
+  </div>
+</div>
