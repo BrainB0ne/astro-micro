@@ -1,4 +1,4 @@
-import type { Metadata, Site, Socials, Repos, Cryptos, Donations } from "@types";
+import type { Metadata, Site, PrivMessages, Socials, Repos, Cryptos, Donations } from "@types";
 
 export const SITE: Site = {
   TITLE: "BrainByteZ",
@@ -43,6 +43,14 @@ export const COPYRIGHT: Metadata = {
   DESCRIPTION:
     "Copyright information.",
 };
+
+export const PRIVMESSAGES: PrivMessages = [
+  {
+    NAME: "Threema ID",
+    ICON: "brand-threema",
+    HREF: "https://threema.id/EZEX9RP9",
+  },
+];
 
 export const SOCIALS: Socials = [
   {

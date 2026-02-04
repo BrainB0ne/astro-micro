@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import { CONTACT, SOCIALS, REPOS } from "@consts";
+import { CONTACT, SOCIALS, PRIVMESSAGES, REPOS } from "@consts";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import LinkButton from "@components/LinkButton.astro";
 import ContactForm from "@components/ContactForm.astro";
@@ -19,6 +19,22 @@ import ContactForm from "@components/ContactForm.astro";
           <p>
             If you want to contact me, check out the options below.
           </p>
+          <div class="font-semibold text-black dark:text-white">
+            Private Message
+          </div>
+          <div class="flex flex-wrap gap-2 text-nowrap not-prose">
+            {
+              PRIVMESSAGES.map((PRIVMESSAGE) => (
+                <LinkButton
+                  external
+                  href={PRIVMESSAGE.HREF}
+                  icon={PRIVMESSAGE.ICON}
+                >
+                  {PRIVMESSAGE.NAME}
+                </LinkButton>
+              ))
+            }
+          </div>
           <div class="font-semibold text-black dark:text-white">
             Social Media
           </div>

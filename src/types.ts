@@ -13,6 +13,12 @@ export type Metadata = {
   DESCRIPTION: string;
 };
 
+export type PrivMessages = {
+  NAME: string;
+  ICON: string;
+  HREF: string;
+}[];
+
 export type Socials = {
   NAME: string;
   ICON: string;
