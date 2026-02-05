@@ -25,6 +25,7 @@
     "astro-social-share": "^2.2.0",
     "clsx": "^2.1.1",
     "daisyui": "^5.5.17",
+    "flag-icons": "^7.5.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
