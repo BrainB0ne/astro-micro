@@ -24,7 +24,7 @@
     "astro-pagefind": "^1.8.5",
     "astro-social-share": "^2.2.0",
     "clsx": "^2.1.1",
-    "daisyui": "^5.5.17",
+    "daisyui": "^5.5.18",
     "flag-icons": "^7.5.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
@@ -36,6 +36,6 @@
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "wrangler": "^4.62.0"
+    "wrangler": "^4.63.0"
   }
 }
