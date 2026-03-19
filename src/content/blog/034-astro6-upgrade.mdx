@@ -1,0 +1,82 @@
+---
+title: "Upgrade to Astro 6"
+description: "Upgrade from Astro 5.18.1 to Astro 6.0.7"
+date: "2026-03-19"
+tags: 
+  - "announcements"
+  - "astro"
+draft: false
+---
+
+import Link from "@components/Link.astro";
+import Callout from "@components/Callout.astro";
+
+## 👋 Intro
+BrainByteZ has been upgraded to Astro 6. 🚀
+
+The upgrade process went almost flawless, just one vite build warning needs to be resolved.
+
+## 1️⃣ Step 1: Run -> `bunx @astrojs/upgrade`
+
+```
+astro   Integration upgrade in progress.
+
+        @astrojs/check is up to date on v0.9.8
+        @astrojs/rss is up to date on v4.0.17
+        @astrojs/sitemap is up to date on v3.7.1
+        astro will be updated  from v5.18.1 to v6.0.7
+        @astrojs/mdx will be updated  from v4.3.14 to v5.0.2
+
+wait    Some packages have breaking changes. Continue?
+        Yes
+
+check   Be sure to follow the CHANGELOGs.
+        astro Upgrade to Astro v6
+        @astrojs/mdx CHANGELOG
+
+        Installing dependencies with bun...
+
+Houston:
+Can't wait to see what you build.
+```
+
+## 2️⃣ Step 2: Run -> `bunx zod-v3-to-v4`
+
+```
+  Let's migrate Zod from v3 to v4
+
+  Where is your tsconfig.json?
+  tsconfig.json
+
+  All files have been migrated.
+
+  You're all set!
+```
+
+This changed the zod import statement as described in the <Link external href="https://docs.astro.build/en/guides/upgrade-to/v6/">Astro 6 upgrade docs</Link>.
+
+`import { z } from "astro/zod";`
+
+
+The following vite build warning is shown during `bun run build` and still needs to be resolved.
+
+<Callout type="warning">
+[WARN] [vite] "matchHostname", "matchPathname", "matchPort" and "matchProtocol" are imported from external module "@astrojs/internal-helpers/remote" but never used in "node_modules/astro/dist/assets/utils/index.js".
+</Callout>
+
+See GitHub issue: <Link external href="https://github.com/withastro/astro/issues/15957">15957</Link>
+
+```
+Astro: v6.0.7
+Node: v24.13.0
+System: Windows (x64)
+Package Manager: bun
+Output: static
+Adapter: none
+```
+
+Luckily, the warning is purely cosmetic according to Claude 🤖
+
+<Callout type="info">
+The warning is purely cosmetic — it does not affect your build output, runtime behavior, or performance. You can safely ignore it while it exists. It won't cause errors or broken functionality. The build will still complete successfully as shown in the GitHub issue reports.
+</Callout>
