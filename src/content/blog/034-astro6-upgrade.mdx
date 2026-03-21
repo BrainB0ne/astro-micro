@@ -12,9 +12,11 @@ import Link from "@components/Link.astro";
 import Callout from "@components/Callout.astro";
 
 ## 👋 Intro
-BrainByteZ has been upgraded to Astro 6. 🚀
+~~BrainByteZ has been upgraded to Astro 6. 🚀~~
 
 The upgrade process went almost flawless, one vite build warning and one `astro dev` error needs to be resolved.
+
+**Update: I decided to rollback to Astro 5.18.1 until the `astro dev` error is fixed.**
 
 ## 1️⃣ Step 1: Run -> `bunx @astrojs/upgrade`
 
@@ -96,3 +98,5 @@ The warning is purely cosmetic — it does not affect your build output, runtime
   2  |
   3  |  //#region \0@oxc-project+runtime@0.99.0/helpers/typeof.js
 ```
+
+For now I decided to rollback to Astro 5.18.1 until the `astro dev` error is fixed.
