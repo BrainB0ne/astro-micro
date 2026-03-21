@@ -14,7 +14,7 @@ import Callout from "@components/Callout.astro";
 ## 👋 Intro
 BrainByteZ has been upgraded to Astro 6. 🚀
 
-The upgrade process went almost flawless, just one vite build warning needs to be resolved.
+The upgrade process went almost flawless, one vite build warning and one `astro dev` error needs to be resolved.
 
 ## 1️⃣ Step 1: Run -> `bunx @astrojs/upgrade`
 
@@ -80,3 +80,19 @@ Luckily, the warning is purely cosmetic according to Claude 🤖
 <Callout type="info">
 The warning is purely cosmetic — it does not affect your build output, runtime behavior, or performance. You can safely ignore it while it exists. It won't cause errors or broken functionality. The build will still complete successfully as shown in the GitHub issue reports.
 </Callout>
+
+**Update: I discovered that there is also an error when running `astro dev` with `bun run dev` after visiting the web-server in the browser.**
+
+<Callout type="error">
+[ERROR] [vite] Internal server error: Failed to resolve import "@vite/env" from "node_modules/astro/node_modules/vite/dist/client/client.mjs". Does the file exist?
+</Callout>
+
+```
+[ERROR] [vite] Internal server error: Failed to resolve import "@vite/env" from "node_modules/astro/node_modules/vite/dist/client/client.mjs". Does the file exist?
+  Plugin: vite:import-analysis
+  File: node_modules/astro/node_modules/vite/dist/client/client.mjs:1:8
+  1  |  import "@vite/env";
+     |          ^
+  2  |
+  3  |  //#region \0@oxc-project+runtime@0.99.0/helpers/typeof.js
+```
