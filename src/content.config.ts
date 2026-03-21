@@ -1,6 +1,6 @@
-import { defineCollection } from "astro:content";
+import { defineCollection, z } from "astro:content";  // Remove z for Astro 6
 import { glob, file } from 'astro/loaders';
-import { z } from "astro/zod";
+// import { z } from "astro/zod";  // Needed for Astro 6
 
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/blog" }),
