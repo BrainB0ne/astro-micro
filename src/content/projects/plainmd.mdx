@@ -8,6 +8,9 @@ draft: false
 import LinkButton from "@components/LinkButton.astro";
 import DownloadLinkButton from "@components/DownloadLinkButton.astro";
 import Callout from "@components/Callout.astro";
+import { Image } from "astro:assets";
+import screenshotImage1 from "images/plainmd-screenshot-v1-3-0.png";
+import screenshotImage2 from "images/plainmd-screenshot.png";
 
 ## 👋 Introduction
 PlainMD is a simple and elegant **Markdown Viewer** built with **Qt6**.
@@ -29,8 +32,25 @@ The deb/AppImage files are linked with Qt 6.4.2 (System-Qt) on Linux Mint 22.3.
   - Microsoft Visual Studio 2022
   - Qt SDK 6.9.3 / Qt Creator 19
 
-## 🖼️ Screenshot
-![PlainMD Screenshot](images/plainmd-screenshot.png)
+## 🖼️ Screenshots
+<div class="du-carousel w-full">
+  <div id="item1" class="du-carousel-item w-full">
+    <Image
+      src={screenshotImage1}
+      class="w-fit"
+      alt="PlainMD Screenshot v1.3.0" />
+  </div>
+  <div id="item2" class="du-carousel-item w-full">
+    <Image
+      src={screenshotImage2}
+      class="w-fit"
+      alt="PlainMD Screenshot v1.2.0" />
+  </div>
+</div>
+<div class="flex w-full justify-center gap-2 py-2">
+  <a href="#item1" class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">1</a>
+  <a href="#item2" class="rounded-sm border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">2</a>
+</div>
 
 ## ✨ Features
 - **Native Qt6 markdown rendering** - Fast, native rendering without external dependencies
