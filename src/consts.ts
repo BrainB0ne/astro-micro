@@ -11,37 +11,37 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Home",
-  DESCRIPTION: "Just Another Geek Site.",
+  TITLE: "BrainByteZ - Tech Blog & Projects",
+  DESCRIPTION: "Welcome to BrainByteZ - a personal blog featuring articles on software development, hardware hacking, gadgets, and open-source projects.",
 };
 
 export const BLOG: Metadata = {
-  TITLE: "Blog",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
+  TITLE: "Blog - Tech Articles / Tutorials",
+  DESCRIPTION: "Explore articles and tutorials on software development, hardware hacking, open-source tools, retro computing, and tech topics.",
 };
 
 export const PROJECTS: Metadata = {
-  TITLE: "Projects",
+  TITLE: "Projects - Open Source / Software",
   DESCRIPTION:
-    "A collection of my projects with links to repositories and downloads.",
+    "A collection of my projects with links to repositories, downloads, and documentation for open-source tools and applications.",
 };
 
 export const CONTACT: Metadata = {
-  TITLE: "Contact",
+  TITLE: "Contact BrainByteZ",
   DESCRIPTION:
-    "Contact me.",
+    "Get in touch with BrainByteZ for questions, feedback, or just to say hello.",
 };
 
 export const SUPPORT: Metadata = {
-  TITLE: "Support",
+  TITLE: "Support BrainByteZ",
   DESCRIPTION:
-    "Support me.",
+    "Support BrainByteZ through donations, Buy Me a Coffee, Ko-fi, or cryptocurrency to help keep the blog & projects alive.",
 };
 
 export const COPYRIGHT: Metadata = {
-  TITLE: "Copyright",
+  TITLE: "Copyright & Legal",
   DESCRIPTION:
-    "Copyright information.",
+    "Copyright and legal information for BrainByteZ, including content usage rights and intellectual property notices.",
 };
 
 export const PRIVMESSAGES: PrivMessages = [
