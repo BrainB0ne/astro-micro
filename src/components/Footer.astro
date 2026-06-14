@@ -1,8 +1,8 @@
 ---
-import Container from "@components/Container.astro";
-import { SITE } from "@consts";
-import BackToTop from "@components/BackToTop.astro";
-import Link from "@components/Link.astro";
+import Container from "@/components/Container.astro";
+import { SITE } from "@/consts";
+import BackToTop from "@/components/BackToTop.astro";
+import Link from "@/components/Link.astro";
 
 const rssURL = (new URL(SITE.RSS, Astro.site)).toString();
 ---

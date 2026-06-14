@@ -1,4 +1,4 @@
-import type { Metadata, Site, PrivMessages, Socials, Repos, Cryptos, Donations } from "@types";
+import type { Metadata, Site, PrivMessages, Socials, Repos, Cryptos, Donations } from "@/types";
 
 export const SITE: Site = {
   TITLE: "BrainByteZ",

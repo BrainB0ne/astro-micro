@@ -1,15 +1,15 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/Container.astro";
-import { SITE, HOME } from "@consts";
-import ArrowCard from "@components/ArrowCard.astro";
-import Link from "@components/Link.astro";
-import HomeIntro from "@components/HomeIntro.astro";
-import HomeCard from "@components/HomeCard.astro";
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/Container.astro";
+import { SITE, HOME } from "@/consts";
+import ArrowCard from "@/components/ArrowCard.astro";
+import Link from "@/components/Link.astro";
+import HomeIntro from "@/components/HomeIntro.astro";
+import HomeCard from "@/components/HomeCard.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import LinkCloud from "@components/LinkCloud.astro";
-import SkillCloud from "@components/SkillCloud.astro";
+import LinkCloud from "@/components/LinkCloud.astro";
+import SkillCloud from "@/components/SkillCloud.astro";
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)

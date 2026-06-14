@@ -54,9 +54,9 @@ bunx prettier --write path/to/file.astro
 
 ### Imports
 
-- Use path aliases with `@` prefix: `@components`, `@layouts`, `@lib`, `@consts`, `@types`
+- Use path aliases with `@` prefix: `@components`, `@layouts`, `@lib`, `@/consts`, `@/types`
 - Group imports: 1) Astro built-ins, 2) External libs, 3) Internal aliases, 4) Relative imports
-- Astro components use `import X from "@components/X.astro"`
+- Astro components use `import X from "@/components/X.astro"`
 - Use double quotes for strings consistently
 
 ### Formatting
@@ -95,7 +95,7 @@ bunx prettier --write path/to/file.astro
 ### Styling
 
 - Tailwind utility classes exclusively
-- Use `cn()` from `@lib/utils` for conditional class merging
+- Use `cn()` from `@/lib/utils` for conditional class merging
 - Dark mode via `dark:` prefixes and `data-theme` attribute
 - Custom CSS in `src/styles/app.css` imported by Head.astro
 - DaisyUI themes: light (default) and dark
