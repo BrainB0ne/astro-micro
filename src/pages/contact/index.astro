@@ -5,6 +5,8 @@ import { CONTACT, SOCIALS, PRIVMESSAGES, REPOS } from "@/consts";
 import BackToPrevious from "@/components/BackToPrevious.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import ContactForm from "@/components/ContactForm.astro";
+import { Image } from "astro:assets";
+import assetsAvatarImage from "../../assets/avatar-256.webp";
 ---
 
 <Layout title={CONTACT.TITLE} description={CONTACT.DESCRIPTION}>
@@ -19,6 +21,11 @@ import ContactForm from "@/components/ContactForm.astro";
           <p>
             If you want to contact me, check out the options below.
           </p>
+          <div class="du-avatar">
+            <div class="w-32 rounded">
+              <Image src={assetsAvatarImage} alt="Profile Picture" width={256} height={256} />
+            </div>
+          </div>
           <div class="font-semibold text-black dark:text-white">
             Private Message
           </div>
