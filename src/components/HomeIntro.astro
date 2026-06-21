@@ -1,9 +1,8 @@
 ---
 import Link from "@/components/Link.astro";
+import AvatarSignature from "@/components/AvatarSignature.astro";
 // import Callout from "@/components/Callout.astro";
 import "../styles/flag-icons.scss";
-import { Image } from "astro:assets";
-import assetsAvatarImage from "../assets/avatar-256.webp";
 ---
 
 <h1 class="text-lg font-semibold">
@@ -40,17 +39,6 @@ import assetsAvatarImage from "../assets/avatar-256.webp";
     <p>
     Grab a coffee, explore, and hopefully discover something useful.
     </p>
-    <p>
-      <div class="mt-8">
-        <div class="du-avatar">
-          <div class="rounded-xl w-22">
-            <Image src={assetsAvatarImage} alt="Profile Picture" width={256} height={256} />
-          </div>
-        </div>
-      </div>
-    </p>
-    <p class="mt-2 text-sm">
-      — BrainB0ne
-    </p>
+    <AvatarSignature />
   </span>
 </article>
