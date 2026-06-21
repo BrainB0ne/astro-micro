@@ -5,6 +5,7 @@ import { SUPPORT, CRYPTOS, DONATIONS } from "@/consts";
 import BackToPrevious from "@/components/BackToPrevious.astro";
 import CryptoButtonV2 from "@/components/CryptoButtonV2.astro";
 import LinkButton from "@/components/LinkButton.astro";
+import TextAvatarSignature from "@/components/TextAvatarSignature.astro";
 ---
 
 <Layout title={SUPPORT.TITLE} description={SUPPORT.DESCRIPTION}>
@@ -14,10 +15,14 @@ import LinkButton from "@/components/LinkButton.astro";
         <BackToPrevious href="/"> Go to home page </BackToPrevious>
         <section class="animate space-y-4">
           <div class="animate font-semibold text-black dark:text-white">
-            Support Me
+            {SUPPORT.TITLE}
           </div>
           <p>
-            If you want to support me, check out the options below.
+            Articles, tutorials, and projects on BrainByteZ are freely available to everyone.
+            If you've found something useful here, consider supporting my work through one of the options below.
+          </p>
+          <p>
+            Support is never expected, but it's always appreciated and encourages me to keep building, learning, and sharing.
           </p>
           <div class="mt-6 flex flex-wrap gap-2 text-nowrap not-prose">
             {
@@ -32,7 +37,10 @@ import LinkButton from "@/components/LinkButton.astro";
               ))
             }
           </div>
-          <div class="mt-6 flex flex-wrap gap-2 text-nowrap not-prose">
+          <div class="text-sm">
+            Crypto Donations
+          </div>
+          <div class="mt-2 flex flex-wrap gap-2 text-nowrap not-prose">
             {
               CRYPTOS.map((CRYPTO) => (
                 <CryptoButtonV2
@@ -48,6 +56,7 @@ import LinkButton from "@/components/LinkButton.astro";
           </div>
         </section>
       </div>
+      <TextAvatarSignature size="w-22"/>
     </aside>
   </Container>
 </Layout>
