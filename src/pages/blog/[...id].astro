@@ -10,6 +10,7 @@ import TableOfContents from "@/components/TableOfContents.astro";
 import Giscus from "@/components/Giscus.astro";
 import SocialShareButtons from "@/components/SocialShareButtons.astro";
 import LinkButton from "@/components/LinkButton.astro";
+import AvatarSignature from "@/components/AvatarSignature.astro";
 import { DONATIONS } from "@/consts";
 
 export async function getStaticPaths() {
@@ -92,6 +93,7 @@ const { Content, headings } = await render(post);
     {headings.length > 0 && <TableOfContents headings={headings} />}
     <article class="animate">
       <Content />
+      <AvatarSignature size="w-16"/>
       <div class="group mt-6 flex flex-wrap gap-2 items-center justify-between text-[light-dark(black/75,white/75)]">
         <div class="flex flex-wrap gap-2 text-nowrap not-prose">
           {

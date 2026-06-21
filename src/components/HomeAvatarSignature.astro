@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import assetsAvatarImage from "../assets/avatar-256.webp";
+
+interface Props {
+  size?: "w-16" | "w-18" | "w-20" | "w-22" | "w-24";
+}
+
+const { size = "w-22" } = Astro.props;
+---
+
+<div class="mt-8">
+  <div class="du-avatar">
+    <div class:list={["rounded-xl", size]}>
+      <Image src={assetsAvatarImage} alt="Profile Picture" width={256} height={256} />
+    </div>
+  </div>
+</div>
+<p class="mt-2 text-sm">
+  — BrainB0ne
+</p>

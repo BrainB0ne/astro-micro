@@ -1,17 +1,24 @@
 ---
 import { Image } from "astro:assets";
 import assetsAvatarImage from "../assets/avatar-256.webp";
+
+interface Props {
+  size?: "w-16" | "w-18" | "w-20" | "w-22" | "w-24";
+}
+
+const { size = "w-22" } = Astro.props;
 ---
 
-<p>
-  <div class="mt-8">
+<div class="flex w-full flex-col">
+  <div class="du-divider"></div>
+</div>
+
+<div class="my-2 flex justify-center">
+  <div class="du-tooltip du-tooltip-bottom" data-tip="BrainB0ne">
     <div class="du-avatar">
-      <div class="rounded-xl w-22">
+      <div class:list={["rounded-xl", size]}>
         <Image src={assetsAvatarImage} alt="Profile Picture" width={256} height={256} />
       </div>
     </div>
   </div>
-</p>
-<p class="mt-2 text-sm">
-  — BrainB0ne
-</p>
+</div>
