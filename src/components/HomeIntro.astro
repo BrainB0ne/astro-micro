@@ -2,10 +2,12 @@
 import Link from "@/components/Link.astro";
 // import Callout from "@/components/Callout.astro";
 import "../styles/flag-icons.scss";
+import { Image } from "astro:assets";
+import assetsAvatarImage from "../assets/avatar-256.webp";
 ---
 
 <h1 class="text-lg font-semibold">
-  👋 Hello there ...
+  👋 Hi, I'm BrainB0ne ...
 </h1>
 <article class="space-y-4">
   <span>
@@ -18,30 +20,35 @@ import "../styles/flag-icons.scss";
     </p>
     -->
     <p>
-      This site will mostly be focused on tech/geek/gadget/programming stuff.
+    I build software, automate things, break them, fix them, and write about the process.<br>
+    BrainByteZ is my corner of the internet where I share practical guides, open-source projects, self-hosting experiments, hardware hacks, and lessons learned along the way.<br>
     </p>
     <p>
-      I will also share my applications/projects on this page.<br>
-      Feel free to have a look at the 
-      <Link href="/projects">
-        projects
-      </Link> section or read through the
-      <Link href="/blog">
-        blog
-      </Link> where I will announce project updates and write about other (tech) topics.
+    Most posts start with a problem I needed to solve and end with something worth sharing.<br>
     </p>
     <p>
-      My blog posts are written in English ( <span class="fi fi-us"></span> ) and/or Dutch ( <span class="fi fi-nl"></span> ).
+    You'll find articles in both English ( <span class="fi fi-us"></span> ) and Dutch ( <span class="fi fi-nl"></span> ), depending on the topic and audience.<br>
     </p>
     <p>
-      All my blog posts (comments excluded) are migrated to this
-      <Link external href="https://astro.build">
-        Astro
-      </Link> 🚀 static-site.<br>
-      The current theme for this page is the minimalistic
-      <Link external href="https://astro-micro.vercel.app">
-        Astro Micro
-      </Link> 🔬
+    This site is powered by <Link external href="https://astro.build">Astro</Link> 🚀
+    and uses the minimalistic <Link external href="https://astro-micro.vercel.app">Astro Micro</Link> 🔬 theme.<br>
+    </p>
+    <p>
+    All blog posts from my previous website have been migrated here to preserve the content and keep everything in one place.<br>
+    Unfortunately, the original comments didn't make the move.<br>
+    </p>
+    <p>
+    Grab a coffee, explore, and hopefully discover something useful.
+    </p>
+    <p>
+      <div class="du-avatar">
+        <div class="rounded-xl w-22">
+          <Image src={assetsAvatarImage} alt="Profile Picture" width={256} height={256} />
+        </div>
+      </div>
+    </p>
+    <p class="mt-2 text-sm">
+      — BrainB0ne
     </p>
   </span>
 </article>
