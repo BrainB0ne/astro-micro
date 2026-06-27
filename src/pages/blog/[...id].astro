@@ -12,11 +12,12 @@ import SocialShareButtons from "@/components/SocialShareButtons.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import AvatarSignature from "@/components/AvatarSignature.astro";
 import { DONATIONS } from "@/consts";
+import { sortByDateDesc } from "@/lib/utils";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
     .filter((post) => !post.data.draft)
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    .sort(sortByDateDesc);
   return posts.map((post) => ({
     params: { id: post.id },
     props: post,
@@ -26,7 +27,7 @@ type Props = CollectionEntry<"blog">;
 
 const posts = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  .sort(sortByDateDesc);
 
 function getNextPost() {
   let postIndex;

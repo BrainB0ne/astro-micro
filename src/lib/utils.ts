@@ -13,6 +13,29 @@ export function formatDate(date: Date) {
   }).format(date);
 }
 
+type SortableEntry = {
+  id: string;
+  data: {
+    date: Date;
+    time?: string;
+  };
+};
+
+function getDateSortValue(entry: SortableEntry) {
+  const date = new Date(entry.data.date);
+
+  if (entry.data.time) {
+    const [hours, minutes, seconds = "0"] = entry.data.time.split(":");
+    date.setHours(Number(hours), Number(minutes), Number(seconds), 0);
+  }
+
+  return date.valueOf();
+}
+
+export function sortByDateDesc(a: SortableEntry, b: SortableEntry) {
+  return getDateSortValue(b) - getDateSortValue(a) || b.id.localeCompare(a.id);
+}
+
 export function readingTime(html: string) {
   const textOnly = html.replace(/<[^>]+>/g, "");
   const wordCount = textOnly.split(/\s+/).length;

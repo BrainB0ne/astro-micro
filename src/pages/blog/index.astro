@@ -6,10 +6,11 @@ import ArrowCard from "@/components/ArrowCard.astro";
 import { BLOG } from "@/consts";
 import TagCloud from "@/components/TagCloud.astro";
 import BackToPrevious from "@/components/BackToPrevious.astro";
+import { sortByDateDesc } from "@/lib/utils";
 
 const data = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  .sort(sortByDateDesc);
 
 type Acc = {
   [year: string]: CollectionEntry<"blog">[];
