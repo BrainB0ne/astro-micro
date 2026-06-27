@@ -1,6 +1,7 @@
 import rss from "@astrojs/rss";
 import { SITE } from "@/consts";
 import { getCollection } from "astro:content";
+import { getEntryDate, sortByDateDesc } from "@/lib/utils";
 
 export async function GET(context) {
   const blog = (await getCollection("blog")).filter((post) => !post.data.draft);
@@ -9,9 +10,7 @@ export async function GET(context) {
     (project) => !project.data.draft,
   );
 
-  const items = [...blog, ...projects].sort(
-    (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
-  );
+  const items = [...blog, ...projects].sort(sortByDateDesc);
 
   return rss({
     title: SITE.TITLE,
@@ -20,7 +19,7 @@ export async function GET(context) {
     items: items.map((item) => ({
       title: item.data.title,
       description: item.data.description,
-      pubDate: item.data.date,
+      pubDate: getEntryDate(item),
       link: `/${item.collection}/${item.id}/`,
     })),
   });

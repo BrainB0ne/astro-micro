@@ -21,7 +21,7 @@ type SortableEntry = {
   };
 };
 
-function getDateSortValue(entry: SortableEntry) {
+export function getEntryDate(entry: SortableEntry) {
   const date = new Date(entry.data.date);
 
   if (entry.data.time) {
@@ -29,11 +29,11 @@ function getDateSortValue(entry: SortableEntry) {
     date.setHours(Number(hours), Number(minutes), Number(seconds), 0);
   }
 
-  return date.valueOf();
+  return date;
 }
 
 export function sortByDateDesc(a: SortableEntry, b: SortableEntry) {
-  return getDateSortValue(b) - getDateSortValue(a) || b.id.localeCompare(a.id);
+  return getEntryDate(b).valueOf() - getEntryDate(a).valueOf() || b.id.localeCompare(a.id);
 }
 
 export function readingTime(html: string) {
