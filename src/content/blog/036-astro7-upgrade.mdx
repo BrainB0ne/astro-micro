@@ -1,0 +1,137 @@
+---
+title: "Upgrade to Astro 7"
+description: "Upgrade from Astro 6.4.8 to Astro 7.0.3"
+date: "2026-06-27"
+time: "15:00"
+tags: 
+  - "announcements"
+  - "astro"
+draft: false
+---
+
+import Link from "@/components/Link.astro";
+import Callout from "@/components/Callout.astro";
+
+## 👋 Intro
+BrainByteZ has been upgraded to Astro 7. 🚀
+
+This article describes the upgrade process.
+The only issue I had to fix was a stricter MDX parsing error during the production build.
+
+## 1️⃣ Step 1: Run -> `bunx @astrojs/upgrade`
+
+```
+astro   Integration upgrade in progress.
+
+        @astrojs/check is up to date on v0.9.9
+        @astrojs/rss is up to date on v4.0.18
+        @astrojs/sitemap is up to date on v3.7.3
+        astro will be updated from v6.4.8 to v7.0.3
+        @astrojs/mdx will be updated from v6.0.3 to v7.0.0
+
+wait    Some packages have breaking changes. Continue?
+        Yes
+
+check   Be sure to follow the CHANGELOGs.
+        astro Upgrade to Astro v7
+        @astrojs/mdx CHANGELOG
+
+        Installing dependencies with bun...
+
+Houston:
+Can't wait to see what you build.
+```
+
+The upgrade updated Astro and the official integrations to versions that support Astro 7.
+
+At the time of writing this site uses:
+
+```
+astro: 7.0.3
+@astrojs/mdx: 7.0.0
+@astrojs/check: 0.9.9
+@astrojs/rss: 4.0.18
+@astrojs/sitemap: 3.7.3
+```
+
+## 2️⃣ Step 2: Run -> `bun run build`
+
+After the upgrade I ran the production build:
+
+```
+bun run build
+```
+
+This runs `astro check` first and then `astro build`.
+
+The type check passed without errors, but the Vite build failed while processing MDX content.
+
+<Callout type="error">
+Unexpected character after `&lt;`, expected a valid JSX tag (note: to create a link in MDX, use `[text](url)`)
+</Callout>
+
+```
+[ERROR] [vite] ✗ Build failed
+28:3: Unexpected character after `<`, expected a valid JSX tag (note: to create a link in MDX, use `[text](url)`) (mdx-jsx:unexpected-character)
+```
+
+## 3️⃣ Step 3: Fix stricter MDX parsing
+
+The error was caused by MDX syntax that worked before, but is now parsed more strictly.
+
+The project pages contained Astro components with the closing `>` on a new line, followed by the component text:
+
+```mdx
+<LinkButton
+  external
+  icon="github"
+  loading="lazy"
+  href="https://github.com/BrainB0ne/plainmd"
+>Available on GitHub</LinkButton>
+```
+
+In Astro 7's MDX build pipeline, this multiline component syntax failed to compile.
+Moving the closing `>` back onto the final prop line fixed the MDX JSX parse error.
+
+```mdx
+<LinkButton
+  external
+  icon="github"
+  loading="lazy"
+  href="https://github.com/BrainB0ne/plainmd">Available on GitHub</LinkButton>
+```
+
+I also removed angle brackets around plain URLs in GPL license code blocks:
+
+```diff
+-along with this program.  If not, see <https://www.gnu.org/licenses/>.
++along with this program.  If not, see https://www.gnu.org/licenses/.
+```
+
+After these MDX changes the production build completed successfully.
+
+## 4️⃣ Step 4: Result
+
+The Astro 7 upgrade is now live on BrainByteZ.
+
+Final verification:
+
+```
+bun run build
+```
+
+Result:
+
+```
+Result (55 files):
+- 0 errors
+- 0 warnings
+- 0 hints
+
+[build] 71 page(s) built
+[build] Complete!
+```
+
+The build now succeeds without errors.
+
+The official upgrade guide is available here: <Link external href="https://docs.astro.build/en/guides/upgrade-to/v7/">Upgrade to Astro v7</Link>.
