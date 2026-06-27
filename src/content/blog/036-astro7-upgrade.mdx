@@ -15,8 +15,8 @@ import Callout from "@/components/Callout.astro";
 ## 👋 Intro
 BrainByteZ has been upgraded to Astro 7. 🚀
 
-This article describes the upgrade process.
-The only issue I had to fix was a stricter MDX parsing error during the production build.
+The upgrade itself was straightforward, but I had to fix two small issues afterwards:
+a stricter MDX parsing error during the production build and a whitespace change caused by Astro 7's new JSX-style HTML compression.
 
 ## 1️⃣ Step 1: Run -> `bunx @astrojs/upgrade`
 
@@ -110,7 +110,37 @@ I also removed angle brackets around plain URLs in GPL license code blocks:
 
 After these MDX changes the production build completed successfully.
 
-## 4️⃣ Step 4: Result
+## 4️⃣ Step 4: Fix JSX-style whitespace handling
+
+Astro 7 also changed the default whitespace handling.
+The default value of `compressHTML` changed from `true` to `"jsx"`.
+
+This means Astro now strips whitespace using JSX rules by default, similar to frameworks like React.
+One small issue showed up in an inline text/link combination.
+
+Before:
+
+```astro
+<p>
+  A new home for
+  <Link external href="https://www.brainbytez.nl">
+    BrainByteZ
+  </Link>
+</p>
+```
+
+With the new whitespace handling, the rendered text could lose the space between `for` and `BrainByteZ`.
+I fixed it by keeping the inline text and link on the same line:
+
+```astro
+<p>
+  A new home for <Link external href="https://www.brainbytez.nl">BrainByteZ</Link>
+</p>
+```
+
+This keeps the intended space explicit and avoids depending on HTML-style whitespace preservation around inline components.
+
+## 5️⃣ Step 5: Result
 
 The Astro 7 upgrade is now live on BrainByteZ.
 
