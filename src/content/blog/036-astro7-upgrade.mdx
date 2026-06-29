@@ -91,14 +91,16 @@ The project pages contained Astro components with the closing `>` on a new line,
 ```
 
 In Astro 7's MDX build pipeline, this multiline component syntax failed to compile.
-Moving the closing `>` back onto the final prop line fixed the MDX JSX parse error.
+Moving the closing `>` back onto the final prop line fixed the MDX JSX parse error, but it introduced another issue: Markdown autolink parsing could treat part of the `href` attribute and the button text as a URL inside the component slot.
+
+The robust fix was to keep the component text as an explicit MDX string expression:
 
 ```mdx
 <LinkButton
   external
   icon="github"
   loading="lazy"
-  href="https://github.com/BrainB0ne/plainmd">Available on GitHub</LinkButton>
+  href="https://github.com/BrainB0ne/plainmd">{"Available on GitHub"}</LinkButton>
 ```
 
 I also removed angle brackets around plain URLs in GPL license code blocks:
