@@ -1,0 +1,106 @@
+---
+title: "ChatGPT-client (Fork)"
+description: "A small Electron desktop wrapper for ChatGPT with local Markdown/PDF exports"
+date: "2026-07-09"
+draft: false
+---
+
+import LinkButton from "@/components/LinkButton.astro";
+import Link from "@/components/Link.astro";
+
+## 👋 Introduction
+ChatGPT-client is a lightweight **Electron wrapper for ChatGPT** that runs ChatGPT in its own desktop window instead of a browser tab.
+It is a fork of <Link external href="https://github.com/jfscoertzen/ChatGPT-client">jfscoertzen/ChatGPT-client</Link>.
+
+**ChatGPT-client is partially vibe-coded with OpenCode: OpenAI GPT-5.5 🤖**
+
+The goal is simple: keep the official ChatGPT web experience, but add the desktop behavior I want day to day: quick refresh, a tray icon, local exports, and a few quality-of-life controls around the app window.
+
+The application was made only for Linux, because of the lack of an official ChatGPT app for Linux. 
+I liked the idea also for Windows, so I added a Windows build.
+
+The application loads `https://chatgpt.com` directly.
+Markdown and PDF exports are generated from the conversation that is already rendered in the window, then saved locally through Electron.
+No extra OpenAI API calls are made for exporting.
+
+This project is built with **Electron 37** and packaged with **electron-builder**.
+
+## ❗ Build Requirements
+- **Node.js 24**
+- **npm** is used for dependency management.
+- **Linux builds** produce AppImage and Debian packages.
+- **Windows builds** produce an NSIS installer and a portable executable.
+
+```bash
+npm install
+npm start
+```
+
+Build packages with:
+
+```bash
+npm run build:linux
+npm run build:win
+```
+
+## ✨ Features
+- **Dedicated desktop window** - ChatGPT opens as a standalone Electron app.
+- **Bottom-right action buttons** - Refresh, Markdown export, and PDF export are available inside the app window.
+- **Local Markdown export** - Saves the currently rendered chat as `chatgpt-export-YYYY-MM-DDTHH-MM-SS.md`.
+- **Local PDF export** - Saves the currently rendered chat as `chatgpt-export-YYYY-MM-DDTHH-MM-SS.pdf` using Electron's local `printToPDF` support.
+- **System tray integration** - Closing the window can hide it to the tray instead of quitting the app.
+- **Tray settings** - Toggle close-to-tray, start minimized, and always-on-top behavior.
+- **Browsing-data cleanup** - Clear cookies, cache, local storage, IndexedDB, and service worker data from the tray menu.
+- **Native edit context menu** - Right-click for cut, copy, paste, and select all.
+- **F5 reload shortcut** - Reload ChatGPT without leaving the app.
+- **Spell checking disabled** - Prevents the embedded browser spellchecker from interfering with typing.
+
+## 📥 Downloads
+Prebuilt packages are published through the project's release pages when available.
+
+<div class="flex gap-2">
+  <LinkButton
+    external
+    icon="github"
+    loading="lazy"
+    href="https://github.com/BrainB0ne/ChatGPT-client/releases">{"GitHub Releases"}</LinkButton>
+</div>
+
+## 💻 Source
+<div class="flex gap-2">
+  <LinkButton
+    external
+    icon="github"
+    loading="lazy"
+    href="https://github.com/BrainB0ne/ChatGPT-client/tree/dev">{"Available on GitHub"}</LinkButton>
+  <LinkButton
+    external
+    icon="codeberg"
+    loading="lazy"
+    href="https://codeberg.org/BrainB0ne/ChatGPT-client/src/branch/dev">{"Get it on Codeberg"}</LinkButton>
+</div>
+
+## 🏛️ License
+```
+MIT License
+
+Copyright (c) 2026 Stephan Coertzen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
