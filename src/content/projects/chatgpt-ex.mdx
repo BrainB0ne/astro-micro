@@ -6,6 +6,7 @@ draft: false
 ---
 
 import LinkButton from "@/components/LinkButton.astro";
+import DownloadLinkButton from "@/components/DownloadLinkButton.astro";
 import Link from "@/components/Link.astro";
 
 ## 👋 Introduction
@@ -59,6 +60,32 @@ npm run build:win
 - **F5 reload shortcut** - Reload ChatGPT without leaving the app.
 - **Spell checking disabled** - Prevents the embedded browser spellchecker from interfering with typing.
 
+## 📥 Downloads
+
+### Windows
+<div class="flex flex-wrap gap-2">
+  <DownloadLinkButton
+    icon="download"
+    loading="lazy"
+    href="https://github.com/BrainB0ne/ChatGPT-client/releases/download/v1.1.0/ChatGPT-EX.Setup.1.1.0.exe">{"ChatGPT-EX v1.1.0 (installer)"}</DownloadLinkButton>
+  <DownloadLinkButton
+    icon="download"
+    loading="lazy"
+    href="https://github.com/BrainB0ne/ChatGPT-client/releases/download/v1.1.0/ChatGPT-EX.1.1.0.exe">{"ChatGPT-EX v1.1.0 (portable)"}</DownloadLinkButton>
+</div>
+
+### Linux
+<div class="flex flex-wrap gap-2">
+  <DownloadLinkButton
+    icon="download"
+    loading="lazy"
+    href="https://github.com/BrainB0ne/ChatGPT-client/releases/download/v1.1.0/chatgpt-ex_1.1.0_amd64.deb">{"ChatGPT-EX v1.1.0 (amd64-deb)"}</DownloadLinkButton>
+  <DownloadLinkButton
+    icon="download"
+    loading="lazy"
+    href="https://github.com/BrainB0ne/ChatGPT-client/releases/download/v1.1.0/ChatGPT-EX-1.1.0.AppImage">{"ChatGPT-EX v1.1.0 (AppImage)"}</DownloadLinkButton>
+</div>
+
 ## 💻 Source
 <div class="flex gap-2">
   <LinkButton
@@ -72,3 +99,29 @@ npm run build:win
     loading="lazy"
     href="https://codeberg.org/BrainB0ne/ChatGPT-client/src/branch/dev">{"Get it on Codeberg"}</LinkButton>
 </div>
+
+## 🏛️ License
+```
+MIT License
+
+Copyright (c) 2026 Stephan Coertzen
+Copyright (c) 2026 BrainByteZ
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
