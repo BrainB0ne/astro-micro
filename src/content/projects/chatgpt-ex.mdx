@@ -49,12 +49,17 @@ npm run build:win
 
 ## ✨ Features
 - **Dedicated desktop window** - ChatGPT opens as a standalone Electron app.
-- **Bottom-right action buttons** - Refresh, Print, Markdown export, and PDF export are available inside the app window.
+- **Bottom-right action buttons** - Refresh, Print, Markdown export, and PDF export are available inside the app window in a compact 2x2 layout.
 - **Local Markdown export** - Saves the currently rendered chat as `chatgpt-export-YYYY-MM-DDTHH-MM-SS.md`.
 - **Local PDF export** - Saves the currently rendered chat as `chatgpt-export-YYYY-MM-DDTHH-MM-SS.pdf` using Electron's local `printToPDF` support.
 - **Print** - Prints the currently rendered chat.
+- **Export preferences** - Choose a default export folder, toggle timestamps, toggle User/Assistant role headings, choose PDF page size, and optionally save exports without a dialog.
+- **Export/print notifications** - Shows a temporary in-window confirmation after successful Markdown export, PDF export, or print.
+- **Drag-and-drop uploads** - Drop images/files into the app window to add them to the ChatGPT prompt.
+- **Compatibility Mode** - Optional Chrome-like user agent mode for site compatibility, with platform-specific Windows and Linux user agents.
+- **Voice/Microphone privacy setting** - Microphone/recording access is disabled by default and can be enabled from the tray settings.
 - **System tray integration** - Closing the window can hide it to the tray instead of quitting the app.
-- **Tray settings** - Toggle close-to-tray, start minimized, and always-on-top behavior.
+- **Tray settings** - Toggle close-to-tray, start minimized, always-on-top behavior, Compatibility Mode, and Voice/Microphone Access.
 - **Browsing-data cleanup** - Clear cookies, cache, local storage, IndexedDB, and service worker data from the tray menu.
 - **Native edit context menu** - Right-click for cut, copy, paste, and select all.
 - **F5 reload shortcut** - Reload ChatGPT without leaving the app.
@@ -67,11 +72,11 @@ npm run build:win
   <DownloadLinkButton
     icon="download"
     loading="lazy"
-    href="https://github.com/BrainB0ne/ChatGPT-client/releases/download/v1.1.0/ChatGPT-EX.Setup.1.1.0.exe">{"ChatGPT-EX v1.1.0 (installer)"}</DownloadLinkButton>
+    href="https://github.com/BrainB0ne/ChatGPT-client/releases/download/v1.2.0/ChatGPT-EX.Setup.1.2.0.exe">{"ChatGPT-EX v1.2.0 (installer)"}</DownloadLinkButton>
   <DownloadLinkButton
     icon="download"
     loading="lazy"
-    href="https://github.com/BrainB0ne/ChatGPT-client/releases/download/v1.1.0/ChatGPT-EX.1.1.0.exe">{"ChatGPT-EX v1.1.0 (portable)"}</DownloadLinkButton>
+    href="https://github.com/BrainB0ne/ChatGPT-client/releases/download/v1.2.0/ChatGPT-EX.1.2.0.exe">{"ChatGPT-EX v1.2.0 (portable)"}</DownloadLinkButton>
 </div>
 
 ### Linux
@@ -79,11 +84,11 @@ npm run build:win
   <DownloadLinkButton
     icon="download"
     loading="lazy"
-    href="https://github.com/BrainB0ne/ChatGPT-client/releases/download/v1.1.0/chatgpt-ex_1.1.0_amd64.deb">{"ChatGPT-EX v1.1.0 (amd64-deb)"}</DownloadLinkButton>
+    href="https://github.com/BrainB0ne/ChatGPT-client/releases/download/v1.2.0/chatgpt-ex_1.2.0_amd64.deb">{"ChatGPT-EX v1.2.0 (amd64-deb)"}</DownloadLinkButton>
   <DownloadLinkButton
     icon="download"
     loading="lazy"
-    href="https://github.com/BrainB0ne/ChatGPT-client/releases/download/v1.1.0/ChatGPT-EX-1.1.0.AppImage">{"ChatGPT-EX v1.1.0 (AppImage)"}</DownloadLinkButton>
+    href="https://github.com/BrainB0ne/ChatGPT-client/releases/download/v1.2.0/ChatGPT-EX-1.2.0.AppImage">{"ChatGPT-EX v1.2.0 (AppImage)"}</DownloadLinkButton>
 </div>
 
 ## 💻 Source
