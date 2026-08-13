@@ -137,29 +137,30 @@ export default defineConfig({
 
 ## Set up Giscus
 
-Follow the steps at [giscus.app](https://giscus.app). Once you get your custom Giscus script from that site, go to `Giscus.astro` and replace that script with your own.
+**Comments are disabled until you add your Giscus configuration.**
 
-```js
-// src/components/Giscus.astro
+1. Follow the steps at [giscus.app](https://giscus.app).
+2. Copy `.env.example` to `.env`.
+3. Add the four values from the script that Giscus generates:
 
-<script
-  is:inline
-  src="https://giscus.app/client.js"
-  data-repo="trevortylerlee/astro-micro"
-  data-repo-id="R_kgDOL_6l9Q"
-  data-category="Announcements"
-  data-category-id="DIC_kwDOL_6l9c4Cfk55"
-  data-mapping="pathname"
-  data-strict="0"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="top"
-  data-theme="preferred_color_scheme"
-  data-lang="en"
-  data-loading="lazy"
-  crossorigin="anonymous"
-  async
-></script>
+```bash
+# .env
+PUBLIC_GISCUS_REPO="your-github-name/your-repository"
+PUBLIC_GISCUS_REPO_ID="your-repository-id"
+PUBLIC_GISCUS_CATEGORY="Announcements"
+PUBLIC_GISCUS_CATEGORY_ID="your-category-id"
+```
+
+Add the same environment variables to your deployment service.
+
+To stop other websites from using your Giscus configuration, add a
+`giscus.json` file to the root of your repository. Replace the example URL with
+your deployed site URL:
+
+```json
+{
+  "origins": ["https://your-site.example.com"]
+}
 ```
 
 To change the Giscus themes used, edit the `setGiscusTheme` function in `Head.astro`.
