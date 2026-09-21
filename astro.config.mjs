@@ -20,21 +20,6 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
-    // temporarily resolve the UNUSED_EXTERNAL_IMPORT warning for Astro 6.
-    // https://github.com/withastro/astro/issues/15957#issuecomment-4189129539
-    build: {
-      rollupOptions: {
-        onwarn(warning, warn) {
-          if (
-            warning.code === "UNUSED_EXTERNAL_IMPORT" &&
-            warning.message.includes("@astrojs/internal-helpers")
-          ) {
-            return;
-          }
-          warn(warning);
-        },
-      },
-    },
   },
   markdown: {
     shikiConfig: {
