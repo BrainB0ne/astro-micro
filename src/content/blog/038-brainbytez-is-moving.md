@@ -1,5 +1,5 @@
 ---
-title: "BrainByteZ is moving to brainbytez.eu"
+title: "BrainByteZ is moving to here (brainbytez.eu)"
 description: "brainbytez.nl WordPress blog will go offline on October 16, 2026."
 date: "2026-09-26"
 tags: 
@@ -30,7 +30,7 @@ The goal is that existing bookmarks and links to old BrainByteZ posts will conti
 ## Why the move?
 
 The old brainbytez.nl site has been running on WordPress and traditional web hosting for many years.
-The new brainbytez.eu website is a much simpler, faster static site and has already taken over as my main blog.
+The new brainbytez.eu website is a much simpler, faster static site (Astro 🚀) and has already taken over as my main blog.
 
 Keeping the old WordPress installation and hosting online no longer makes much sense when all of its content has already been preserved on the new site.
 
